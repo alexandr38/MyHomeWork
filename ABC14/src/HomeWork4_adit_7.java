@@ -16,7 +16,7 @@ public class HomeWork4_adit_7 {
         Scanner sc = new Scanner(System.in); // переменная для работы сканера
 
         System.out.println(" enter the month number in the range from 1 to 12 " ); // сообщение пользователю
-        byte monthNum = sc.nextByte(); // инициализация переменной и ожидание ввода первого значения
+        byte monthNum = sc.nextByte(); // инициализация переменной и ожидание ввода значения
 
         switch ( monthNum ) {
             case 12:
