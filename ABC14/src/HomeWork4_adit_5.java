@@ -21,7 +21,7 @@ public class HomeWork4_adit_5 {
         int secondNum = sc.nextInt(); // инициализация переменной и ожидание ввода второго значения
 
         System.out.println(" enter third number " ); // сообщение пользователю
-        int thirdNum = sc.nextInt(); // инициализация переменной и ожидание ввода второго значения
+        int thirdNum = sc.nextInt(); // инициализация переменной и ожидание ввода третьего значения
 
         boolean couple = firstNum == secondNum || firstNum == thirdNum || secondNum == thirdNum ; // поиск пары
         System.out.println( "among the entered numbers, there are couple of equal " + "- " + couple );
