@@ -13,8 +13,6 @@ public class HomeWork4_adit_10 {
 
     public static void main(String[] args) {
 
-        /* еще в процессе */
-
         Scanner sc = new Scanner(System.in); // переменная для работы сканера
         double priceCall ;  // стоимость разговора
         int tariff = 2 ;     // стоимость 1-ой минуты
