@@ -6,20 +6,20 @@ import java.util.Scanner;
 
 public class HomeWork5_3 {
 
-    /* 5.3. Посчитать сколько раз встречается символ 8 в заданном числе, которое вводит юзер */
+    /* 5.3. РџРѕСЃС‡РёС‚Р°С‚СЊ СЃРєРѕР»СЊРєРѕ СЂР°Р· РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ СЃРёРјРІРѕР» 8 РІ Р·Р°РґР°РЅРЅРѕРј С‡РёСЃР»Рµ, РєРѕС‚РѕСЂРѕРµ РІРІРѕРґРёС‚ СЋР·РµСЂ */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
-        int countChar = 0 ;                  // счетчик символов с начальной инициализацией
+        Scanner sc = new Scanner(System.in); // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
+        int countChar = 0 ;                  // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‡РµС‚С‡РёРєР° СЃРёРјРІРѕР»РѕРІ
 
-        System.out.println(" enter a positive integer " ); // сообщение пользователю
-        int number = sc.nextInt();                         // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter a positive integer " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int number = sc.nextInt();                         // С‡С‚РµРЅРёРµ РІРІРѕРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
-        String numString = Integer.toString ( number ) ;    // конвертируем число в строку
-        for (int i = 0; i <= ( numString.length() - 1) ; i++ )
+        String numString = Integer.toString ( number ) ;        // РєРѕРЅРІРµСЂС‚Р°С†РёСЏ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ
+        for (int i = 0; i <= ( numString.length() - 1) ; i++ )  // С†РёРєР» РґР»СЏ РїРѕРґСЃС‡РµС‚Р° СЃРёРјРІРѕР»РѕРІ
         {
-            if ( numString.charAt(i) == '8') countChar++ ;  // если текущий символ строки равен 8, наращиваем счетчик
+            if ( numString.charAt(i) == '8') countChar++ ;      // РµСЃР»Рё С‚РµРєСѓС‰РёР№ СЂР°РІРµРЅ 8, С‚Рѕ РЅР°СЂР°СЃС‚РёС‚СЊ СЃС‡РµС‚С‡РёРє
 
         }
         System.out.println( " 8 including a number of - " + countChar);

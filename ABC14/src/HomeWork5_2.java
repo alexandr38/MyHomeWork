@@ -6,21 +6,21 @@ import java.util.Scanner;
 
 public class HomeWork5_2 {
 
-    /* 5.2. Вычислить факториал числа. */
+    /* 5.2. Р’С‹С‡РёСЃР»РёС‚СЊ С„Р°РєС‚РѕСЂРёР°Р» С‡РёСЃР»Р°. */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
-        double factNumber = 1 ;              // результат вычисления факториала
+        Scanner sc = new Scanner(System.in); // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
+        double factNumber = 1 ;              // РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ С„Р°РєС‚РѕСЂРёР°Р»Р°
 
-        System.out.println(" enter a positive integer " ); // сообщение пользователю
-        int number = sc.nextInt(); // инициализация переменной и ожидание ввода значения
-        String resultMessage = " factorial [ " + number + " ] = ";
+        System.out.println(" enter a positive integer " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int number = sc.nextInt();                         // С‡С‚РµРЅРёРµ РІРІРѕРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+        String resultMessage = " factorial [ " + number + " ] = "; // СЃС‚СЂРѕРєР° РґР»СЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
         switch (number) {
-                case 0:
+                case 0:                     // С„Р°РєС‚РѕСЂРёР°Р» РЅСѓР»СЏ 1
                     factNumber = 1;
-                default: {
+                default: {                   // РІС‹С‡РёСЃР»РµРЅРёРµ С„Р°РєС‚РѕСЂРёР°Р»Р° С‡РёСЃР»Р°
                     for (int i = 1; i <= number; i++) {
                         factNumber = factNumber * i;
                     }
