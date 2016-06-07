@@ -6,27 +6,29 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_15 {
 
-    /* Èçâåñòíû ïëîùàäè êðóãà è êâàäðàòà. Îïðåäåëèòü: à) óìåñòèòñÿ ëè êðóã â êâàäðàò;
-     á) óìåñòèòñÿ ëè êâàäðàò â êðóãå.
+    /* Ð˜Ð·Ð²ÐµÑÑ‚Ð½Ñ‹ Ð¿Ð»Ð¾Ñ‰Ð°Ð´Ð¸ ÐºÑ€ÑƒÐ³Ð° Ð¸ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð°. ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÑŒ: Ð°) ÑƒÐ¼ÐµÑÑ‚Ð¸Ñ‚ÑÑ Ð»Ð¸ ÐºÑ€ÑƒÐ³ Ð² ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚;
+    Ð±) ÑƒÐ¼ÐµÑÑ‚Ð¸Ñ‚ÑÑ Ð»Ð¸ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚ Ð² ÐºÑ€ÑƒÐ³Ðµ.
       */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // ïåðåìåííàÿ äëÿ ðàáîòû ñêàíåðà
-        String resultMessageCircleInSquare = " circle is placed in square - " ;       // êðóã ïîìåùàåòñÿ â êâàäðàò
-        String resultMessageSquareInCircle = " the square is placed in a circle - " ; // êâàäðàò ïîìåùàåòñÿ â êðóã
+        Scanner sc = new Scanner(System.in);                                          // Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ ÑÐºÐ°Ð½ÐµÑ€Ð°
+        String resultMessageCircleInSquare = " circle is placed in square - " ;       // ÑÑ‚Ñ€Ð¾ÐºÐ° ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð´Ð»Ñ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð°
+        String resultMessageSquareInCircle = " the square is placed in a circle - " ; // ÑÑ‚Ñ€Ð¾ÐºÐ° ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð´Ð»Ñ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð°
 
-        System.out.println(" enter area of a circle " ); // ñîîáùåíèå ïîëüçîâàòåëþ
-        float areaCircle = sc.nextFloat();                   // èíèöèàëèçàöèÿ ïåðåìåííîé è îæèäàíèå ââîäà çíà÷åíèÿ
+        System.out.println(" enter area of a circle " );                    // Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŽ
+        float areaCircle = sc.nextFloat();                                  // Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ Ð²Ð²Ð¾Ð´Ð°
 
-        System.out.println(" enter square area " ); // ñîîáùåíèå ïîëüçîâàòåëþ
-        float areaSquare = sc.nextFloat();              // èíèöèàëèçàöèÿ ïåðåìåííîé è îæèäàíèå ââîäà çíà÷åíèÿ
+        System.out.println(" enter square area " );                         //  Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŽ
+        float areaSquare = sc.nextFloat();                                  // Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ Ð²Ð²Ð¾Ð´Ð°
 
-        double sideSquare = Math.sqrt( areaSquare ) ;                     // ñòîðîíà êâàäðàòà
-        double diameterCircle = 2 * Math.sqrt( areaCircle / Math.PI ) ;   // äèàìåòð êðóãà
+        double sideSquare = Math.sqrt( areaSquare ) ;                       // ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð° ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð°
+        double diameterCircle = 2 * Math.sqrt( areaCircle / Math.PI ) ;     // Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ ÐºÑ€ÑƒÐ³Ð°
 
-        boolean circleInSquare = sideSquare >= diameterCircle ;                  // êðóã ïîìåùàåòñÿ, åñëè åãî äèàìåòð ìåíüøå èëè ðàâåí ñòîðîíå êâàäðàòà
-        boolean squareInCircle = diameterCircle >= Math.sqrt( 2 * areaSquare ) ; // êâàäðàò ïîìåùàåòñÿ, åñëè åãî äèãîíàëü ìåíüøå èëè ðàâíà äèàìåòðó êðóãà
+        // ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð° ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð° Ð±Ð¾Ð»ÑŒÑˆÐµ Ð¸Ð»Ð¸ Ñ€Ð°Ð²Ð½Ð° Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€Ñƒ, ÐºÑ€ÑƒÐ³ Ð²Ð¼ÐµÑ‰Ð°ÐµÑ‚ÑÑ
+        boolean circleInSquare = sideSquare >= diameterCircle ;
+        //Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð¸Ð»Ð¸ Ñ€Ð°Ð²ÐµÐ½ Ð´Ð¸Ð°Ð³Ð¾Ð½Ð°Ð»Ð¸ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð°, ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚ Ð²Ð¼ÐµÑ‰Ð°ÐµÑ‚ÑÑ
+        boolean squareInCircle = diameterCircle >= Math.sqrt( 2 * areaSquare ) ;
 
         System.out.println( resultMessageCircleInSquare + circleInSquare + '\n');
         System.out.println( resultMessageSquareInCircle + squareInCircle );
