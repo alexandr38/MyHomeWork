@@ -25,9 +25,9 @@ public class HomeWork4_adit_15 {
         double sideSquare = Math.sqrt( areaSquare ) ;                       // сторона квадрата
         double diameterCircle = 2 * Math.sqrt( areaCircle / Math.PI ) ;     // диаметр круга
 
-        // сторона квадрата больше или равна диаметру, круг вмещается
+        // сторона квадрата больше или равна диаметру, круг вмещается в квадрат
         boolean circleInSquare = sideSquare >= diameterCircle ;
-        //диаметр больше или равен диагонали квадрата, квадрат вмещается
+        //диаметр больше или равен диагонали квадрата, квадрат вмещается в круг
         boolean squareInCircle = diameterCircle >= Math.sqrt( 2 * areaSquare ) ;
 
         System.out.println( resultMessageCircleInSquare + circleInSquare + '\n');
