@@ -6,19 +6,19 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_9 {
 
-    /* Написать программу вычисления идеального веса пользователя (рост- 100).
-     Выдать рекомендации о необходимости поправиться либо похудеть.
+    /* РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ РІС‹С‡РёСЃР»РµРЅРёСЏ РёРґРµР°Р»СЊРЅРѕРіРѕ РІРµСЃР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ (СЂРѕСЃС‚-100).
+    Р’С‹РґР°С‚СЊ СЂРµРєРѕРјРµРЅРґР°С†РёРё Рѕ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРїСЂР°РІРёС‚СЊСЃСЏ Р»РёР±Рѕ РїРѕС…СѓРґРµС‚СЊ.
       */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
+        Scanner sc = new Scanner(System.in);            // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
 
-        System.out.println(" enter the growth " ); // сообщение пользователю
-        int growth = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter the growth " );      //РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int growth = sc.nextInt();                      // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" enter the weight " ); // сообщение пользователю
-        int weight = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter the weight " );       // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int weight = sc.nextInt();                       // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
         if ( growth <= 100 ) System.out.println( "incorrect growth. growth should be greather than 100 " );
         else {
