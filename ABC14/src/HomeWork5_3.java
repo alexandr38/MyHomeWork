@@ -10,7 +10,7 @@ public class HomeWork5_3 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in); // инициализация сканера
         int countChar = 0 ;                  // инициализация счетчика символов
 
         System.out.println(" enter a positive integer " ); // приглашение пользователю

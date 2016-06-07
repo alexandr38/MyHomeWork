@@ -10,7 +10,7 @@ public class HomeWork4_adit_6 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in); // инициализация сканера
 
         System.out.println(" enter rate in km/h " ); // приглашение пользователю
         float rate = sc.nextFloat();                 // чтение ввода

@@ -12,7 +12,7 @@ public class HomeWork4_adit_9 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);            // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in);            // инициализация сканера
 
         System.out.println(" enter the growth " );      //приглашение пользователю
         int growth = sc.nextInt();                      // чтение ввода

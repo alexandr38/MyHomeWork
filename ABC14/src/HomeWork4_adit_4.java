@@ -12,7 +12,7 @@ public class HomeWork4_adit_4 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in); // инициализация сканера
 
         System.out.println(" enter speed in km/h " ); // приглашение пользователю
         float speedKm = sc.nextFloat();               // чтение ввода

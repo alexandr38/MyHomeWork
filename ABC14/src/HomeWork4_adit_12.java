@@ -14,7 +14,7 @@ public class HomeWork4_adit_12 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);               // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in);               // инициализация сканера
         String resultMessage = new String();               // строка результата
 
         System.out.println(" оцените ветер от 1 до 4 " ); // приглашение пользователю

@@ -12,7 +12,7 @@ public class HomeWork5_1 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in); // инициализация сканера
 
         System.out.println(" 1 - translated into decimal notation, 2 - translation in binary system " ); // выбор системы счисления
         byte systemNotation = sc.nextByte();                                                             // 1 - в десятичную, 2 - в двоичную

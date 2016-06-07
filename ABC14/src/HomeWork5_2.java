@@ -10,7 +10,7 @@ public class HomeWork5_2 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in); // инициализация сканера
         double factNumber = 1 ;              // начальное значение факториала
 
         System.out.println(" enter a positive integer " ); // приглашение пользователю

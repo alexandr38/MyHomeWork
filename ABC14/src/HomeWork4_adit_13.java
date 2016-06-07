@@ -6,26 +6,27 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_13 {
 
-    /* Даны три числа A,B,C. Увеличить числа в два раза,
-     если A+B+C>0, в противном случае заменить на нули.
+    /* Р”Р°РЅС‹ С‚СЂРё С‡РёСЃР»Р° A,B,C. РЈРІРµР»РёС‡РёС‚СЊ С‡РёСЃР»Р° РІ РґРІР° СЂР°Р·Р°,
+    РµСЃР»Рё A+B+C>0, РІ РїСЂРѕС‚РёРІРЅРѕРј СЃР»СѓС‡Р°Рµ Р·Р°РјРµРЅРёС‚СЊ РЅР° РЅСѓР»Рё.
       */
+
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
-        String resultMessageOperNum ; // тут будет запись об операции над числами
+        Scanner sc = new Scanner(System.in);        // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРєР°РЅРµСЂР°
+        String resultMessageOperNum = new String(); // СЃС‚СЂРѕРєР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
-        System.out.println(" enter first number" ); // сообщение пользователю
-        int firstNum = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter first number" ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int firstNum = sc.nextInt();                // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" enter second number" ); // сообщение пользователю
-        int secondNum = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter second number" ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int secondNum = sc.nextInt();                // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" enter third number" ); // сообщение пользователю
-        int thirdNum = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter third number" ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int thirdNum = sc.nextInt();                // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        boolean sum = ( ( firstNum + secondNum + thirdNum ) > 0) ;
-        String resultMessageSum = ( " the sum of the numbers entered is greater than zero " +"- " + sum + " \n") ;  // строка для вывода результата
-        if ( sum == true )  {
+        boolean sum = ( ( firstNum + secondNum + thirdNum ) > 0) ;  // РїСЂРѕРІРµСЂРєР° СЃСѓРјРјС‹ С‡РёСЃРµР»
+        String resultMessageSum = ( " the sum of the numbers entered is greater than zero " +"- " + sum + " \n") ;  // РїРѕРґРіРѕС‚РѕРІРєР° СЃС‚СЂРѕРєРё Рє РІС‹РІРѕРґСѓ
+        if ( sum == true )  {               // РµСЃР»Рё РІРµСЂРЅРѕ, С‚Рѕ СѓРґРІРѕРёС‚СЊ С‡РёСЃР»Р°
             firstNum *= 2 ;
             secondNum *= 2 ;
             thirdNum *= 2 ;
@@ -33,7 +34,7 @@ public class HomeWork4_adit_13 {
         }
         else {
             firstNum = secondNum = thirdNum = 0;
-            resultMessageOperNum = " number replaced by zero : " ;
+            resultMessageOperNum = " number replaced by zero : " ;   // СЃСѓРјРјР°<0, Р·Р°РјРµРЅСЏРµРј РЅР° РЅРѕР»СЊ
         }
         System.out.println( resultMessageSum + resultMessageOperNum + Integer.toString( firstNum ) + ", " +
                                             Integer.toString( secondNum ) + ", " + Integer.toString( thirdNum ) ) ;

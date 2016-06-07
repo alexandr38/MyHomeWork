@@ -12,7 +12,7 @@ public class HomeWork4_adit_10 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);    // переменная для работы со сканером
+        Scanner sc = new Scanner(System.in);    // инициализация сканера
         double priceCall ;                      // стоимость разговора
         int tariff = 2 ;                        // условный тариф за минуту разговора
         byte discount ;                         // скидка
