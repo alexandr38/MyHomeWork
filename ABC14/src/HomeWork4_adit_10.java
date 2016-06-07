@@ -6,42 +6,41 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_10 {
 
-    /* Написать программу вычисления стоимости переговоров,
-    если по субботам и воскресеньям предоставляется 20% скидка.
-    Ввести продолжительность разговора и день недели (цифра от 1 до 7).
+    /* РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃС‚РѕРёРјРѕСЃС‚Рё РїРµСЂРµРіРѕРІРѕСЂРѕРІ, РµСЃР»Рё РїРѕ СЃСѓР±Р±РѕС‚Р°Рј Рё РІРѕСЃРєСЂРµСЃРµРЅСЊСЏРј
+     РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚СЃСЏ 20% СЃРєРёРґРєР°. Р’РІРµСЃС‚Рё РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЂР°Р·РіРѕРІРѕСЂР° Рё РґРµРЅСЊ РЅРµРґРµР»Рё (С†РёС„СЂР° РѕС‚ 1 РґРѕ 7).
      */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
-        double priceCall ;  // стоимость разговора
-        int tariff = 2 ;     // стоимость 1-ой минуты
-        byte discount ;  // скидка
+        Scanner sc = new Scanner(System.in);    // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
+        double priceCall ;                      // СЃС‚РѕРёРјРѕСЃС‚СЊ СЂР°Р·РіРѕРІРѕСЂР°
+        int tariff = 2 ;                        // СѓСЃР»РѕРІРЅС‹Р№ С‚Р°СЂРёС„ Р·Р° РјРёРЅСѓС‚Сѓ СЂР°Р·РіРѕРІРѕСЂР°
+        byte discount ;                         // СЃРєРёРґРєР°
 
-        System.out.println(" enter call duration in seconds " ); // сообщение пользователю
-        int duration = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter call duration in seconds " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int duration = sc.nextInt();                             // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" day of the week from 1 to 7 " ); // сообщение пользователю
-        int dayWeek = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" day of the week from 1 to 7 " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int dayWeek = sc.nextInt();                           // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        String resultMessage = " day " + "= " + dayWeek + " duration " + "= " + duration ;
+        String resultMessage = " day " + "= " + dayWeek + " duration " + "= " + duration ; // СЃС‚СЂРѕРєР° РґР»СЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
         switch ( dayWeek ) {
             case 1 :
             case 2 :
             case 3 :
             case 4 :
             case 5 :
-                discount = 0 ;
-                priceCall = Math.ceil( duration / 60) * tariff ;    // расчет стоимости разговора без скидки
-                resultMessage = resultMessage + " discount " + "= " + discount + " price " + "= " + priceCall ; // формирование сообщения для вывода
+                discount = 0 ;                                         // СЃРєРёРґРєРё СЃРµРіРѕРґРЅСЏ РЅРµС‚
+                priceCall = Math.ceil( duration / 60) * tariff ;        // РІСЂРµРјСЏ РІ РјРёРЅ Рё РѕРєСЂСѓРіР»СЏРµРј РґРѕ Р±РѕР»СЊС€РµРіРѕ С†РµР»РѕРіРѕ
+                resultMessage = resultMessage + " discount " + "= " + discount + " price " + "= " + priceCall ; // РіРѕС‚РѕРІР°СЏ Рє РІС‹РІРѕРґСѓ СЃС‚СЂРѕРєР°
                 System.out.println( resultMessage );
                 break ;
 
             case 6 :
             case 7 :
-                discount = 20 ;
-                priceCall = 0.8 * Math.ceil( duration / 60) * tariff ; // расчет стоимости разговора со скидкой
-                resultMessage = resultMessage + " discount " + "= " + discount + " price " + "= " + priceCall ;   // формирование сообщения для вывода
+                discount = 20 ;                                        // РµСЃС‚СЊ СЃРєРёРґРєР°
+                priceCall = 0.8 * Math.ceil( duration / 60) * tariff ; // РІСЂРµРјСЏ РІ РјРёРЅ Рё РѕРєСЂСѓРіР»СЏРµРј РґРѕ Р±РѕР»СЊС€РµРіРѕ С†РµР»РѕРіРѕ Рё СЃРѕ СЃРєРёРґРєРѕР№
+                resultMessage = resultMessage + " discount " + "= " + discount + " price " + "= " + priceCall ;   // РіРѕС‚РѕРІР°СЏ Рє РІС‹РІРѕРґСѓ СЃС‚СЂРѕРєР°
                 System.out.println( resultMessage );
                 break ;
 
