@@ -6,19 +6,18 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_11 {
 
-    /* Написать программу, которая при вводе числа в диапазоне от 1 до 99
-    добавляет к нему слово "копейка" в правильной форме. Например,
-    1 копейка, 5 копеек, 42 копейки .
+    /* РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ, РєРѕС‚РѕСЂР°СЏ РїСЂРё РІРІРѕРґРµ С‡РёСЃР»Р° РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 1 РґРѕ 99
+    РґРѕР±Р°РІР»СЏРµС‚ Рє РЅРµРјСѓ СЃР»РѕРІРѕ "РєРѕРїРµР№РєР°" РІ РїСЂР°РІРёР»СЊРЅРѕР№ С„РѕСЂРјРµ. РќР°РїСЂРёРјРµСЂ, 1 РєРѕРїРµР№РєР°, 5 РєРѕРїРµРµРє, 42 РєРѕРїРµР№РєРё .
      */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
+        Scanner sc = new Scanner(System.in); // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
 
-        System.out.println(" введите кол-во копеек от 1 до 99 " ); // сообщение пользователю
-        int quantity = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РєРѕРїРµРµРє РѕС‚ 1 РґРѕ 99 " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int quantity = sc.nextInt();                               // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        if ( quantity > 10 && quantity < 20 )  System.out.println( quantity + " копеек ");
+        if ( quantity > 10 && quantity < 20 )  System.out.println( quantity + " РєРѕРїРµРµРє ");
         else
             switch ( quantity % 10 ) {
                 case 0 :
@@ -27,17 +26,17 @@ public class HomeWork4_adit_11 {
                 case 7 :
                 case 8 :
                 case 9 :
-                    System.out.println( quantity + " копеек ");
+                    System.out.println( quantity + " РєРѕРїРµРµРє ");
                     break ;
 
                 case 1 :
-                    System.out.println( quantity + " копейка ");
+                    System.out.println( quantity + " РєРѕРїРµР№РєР° ");
                     break ;
 
                 case 2 :
                 case 3 :
                 case 4 :
-                    System.out.println( quantity + " копейки ");
+                    System.out.println( quantity + " РєРѕРїРµР№РєРё ");
                     break ;
         }
 
