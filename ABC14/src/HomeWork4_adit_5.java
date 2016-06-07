@@ -6,24 +6,24 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_5 {
 
-    /* Даны три числа a, b, c. Определить,
-    имеется ли среди них хотя бы одна пара равных
+    /* Р”Р°РЅС‹ С‚СЂРё С‡РёСЃР»Р° a, b, c. РћРїСЂРµРґРµР»РёС‚СЊ,
+    РёРјРµРµС‚СЃСЏ Р»Рё СЃСЂРµРґРё РЅРёС… С…РѕС‚СЏ Р±С‹ РѕРґРЅР° РїР°СЂР° СЂР°РІРЅС‹С…
      */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
+        Scanner sc = new Scanner(System.in); // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
 
-        System.out.println(" enter first number " ); // сообщение пользователю
-        int firstNum = sc.nextInt(); // инициализация переменной и ожидание ввода первого значения
+        System.out.println(" enter first number " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int firstNum = sc.nextInt();                 // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" enter second number " ); // сообщение пользователю
-        int secondNum = sc.nextInt(); // инициализация переменной и ожидание ввода второго значения
+        System.out.println(" enter second number " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int secondNum = sc.nextInt();                 // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        System.out.println(" enter third number " ); // сообщение пользователю
-        int thirdNum = sc.nextInt(); // инициализация переменной и ожидание ввода третьего значения
+        System.out.println(" enter third number " );   // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int thirdNum = sc.nextInt();                   // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        boolean couple = firstNum == secondNum || firstNum == thirdNum || secondNum == thirdNum ; // поиск пары
+        boolean couple = firstNum == secondNum || firstNum == thirdNum || secondNum == thirdNum ; // РїРѕРёСЃРє РїР°СЂС‹ СЂР°РІРЅС‹С…
         System.out.println( "among the entered numbers, there are couple of equal " + "- " + couple );
 
 

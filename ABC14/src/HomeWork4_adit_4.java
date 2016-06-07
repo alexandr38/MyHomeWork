@@ -6,21 +6,23 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_4 {
 
-    /* Èçâåñòíû äâå ñêîğîñòè, îäíà â êèëîìåòğàõ â ÷àñ, äğóãàÿ â ìåòğàõ â ñåêóíäó.
-     Êàêàÿ èç íèõ áîëüøå?
+    /* Ğ˜Ğ·Ğ²ĞµÑÑ‚Ğ½Ñ‹ Ğ´Ğ²Ğµ ÑĞºĞ¾Ñ€Ğ¾ÑÑ‚Ğ¸, Ğ¾Ğ´Ğ½Ğ° Ğ² ĞºĞ¸Ğ»Ğ¾Ğ¼ĞµÑ‚Ñ€Ğ°Ñ… Ğ² Ñ‡Ğ°Ñ, Ğ´Ñ€ÑƒĞ³Ğ°Ñ Ğ² Ğ¼ĞµÑ‚Ñ€Ğ°Ñ… Ğ² ÑĞµĞºÑƒĞ½Ğ´Ñƒ.
+    ĞšĞ°ĞºĞ°Ñ Ğ¸Ğ· Ğ½Ğ¸Ñ… Ğ±Ğ¾Ğ»ÑŒÑˆĞµ?
       */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // ïåğåìåííàÿ äëÿ ğàáîòû ñêàíåğà
+        Scanner sc = new Scanner(System.in); // Ğ¿ĞµÑ€ĞµĞ¼ĞµĞ½Ğ½Ğ°Ñ Ğ´Ğ»Ñ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ñ‹ ÑĞ¾ ÑĞºĞ°Ğ½ĞµÑ€Ğ¾Ğ¼
 
-        System.out.println(" enter speed in km/h " ); // ñîîáùåíèå ïîëüçîâàòåëş
-        float speedKm = sc.nextFloat(); // èíèöèàëèçàöèÿ ïåğåìåííîé è îæèäàíèå ââîäà ïåğâîãî çíà÷åíèÿ
+        System.out.println(" enter speed in km/h " ); // Ğ¿Ñ€Ğ¸Ğ³Ğ»Ğ°ÑˆĞµĞ½Ğ¸Ğµ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ
+        float speedKm = sc.nextFloat();               // Ñ‡Ñ‚ĞµĞ½Ğ¸Ğµ Ğ²Ğ²Ğ¾Ğ´Ğ°
 
-        System.out.println(" enter speed in m/sec " ); // ñîîáùåíèå ïîëüçîâàòåëş
-        float speedM = sc.nextFloat(); // èíèöèàëèçàöèÿ ïåğåìåííîé è îæèäàíèå ââîäà ïåğâîãî çíà÷åíèÿ
+        System.out.println(" enter speed in m/sec " ); // Ğ¿Ñ€Ğ¸Ğ³Ğ»Ğ°ÑˆĞµĞ½Ğ¸Ğµ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ
+        float speedM = sc.nextFloat();                 // Ñ‡Ñ‚ĞµĞ½Ğ¸Ğµ Ğ²Ğ²Ğ¾Ğ´Ğ°
 
-        float resultSpeed = speedKm * 1000/3600 ; // ïåğåâîä êì/÷ -> ì/ñ
+        float resultSpeed = speedKm * 1000/3600 ;       // Ğ¿ĞµÑ€ĞµĞ²Ğ¾Ğ´ ĞºĞ¼/Ñ‡ Ğ² Ğ¼/ÑĞµĞº
+
+        // ÑÑ€Ğ°Ğ²Ğ½ĞµĞ½Ğ¸Ğµ ÑĞºĞ¾Ñ€Ğ¾ÑÑ‚ĞµĞ¹ Ğ¸ Ğ²Ñ‹Ğ²Ğ¾Ğ´ Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ğ°
         if ( resultSpeed == speedM ) System.out.println( " speed in km/h equal to the speed in m/sec " );
             else
                 if ( resultSpeed > speedM ) System.out.println( "speed in km/h more speed in m/sec " );
