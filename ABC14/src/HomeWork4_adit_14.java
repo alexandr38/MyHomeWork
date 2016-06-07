@@ -6,21 +6,21 @@ import java.util.Scanner;
 
 public class HomeWork4_adit_14 {
 
-    /* 14) Определить, является ли шестизначное число "счастливым"
-    (сумма первых трех цифр равна сумме последних трех цифр).
+    /* РћРїСЂРµРґРµР»РёС‚СЊ, СЏРІР»СЏРµС‚СЃСЏ Р»Рё С€РµСЃС‚РёР·РЅР°С‡РЅРѕРµ С‡РёСЃР»Рѕ "СЃС‡Р°СЃС‚Р»РёРІС‹Рј"
+    (СЃСѓРјРјР° РїРµСЂРІС‹С… С‚СЂРµС… С†РёС„СЂ СЂР°РІРЅР° СЃСѓРјРјРµ РїРѕСЃР»РµРґРЅРёС… С‚СЂРµС… С†РёС„СЂ)..
      */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
+        Scanner sc = new Scanner(System.in);                    // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРєР°РЅРµСЂР°
 
-        System.out.println(" enter the six-digit number " ); // сообщение пользователю
-        int sixDigNum = sc.nextInt(); // инициализация переменной и ожидание ввода значения
+        System.out.println(" enter the six-digit number " );    // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+        int sixDigNum = sc.nextInt();                           // С‡С‚РµРЅРёРµ РІРІРѕРґР°
 
-        int sumThreeSenior = sixDigNum / 100000 + ( sixDigNum % 100000 ) / 10000 + ( ( sixDigNum % 100000 ) % 10000) / 1000 ; // сумма трех старших
-        int sumThreeYounger = ( sixDigNum % 1000 ) /100 + ( ( sixDigNum % 1000 ) % 100 ) / 10 + sixDigNum % 10 ;        // сумма трех младших
-        if ( sumThreeSenior == sumThreeYounger )
-            System.out.println( " the number entered is happy " );
+        int sumThreeSenior = sixDigNum / 100000 + ( sixDigNum % 100000 ) / 10000 + ( ( sixDigNum % 100000 ) % 10000) / 1000 ; // СЃСѓРјРјР° С‚СЂРµС… СЃС‚Р°СЂС€РёС…
+        int sumThreeYounger = ( sixDigNum % 1000 ) /100 + ( ( sixDigNum % 1000 ) % 100 ) / 10 + sixDigNum % 10 ;              // СЃСѓРјРјР° С‚СЂРµС… РјР»Р°РґС€РёС…
+        if ( sumThreeSenior == sumThreeYounger )                                                // РµСЃР»Рё СЂР°РІРЅС‹
+            System.out.println( " the number entered is happy " );                              // СЃС‡Р°СЃС‚Р»РёРІРѕРµ
         else
             System.out.println( " the number entered is not happy " );
 
