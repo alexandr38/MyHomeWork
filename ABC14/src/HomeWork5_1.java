@@ -6,24 +6,26 @@ import java.util.Scanner;
 
 public class HomeWork5_1 {
 
-    /* 5.1. Перевод с числа с десятичной системы счисления в двоичную, и наоборот. Пользователь сам вводит число */
+    /*5.1. РџРµСЂРµРІРѕРґ СЃ С‡РёСЃР»Р° СЃ РґРµСЃСЏС‚РёС‡РЅРѕР№ СЃРёСЃС‚РµРјС‹ СЃС‡РёСЃР»РµРЅРёСЏ РІ РґРІРѕРёС‡РЅСѓСЋ, Рё РЅР°РѕР±РѕСЂРѕС‚.
+    РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃР°Рј РІРІРѕРґРёС‚ С‡РёСЃР»Рѕ
+     */
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // переменная для работы сканера
+        Scanner sc = new Scanner(System.in); // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРєР°РЅРµСЂРѕРј
 
-        System.out.println(" 1 - translated into decimal notation, 2 - translation in binary system " ); // сообщение пользователю
-        byte systemNotation = sc.nextByte();        // инициализация переменной и ожидание ввода значения
+        System.out.println(" 1 - translated into decimal notation, 2 - translation in binary system " ); // РІС‹Р±РѕСЂ СЃРёСЃС‚РµРјС‹ СЃС‡РёСЃР»РµРЅРёСЏ
+        byte systemNotation = sc.nextByte();                                                             // 1 - РІ РґРµСЃСЏС‚РёС‡РЅСѓСЋ, 2 - РІ РґРІРѕРёС‡РЅСѓСЋ
 
         switch ( systemNotation ) {
             case 1 :
-                // перевод в десятичную систему
-                System.out.println(" enter a binary number " ); // сообщение пользователю
-                int binaryNum = sc.nextInt();        // инициализация переменной и ожидание ввода значения
-                double binToDecNum = 0 ;             // результат перевода
+                // РїРµСЂРµРІРѕРґ РІ РґРµСЃСЏС‚РёС‡РЅСѓСЋ СЃРёСЃС‚РµРјСѓ
+                System.out.println(" enter a binary number " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РґР»СЏ РІРІРѕРґР° РґРІРѕРёС‡РЅРѕРіРѕ С‡РёСЃР»Р°
+                int binaryNum = sc.nextInt();        // С‡С‚РµРЅРёРµ РІРІРѕРґР° РІ РїРµСЂРµРјРµРЅРЅСѓСЋ
+                double binToDecNum = 0 ;             // СЂРµР·СѓР»СЊС‚Р°С‚ РїРµСЂРµРІРѕРґР°
 
-                String binNumStr = Integer.toString ( binaryNum ) ;    // конвертируем число в строку
-                for ( int i = 0, degree = binNumStr.length() - 1 ; i < binNumStr.length(); i++ , degree-- )  // degree - текущая степень двойки
+                String binNumStr = Integer.toString ( binaryNum ) ;    // РєРѕРЅРІРµСЂС‚Р°С†РёСЏ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ
+                for ( int i = 0, degree = binNumStr.length() - 1 ; i < binNumStr.length(); i++ , degree-- )  // degree - СЃС‚РµРїРµРЅСЊ РґРІРѕР№РєРё
                 {
                    if ( binNumStr.charAt(i) == '1')  binToDecNum += Math.pow( 2, degree) ;
                 }
@@ -31,16 +33,16 @@ public class HomeWork5_1 {
                 break ;
 
             case 2 :
-                // перевод в двоичную систему
-                System.out.println(" Enter a decimal number " ); // сообщение пользователю
-                int decNum = sc.nextInt();                       // инициализация переменной и ожидание ввода значения
-                String decToBin = new String();                  // строка результата (пока пустая)
+                // РїРµСЂРµРІРѕРґ РІ РґРІРѕРёС‡РЅСѓСЋ СЃРёСЃС‚РµРјСѓ СЃС‡РёСЃР»РµРЅРёСЏ
+                System.out.println(" Enter a decimal number " ); // РїСЂРёРіР»Р°С€РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РґР»СЏ РІРІРѕРґР° РґРµСЃСЏС‚РёС‡РЅРѕРіРѕ С‡РёСЃР»Р°
+                int decNum = sc.nextInt();                       // С‡С‚РµРЅРёРµ РІРІРѕРґР° РІ РїРµСЂРµРјРµРЅРЅСѓСЋ
+                String decToBin = new String();                  // СЃС‚СЂРѕРєР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
                 while ( decNum >= 2 )
                 {
-                    decToBin = Integer.toString( decNum % 2) + decToBin ; // остаток от деления запоминаем в строку
-                    decNum = decNum / 2 ;                                 // запоминаем целую часть для след. раза
-                    if ( decNum == 1 ) decToBin = '1' + decToBin ;
+                    decToBin = Integer.toString( decNum % 2) + decToBin ; // РѕСЃС‚Р°С‚РѕРє РѕС‚ РґРµР»РµРЅРёСЏ РІ СЂРµР·СѓР»СЊС‚Р°С‚
+                    decNum = decNum / 2 ;                                 // С†РµР»Р°СЏ С‡Р°СЃС‚СЊ РґР»СЏ СЃР»РµРґ. СЂР°Р·Р°
+                    if ( decNum == 1 ) decToBin = '1' + decToBin ;         // РµСЃР»Рё РїРѕСЃР»РµРґРЅСЏСЏ, РґРѕР±Р°РІРёС‚СЊ РІ СЂРµР·СѓР»СЊС‚Р°С‚
                 }
                 System.out.println( " binary number = " + decToBin );
                 break ;
