@@ -4,6 +4,7 @@ package week2;
  * Created by Agryzkov on 08.06.2016.
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HomeWork3_4 {
@@ -27,6 +28,15 @@ public class HomeWork3_4 {
              System.out.println(" enter the array B element [" + i + "] ");
              arrayBElem[i] = sc.nextInt();
          }
-
+        // result array
+         ArrayList < Integer > resultArray = new ArrayList < Integer > () {{
+             add ( arrayAElem [ 1 ] ) ;
+             add ( arrayBElem [ 1 ] ) ;
+         }} ;
+        // result output
+        System.out.println( " an array containing the elements of the medium " );
+        for ( int i = 0 ; i < resultArray.size() ; i++ ) {
+            System.out.println( resultArray.get( i ) );
+        }
     }
 }
