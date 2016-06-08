@@ -21,14 +21,17 @@ public class HomeWork3_3 {
             System.out.println( " enter the array element [" + i + "] ");
             arrayElem [ i ] = sc.nextInt() ;
         }
+        // print source array
         System.out.println( " source array " ) ;
         for ( int i = 0 ; i < arrayElem.length ; i++ ) {
             System.out.println ( arrayElem [i] ) ;
         }
+        // permutation
         int buff = arrayElem [ 0 ] ;
         arrayElem [ 0 ] = arrayElem [ arrayElem.length - 1 ] ;
         arrayElem [ arrayElem.length - 1 ] = buff ;
 
+        // print invers array
         System.out.println( " array inversion " ) ;
         for ( int i = 0 ; i < arrayElem.length ; i++ ) {
             System.out.println ( arrayElem [i] ) ;
