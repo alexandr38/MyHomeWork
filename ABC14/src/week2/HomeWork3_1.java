@@ -17,12 +17,12 @@ public class HomeWork3_1 {
         Scanner sc = new Scanner(System.in);
         System.out.println(" enter the number of array elements " ) ;
         int numberArrElem = sc.nextInt() ;
-        int [ ] arrayElem = new int [ numberArrElem ];
+        int[ ] arrayElem = new int [numberArrElem];
         for ( int i = 0 ; i < numberArrElem ; i++ ) {
             System.out.println( " enter the array element [" + i + " ] ");
-            arrayElem [ i ] = sc.nextInt() ;
+            arrayElem [i] = sc.nextInt() ;
         }
-        boolean resultSearchFirstLast6 = arrayElem [ 0 ] == 6 || arrayElem [ numberArrElem -1  ] == 6 ;
+        boolean resultSearchFirstLast6 = arrayElem[0] == 6 || arrayElem[numberArrElem -1] == 6 ;
         System.out.println( "the first or the last element of the array is equal to 6 - " + resultSearchFirstLast6 ) ;
     }
 }

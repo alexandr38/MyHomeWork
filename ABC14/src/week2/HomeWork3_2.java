@@ -19,16 +19,16 @@ public class HomeWork3_2 {
         int [ ] arrayA = new int [ lengthA ];
         for ( int i = 0 ; i < lengthA ; i++ ) {
             System.out.println( " enter the array A element [ " + i + " ] ");
-            arrayA [ i ] = sc.nextInt() ;
+            arrayA [i] = sc.nextInt() ;
         }
         System.out.println(" enter the length of array B " ) ;
         int lengthB = sc.nextInt() ;
         int [ ] arrayB = new int [ lengthA ];
         for ( int i = 0 ; i < lengthB ; i++ ) {
             System.out.println( " enter the array B element [ " + i + " ] ");
-            arrayB [ i ] = sc.nextInt() ;
+            arrayB[i] = sc.nextInt() ;
         }
-        boolean firstLastElement = arrayA [ 0 ] == arrayB [ 0 ] || arrayA [ lengthA - 1 ] == arrayB [ lengthB - 1 ] ;
+        boolean firstLastElement = arrayA[0] == arrayB[0] || arrayA[lengthA - 1] == arrayB[lengthB - 1] ;
         System.out.println( " first or last elements of arrays are equal - " + firstLastElement);
     }
 }

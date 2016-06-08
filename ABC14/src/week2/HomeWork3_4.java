@@ -16,27 +16,27 @@ public class HomeWork3_4 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int [ ] arrayAElem = new int [ 3 ];
+        int[] arrayAElem = new int[3];
         System.out.println(" enter an array A of three elements " ) ;
         for ( int i = 0 ; i < arrayAElem.length ; i++ ) {
             System.out.println(" enter the array A element [" + i + "] ");
             arrayAElem[i] = sc.nextInt();
         }
-         int [ ] arrayBElem = new int [ 3 ];
+         int[] arrayBElem = new int[3];
          System.out.println(" enter an array B of three elements " ) ;
          for ( int i = 0 ; i < arrayBElem.length ; i++ ) {
              System.out.println(" enter the array B element [" + i + "] ");
              arrayBElem[i] = sc.nextInt();
          }
         // result array
-         ArrayList < Integer > resultArray = new ArrayList < Integer > () {{
-             add ( arrayAElem [ 1 ] ) ;
-             add ( arrayBElem [ 1 ] ) ;
+         ArrayList <Integer> resultArray = new ArrayList <Integer> () {{
+             add ( arrayAElem[1] ) ;
+             add ( arrayBElem[1] ) ;
          }} ;
         // result output
         System.out.println( " an array containing the elements of the medium " );
         for ( int i = 0 ; i < resultArray.size() ; i++ ) {
-            System.out.println( resultArray.get( i ) );
+            System.out.println( resultArray.get(i) );
         }
     }
 }
