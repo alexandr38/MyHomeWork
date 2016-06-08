@@ -1,4 +1,4 @@
-/**
+package week1; /**
  * Created by sasha on 05.06.2016.
  */
 
