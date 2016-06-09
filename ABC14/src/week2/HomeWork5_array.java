@@ -84,7 +84,71 @@ public class HomeWork5_array {
     matchUp([1, 2, 3], [2, 3, 5]) → 3
     matchUp([1, 2, 3], [2, 3, 3]) → 2
      */
-    
+    public int matchUp(int[] nums1, int[] nums2) {
+        int count = 0;
+        for (int i = 0; i < nums1.length; i++ ) {
+            if ( Math.abs( nums1[i]-nums2[i] ) <= 2
+                    && Math.abs( nums1[i]-nums2[i] ) > 0 ) count++;
+        }
+        return count;
+    }
+
+    /* Given an array of ints, return true if the array contains
+    either 3 even or 3 odd values all next to each other.
+    modThree([2, 1, 3, 5]) → true
+    modThree([2, 1, 2, 5]) → false
+    modThree([2, 4, 2, 5]) → true
+     */
+    public boolean modThree(int[] nums) {
+        boolean chetNechet = false;
+        if ( nums.length < 3 ) chetNechet = false;
+        else {
+            int sumOst = 0 ;
+            for ( int i = 0; i < nums.length-2 && chetNechet == false; i++ ) {
+                sumOst = nums[i]%2 + nums[i+1]%2 + nums[i+2]%2 ;
+                if (sumOst == 3 || sumOst == 0) chetNechet = true ;
+                else chetNechet = false ;
+            }
+        }
+        return chetNechet;
+    }
+
+    /* Return true if the group of N numbers at the start and end of the array
+    are the same. For example, with {5, 6, 45, 99, 13, 5, 6}, the ends are the same for n=0 and n=2,
+    and false for n=1 and n=3. You may assume that n is in the range 0..nums.length inclusive.
+    sameEnds([5, 6, 45, 99, 13, 5, 6], 1) → false
+    sameEnds([5, 6, 45, 99, 13, 5, 6], 2) → true
+    sameEnds([5, 6, 45, 99, 13, 5, 6], 3) → false
+     */
+    /* switch (nums.length - len) {
+      case 0 : group = true ;
+               break;
+      default:
+              int[] startNum = new int[len] ;
+              int[] endNum = new int[len] ;
+              int endPos = nums.length - len ;
+              System.arraycopy( nums, 0, startNum, 0, len ) ;
+              System.arraycopy( nums, endPos, endNum, 0, len ) ;
+              group = startNum.equals (endNum) ;
+              break;
+              */
+    public boolean sameEnds(int[] nums, int len) {
+        boolean group = false ;
+        switch (nums.length - len) {
+            case 0 : group = true ;
+                break;
+            default:
+                int countSameNume = 0;
+                for ( int st = 0, end = nums.length - len ; st < len; st++, end++ )
+                {
+                    if ( nums[st] == nums[end] ) countSameNume++ ;
+                }
+                if ( countSameNume == len ) group = true ;
+                break;
+        }
+        return group;
+    }
+       
 
 
 }
