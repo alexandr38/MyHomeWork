@@ -66,16 +66,25 @@ public class HomeWork5_array {
     no14([1, 2, 3, 4]) ? false
     no14([2, 3, 4]) ? true
        */
-    // !!!!!!!!!!!!!!
     public boolean no14(int[] nums) {
-        boolean yes1 = false ;
-        boolean yes4 = false ;
-        for ( int i = 0; i < nums.length && (yes1 == false && yes4 == false) ; i++) {
-            if ( nums[i] == 1 ) yes1 = true ;
-            else if ( nums[i] == 4 ) yes4 = true ;
+        boolean no1 = false ;
+        boolean no4 = false ;
+        for ( int i = 0; i < nums.length && (no1 == false || no4 == false); i++ ) {
+            if ( nums[i] == 1 ) no1 = true ;
+            else
+            if ( nums[i] == 4 ) no4 = true ;
         }
-        return yes1 && yes4 ;
+        return !(no1 && no4) ;
     }
+
+    /* Given arrays nums1 and nums2 of the same length, for every element in nums1,
+    consider the corresponding element in nums2 (at the same index). Return the count
+    of the number of times that the two elements differ by 2 or less, but are not equal.
+    matchUp([1, 2, 3], [2, 3, 10]) → 2
+    matchUp([1, 2, 3], [2, 3, 5]) → 3
+    matchUp([1, 2, 3], [2, 3, 3]) → 2
+     */
+    
 
 
 }
