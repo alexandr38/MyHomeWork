@@ -108,7 +108,6 @@ public class HomeWork5_string_1 {
     seeColor("xxred") ? ""
     seeColor("blueTimes") ? "blue"
     */
-    //??????????????????
     public String seeColor(String str) {
         String result = new String() ;
         switch ( str.length() ) {
@@ -123,15 +122,38 @@ public class HomeWork5_string_1 {
                 break ;
             case 4 :
                 if (str.equals("blue") ) result = "blue" ;
-                else { if (str.substring(0, 4).equals("red") ) result = "red" ;
+                else { if (str.substring(0, 3).equals("red") ) result = "red" ;
                 else result = "" ; }
                 break ;
             default :
-                if (str.substring(0, 4).equals("red") )  result = "red" ;
-                else { if (str.substring(0, 5).equals("blue") ) result = "blue" ;
+                if (str.substring(0, 3).equals("red") )  result = "red" ;
+                else { if (str.substring(0, 4).equals("blue") ) result = "blue" ;
                 else result = "" ; }
                 break ;
         }
         return result ;
     }
+
+    /* Given a string, return a new string made of 3 copies of the first 2 chars of the original string.
+    The string may be any length. If there are fewer than 2 chars, use whatever is there.
+    extraFront("Hello") ? "HeHeHe"
+    extraFront("ab") ? "ababab"
+    extraFront("H") ? "HHH"
+    */
+    public String extraFront(String str) {
+        String result = new String () ;
+        switch ( str.length() ) {
+            case 0 :
+                break;
+            case 1 :
+            case 2 :
+                result = str + str + str ;
+                break ;
+            default :
+                result = str.substring(0, 2) + str.substring(0, 2) + str.substring(0, 2) ;
+                break ;
+        }
+        return result ;
+    }
+    
 }
