@@ -155,5 +155,5 @@ public class HomeWork5_string_1 {
         }
         return result ;
     }
-    
+
 }
