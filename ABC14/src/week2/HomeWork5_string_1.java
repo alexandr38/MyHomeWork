@@ -108,5 +108,30 @@ public class HomeWork5_string_1 {
     seeColor("xxred") ? ""
     seeColor("blueTimes") ? "blue"
     */
-    
+    //??????????????????
+    public String seeColor(String str) {
+        String result = new String() ;
+        switch ( str.length() ) {
+            case 0 :
+            case 1 :
+            case 2 :
+                result = "" ;
+                break ;
+            case 3 :
+                if (str.equals("red") ) result = "red" ;
+                else result = "" ;
+                break ;
+            case 4 :
+                if (str.equals("blue") ) result = "blue" ;
+                else { if (str.substring(0, 4).equals("red") ) result = "red" ;
+                else result = "" ; }
+                break ;
+            default :
+                if (str.substring(0, 4).equals("red") )  result = "red" ;
+                else { if (str.substring(0, 5).equals("blue") ) result = "blue" ;
+                else result = "" ; }
+                break ;
+        }
+        return result ;
+    }
 }
