@@ -143,5 +143,31 @@ public class HomeWork6_string_2 {
     starOut("sm*eilly") → "silly"
     */
 
+    /* Return the number of times that the string "hi" appears anywhere in the given string.
+    countHi("abc hi ho") → 1
+    countHi("ABChi hi") → 2
+    countHi("hihi") → 2
+    */
+    public int countHi(String str) {
+        int countStr = 0 ;
+        switch ( str.length() ) {
+            case 0 :
+            case 1 :
+                break ;
+            case 2 :
+                if ( str.equals("hi") ) countStr++ ;
+                break ;
+            default :
+                for (int i = 0 ; i < str.length() -1 ; i++ ) {
+                    if ( ( str.substring(i, i+2 ) ).equals("hi") ) {
+                        i++;
+                        countStr++;
+                    }
+                }
+                break ;
+        }
+        return countStr ;
+    }
+    
 
 }
