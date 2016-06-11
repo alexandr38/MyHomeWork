@@ -176,5 +176,15 @@ public class HomeWork6_string_2 {
      endOther("AbC", "HiaBc") → true
      endOther("abc", "abXabc") → true
      */
-    
+    public boolean endOther(String a, String b) {
+        boolean result = false ;
+        int lenA = a.length() ;
+        int lenB = b.length() ;
+        String stA = a.toLowerCase() ;
+        String stB = b.toLowerCase() ;
+        if ( lenA > lenB ) result = stA.lastIndexOf(stB) == ( lenA - lenB ) ;
+        else if ( lenA < lenB ) result = stB.lastIndexOf(stA) == ( lenB - lenA ) ;
+        else result = stA.equals(stB) ;
+        return result ;
+    }
 }
