@@ -32,7 +32,25 @@ public class HomeWork6_string_2 {
     countCode("codexxcode") ? 2
     countCode("cozexxcope") ? 2
     */
-
+    public int countCode(String str) {
+        int count = 0 ;
+        switch ( str.length() ) {
+            case 0 :
+            case 1 :
+            case 2 :
+            case 3 :
+                break ;
+            default :
+                for ( int i = 0 ; i < str.length()-3 ; i++ ) {
+                    if (str.substring(i, i+2).equals("co") && str.charAt(i+3) == ('e') ) {
+                        count++ ;
+                        i+= 3 ;
+                    }
+                }
+                break;
+        }
+        return count ;
+    }
 
     /* Return true if the given string contains a "bob" string,
     but where the middle 'o' char can be any char.
