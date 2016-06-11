@@ -142,6 +142,28 @@ public class HomeWork6_string_2 {
     starOut("ab**cd") → "ad"
     starOut("sm*eilly") → "silly"
     */
+    public String starOut(String str) {
+        String result = new String () ;
+        switch ( str.length() ) {
+            case 0 :
+                result = "" ;
+                break ;
+            case 1 :
+            case 2 :
+                if ( !str.contains( "*" ) ) result = str ;
+                break ;
+            default :
+                for ( int i = 0 ; i < str.length() ; i++ ) {
+                    if ( i == 0 && str.charAt(0) != '*' ) result += str.charAt(0) ;
+                    if ( i > 0 && str.charAt(i) != '*' && str.charAt(i-1) != '*')
+                        result += str.charAt(i);
+                    if ( i > 0 && str.charAt(i) == '*' && str.charAt(i-1) != '*' )
+                        result = result.substring(0, result.length() - 1 ) ;
+                }
+                break ;
+        }
+        return result ;
+    }
 
     /* Return the number of times that the string "hi" appears anywhere in the given string.
     countHi("abc hi ho") → 1
