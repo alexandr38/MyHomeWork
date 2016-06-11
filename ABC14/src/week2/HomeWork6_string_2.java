@@ -119,7 +119,7 @@ public class HomeWork6_string_2 {
                 result = str.charAt(0) == '*' ;
                 break ;
             case 2 :
-                result = str.charAt(0) == str.charAt(1) ;
+                result = str.equals("**") ;
                 break ;
             default :
                 int posStar = str.indexOf('*') ;
@@ -135,6 +135,13 @@ public class HomeWork6_string_2 {
         }
         return result ;
     }
+
+    /* Return a version of the given string, where for every star (*) in the string the star
+    and the chars immediately to its left and right are gone. So "ab*cd" yields "ad" and "ab**cd" also yields "ad".
+    starOut("ab*cd") → "ad"
+    starOut("ab**cd") → "ad"
+    starOut("sm*eilly") → "silly"
+    */
 
 
 }
