@@ -116,7 +116,7 @@ public class HomeWork6_string_2 {
                 result = true ;
                 break;
             case 1 :
-                result = str.charAt(0) == '*' ;
+                result = str.equals("*") ; ;
                 break ;
             case 2 :
                 result = str.equals("**") ;
