@@ -66,7 +66,19 @@ public class HomeWork6_string_2 {
     prefixAgain("abXYabc", 2) → true
     prefixAgain("abXYabc", 3) → false
      */
-    
+    public boolean prefixAgain(String str, int n) {
+        boolean result = false ;
+        switch ( str.length() ) {
+            case 0 :
+            case 1 :
+                break ;
+            default:
+                String prefix = str.substring(0, n);
+                result = str.indexOf( prefix, n ) != -1 ;
+                break ;
+        }
+        return result ;
+    }
 
     /* Given a string and an int n, return a string made of n repetitions of the last n characters of the string.
      You may assume that n is between 0 and the length of the string, inclusive.
