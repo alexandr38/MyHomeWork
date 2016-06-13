@@ -47,5 +47,22 @@ public class MyArrayUtil {
         System.out.println() ;
     }
 
+    //swap max and min cell. If multiple items have the same value, remember the first occurrence
+    public static int[] swapMinMax ( int[] nums ) {
+        int maxCell = nums[0] ;
+        int indexMaxCell = 0 ;
+        int minCell = nums[0] ;
+        int indexMinCell = 0 ;
+        // search first min and first max cell
+        for (int i = 0 ; i < nums.length ; i++) {
+            if (nums[i] > maxCell ) { maxCell = nums[i]; indexMaxCell = i; }
+            if (nums[i] < minCell ) { minCell = nums[i]; indexMinCell = i; }
+        }
+        // swap cell
+        int buff = maxCell ;
+        nums[indexMaxCell] = minCell ;
+        nums[indexMinCell] = buff ;
+        return nums ;
+    }
 
 }

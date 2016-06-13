@@ -3,6 +3,11 @@ package week2;
 /**
  * Created by Agryzkov on 13.06.2016.
  */
+
+    /* create new random array. And search min cell and max cell
+    in new array.
+    */
+
 public class HomeWork4_1 {
 
     public static void main(String[] args) {
