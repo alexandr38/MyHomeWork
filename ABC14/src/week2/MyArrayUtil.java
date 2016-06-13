@@ -75,12 +75,12 @@ public class MyArrayUtil {
     }
 
     // FAQ arithmetic mean value of the array
-    public static float sumArray ( int[] nums, int pos, int size ) {
+    public static float sumArray ( int[] nums, int pos, int count ) {
         float sumArr = 0 ;
-        for ( int i = pos ; i < size ; i++ ) {
+        for ( int i = pos ; i < pos + count ; i++ ) {
         sumArr += nums[i] ;
         }
-        sumArr /= size ;
+        sumArr /= count ;
         return sumArr ;
     }
 
