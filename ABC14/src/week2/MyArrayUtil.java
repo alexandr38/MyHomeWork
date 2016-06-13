@@ -65,4 +65,14 @@ public class MyArrayUtil {
         return nums ;
     }
 
+    // copy second array into first array
+    public static int[] copyArray ( int[] firstArray, int[] secondArray ) {
+        for ( int i = 0 ; i < firstArray.length ; i++ ) {
+            firstArray[i] = secondArray[i] ;
+        }
+        return firstArray ;
+    }
+
+
+
 }

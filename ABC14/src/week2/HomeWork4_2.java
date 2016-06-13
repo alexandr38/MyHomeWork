@@ -8,7 +8,6 @@ package week2;
 public class HomeWork4_2 {
 
     public static void main(String[] args) {
-
         // random Size of Array
         int randomSize = (int) (Math.random() * 100);
         // create array
