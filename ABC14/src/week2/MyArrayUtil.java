@@ -41,7 +41,7 @@ public class MyArrayUtil {
     // print array: 10 cell in string
     public static void printArray ( int[] nums ) {
         for ( int i = 0 ; i < nums.length ; i ++ ) {
-            if ( (i+1)%10 == 0 ) System.out.println( nums[i] + "  " );
+            if ( (i+1)%20 == 0 ) System.out.println( nums[i] + "  " );
             else System.out.print ( nums[i] + "  " ) ;
         }
         System.out.println() ;
@@ -81,6 +81,16 @@ public class MyArrayUtil {
         }
         return searchNumCount ;
     }
+    // FAQ arithmetic mean value of the array
+    public static float sumArray ( int[] nums ) {
+        float sumArr = 0 ;
+        for ( int i = 0 ; i < nums.length ; i++ ) {
+        sumArr += nums[i] ;
+        }
+        sumArr /= nums.length ;
+        return sumArr ;
+    }
+
 
 
 }
