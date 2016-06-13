@@ -39,9 +39,10 @@ public class MyArrayUtil {
     }
 
     // print array: 20 cell in string
-    public static void printArray ( int[] nums, int pos, int size ) {
-        for ( int i = pos ; i < size ; i ++ ) {
-            if ( (i+1)%20 == 0 ) System.out.println( nums[i] + "  " );
+    public static void printArray ( int[] nums, int pos ) {
+        for ( int i = pos, elemInStr = 1 ; i < nums.length ; i ++ , elemInStr++ ) {
+            if ( elemInStr == 20 ) { System.out.println( nums[i] + "  " );
+                                     elemInStr = 0 ; }
             else System.out.print ( nums[i] + "  " ) ;
         }
         System.out.println() ;

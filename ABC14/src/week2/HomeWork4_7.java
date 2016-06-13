@@ -12,15 +12,15 @@ public class HomeWork4_7 {
         // random Size of Array
         int randomSize = (int) (Math.random() * 100 * 2 );
         // create array
-        int[] randomArray = {1,2,3,4,5,6,7,8,9,0};//MyArrayUtil.createIntArray(randomSize);
+        int[] randomArray = MyArrayUtil.createIntArray(randomSize);
         // print start array
-        MyArrayUtil.printArray(randomArray, 0, randomArray.length );
+        MyArrayUtil.printArray(randomArray, 0 );
         // half the sum of an array
         float sumFirstHalfArr = MyArrayUtil.sumArray( randomArray, 0, randomArray.length/2 ) ;
         float sumSecondHalfArr = MyArrayUtil.sumArray( randomArray, randomArray.length/2, randomArray.length/2 ) ;
-        if ( sumFirstHalfArr > sumSecondHalfArr ) { MyArrayUtil.printArray( randomArray, 0, randomArray.length/2 );}
+        if ( sumFirstHalfArr > sumSecondHalfArr ) { MyArrayUtil.printArray( randomArray, 0 );}
         else {if ( sumFirstHalfArr < sumSecondHalfArr )
-                { MyArrayUtil.printArray( randomArray, randomArray.length/2, randomArray.length );}
+                { MyArrayUtil.printArray( randomArray, randomArray.length/2 );}
              }
     }
 }

@@ -16,7 +16,7 @@ public class HomeWork4_1 {
         // create array
         int[] randomArray = MyArrayUtil.createIntArray( randomSize ) ;
         // print start array
-        MyArrayUtil.printArray( randomArray, 0, randomArray.length );
+        MyArrayUtil.printArray( randomArray, 0 );
         // search max cell
         int maxCell = MyArrayUtil.searchMaxCell( randomArray ) ;
         // search min cell

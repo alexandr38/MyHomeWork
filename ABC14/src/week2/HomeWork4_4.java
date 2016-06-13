@@ -18,7 +18,7 @@ public class HomeWork4_4 {
         // create array
         int[] randomArray = MyArrayUtil.createIntArray(randomSize);
         // print start array
-        MyArrayUtil.printArray(randomArray, 0, randomArray.length);
+        MyArrayUtil.printArray(randomArray, 0 );
         // search user number
         System.out.println("quantity the number " + userNumber + " in array equally " + MyArrayUtil.countCell( randomArray, userNumber));
     }

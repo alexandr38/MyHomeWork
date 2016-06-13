@@ -15,7 +15,7 @@ public class HomeWork4_6 {
         // create array
         int[] randomArray = MyArrayUtil.createIntArray(randomSize);
         // print start array
-        MyArrayUtil.printArray(randomArray, 0, randomArray.length);
+        MyArrayUtil.printArray(randomArray, 0 );
         System.out.println(" FAQ arithmetic mean value of the array = " + MyArrayUtil.sumArray(randomArray, 0, randomArray.length));
     }
 }
