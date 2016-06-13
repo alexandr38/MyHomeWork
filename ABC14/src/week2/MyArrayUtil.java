@@ -91,6 +91,22 @@ public class MyArrayUtil {
         return sumArr ;
     }
 
+    // create new odd array ( нечетные элементы)
+    public static int[] newOddArray ( int sizeNums ) {
+        int[] oddArray = new int[sizeNums] ;
+        for ( int i = 0 ; i < sizeNums ; i++ ) {
+            oddArray[i] = (int)(Math.random()*100)*2 + 1;
+        }
+        return oddArray ;
+    }
 
+    // create new even array ( четные элементы)
+    public static int[] newEvenArray ( int sizeNums ) {
+        int[] evenArray = new int[sizeNums] ;
+        for ( int i = 0 ; i < sizeNums ; i++ ) {
+            evenArray[i] = (int)(Math.random()*100)*2;
+        }
+        return evenArray ;
+    }
 
 }
