@@ -38,9 +38,9 @@ public class MyArrayUtil {
         return minCell ;
     }
 
-    // print array: 10 cell in string
-    public static void printArray ( int[] nums ) {
-        for ( int i = 0 ; i < nums.length ; i ++ ) {
+    // print array: 20 cell in string
+    public static void printArray ( int[] nums, int pos, int size ) {
+        for ( int i = pos ; i < size ; i ++ ) {
             if ( (i+1)%20 == 0 ) System.out.println( nums[i] + "  " );
             else System.out.print ( nums[i] + "  " ) ;
         }
@@ -65,14 +65,6 @@ public class MyArrayUtil {
         return nums ;
     }
 
-    // copy second array into first array
-    public static int[] copyArray ( int[] firstArray, int[] secondArray ) {
-        for ( int i = 0 ; i < firstArray.length ; i++ ) {
-            firstArray[i] = secondArray[i] ;
-        }
-        return firstArray ;
-    }
-
     // search cell and count
     public static int countCell ( int[] nums , int searchNum ) {
         int searchNumCount = 0 ;
@@ -81,13 +73,14 @@ public class MyArrayUtil {
         }
         return searchNumCount ;
     }
+
     // FAQ arithmetic mean value of the array
-    public static float sumArray ( int[] nums ) {
+    public static float sumArray ( int[] nums, int pos, int size ) {
         float sumArr = 0 ;
-        for ( int i = 0 ; i < nums.length ; i++ ) {
+        for ( int i = pos ; i < size ; i++ ) {
         sumArr += nums[i] ;
         }
-        sumArr /= nums.length ;
+        sumArr /= size ;
         return sumArr ;
     }
 

@@ -14,11 +14,11 @@ public class HomeWork4_3 {
         int[] firstArray = MyArrayUtil.createIntArray(randomSize);
         int[] secondArray = MyArrayUtil.createIntArray(randomSize);
         // print arrays
-        MyArrayUtil.printArray(firstArray);
-        MyArrayUtil.printArray(secondArray);
+        MyArrayUtil.printArray(firstArray, 0, firstArray.length);
+        MyArrayUtil.printArray(secondArray, 0, secondArray.length);
         // copy array
-        MyArrayUtil.copyArray( firstArray, secondArray ) ;
+        System.arraycopy(firstArray, 0, secondArray, 0,firstArray.length );
         // print result first array
-        MyArrayUtil.printArray( firstArray );
+        MyArrayUtil.printArray( secondArray, 0, secondArray.length );
     }
 }

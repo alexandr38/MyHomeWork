@@ -20,6 +20,6 @@ public class HomeWork4_5 {
               if ( i%2 == 0 ) { evenOddArr[i] = (int)(Math.random()*100)*2; }
               else { evenOddArr[i] = (int)(Math.random()*100)*2 + 1; }
           }
-          MyArrayUtil.printArray( evenOddArr );
+          MyArrayUtil.printArray( evenOddArr, 0, sizeArray );
       }
 }

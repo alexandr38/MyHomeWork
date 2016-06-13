@@ -13,10 +13,10 @@ public class HomeWork4_2 {
         // create array
         int[] randomArray = MyArrayUtil.createIntArray(randomSize);
         // print start array
-        MyArrayUtil.printArray(randomArray);
+        MyArrayUtil.printArray(randomArray, 0, randomArray.length);
         // swap min and max cell
         MyArrayUtil.swapMinMax(randomArray);
         //print result array
-        MyArrayUtil.printArray(randomArray);
+        MyArrayUtil.printArray(randomArray, 0, randomArray.length);
     }
 }
