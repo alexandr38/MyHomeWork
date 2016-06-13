@@ -73,6 +73,14 @@ public class MyArrayUtil {
         return firstArray ;
     }
 
+    // search cell and count
+    public static int countCell ( int[] nums , int searchNum ) {
+        int searchNumCount = 0 ;
+        for ( int i = 0 ; i < nums.length ; i++ ) {
+            if ( nums[i] == searchNum ) searchNumCount++ ;
+        }
+        return searchNumCount ;
+    }
 
 
 }
