@@ -121,4 +121,16 @@ public class MyArrayUtil {
         }
         return nums;
     }
+
+    // right shift
+    public static int[] rightShift ( int[] arr, int shiftPos ) {
+        for ( int countShift = 1; countShift <= shiftPos; countShift++ ) {
+            int buf = arr[arr.length-1];
+            for ( int i = arr.length-1; i >= 0; i-- ) {
+                arr[i] = arr[i-1];
+            }
+            arr[0] = buf;
+        }
+        return arr;
+    }
 }
