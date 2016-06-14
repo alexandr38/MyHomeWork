@@ -12,11 +12,16 @@ public class HomeWork7_2_2 {
         Scanner sc = new Scanner(System.in);
         System.out.println(" enter the positive integer more 1 ");
         int num = sc.nextInt();
-        boolean primeNum = true;
-        // 1 и само число не учитываем, там всегда true
-        for ( int i = 2; i < num && primeNum; i++ ) {
-            if (num%i == 0) { primeNum = false; }
-        }
-        System.out.println( "the enter positive integer is an prime number - " + primeNum );
+        if ( num <= 0) { System.out.println( "incorrect data" ); }
+        else { if ( num == 1) {System.out.println( "the enter positive integer is a prime number" ); }
+                else {
+                     boolean primeNum = true;
+                     // 1 и само число не учитываем, там всегда true
+                     for (int i = 2; i < num && primeNum; i++) {
+                     if (num % i == 0) { primeNum = false; }
+                     }
+                     System.out.println("the enter positive integer is an prime number - " + primeNum);
+                     }
+            }
     }
 }
