@@ -38,4 +38,25 @@ public class MyMatrixUtil {
         return matrix;
     }
 
+    // create boolean matrix
+    public static boolean[][] boolMatrix ( int strNum, int columnNum ) {
+        boolean[][] boolMatrix = new boolean[strNum][columnNum];
+        for ( int i = 0; i < strNum; i++ ) {
+            for ( int j = 0; j < columnNum; j++ ) {
+                if ( i == j ) { boolMatrix[i][j] = true; }
+                else { boolMatrix[i][j] = false; }
+            }
+        }
+        return boolMatrix;
+    }
+
+    // print boolean matrix
+    public static void boolPrintMatrix ( boolean[][] matrix ) {
+        for ( int i = 0; i < matrix.length; i++ ) {
+            for ( int j = 0; j < matrix[i].length; j++) {
+                System.out.print( matrix[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
 }
