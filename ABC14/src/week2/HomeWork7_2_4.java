@@ -17,8 +17,8 @@ public class HomeWork7_2_4 {
         int numRightShift = sc.nextInt();
         int[] nums = MyArrayUtil.createIntArray( sizeArray );
         System.out.println( " parent array ");
-        System.out.println( nums );
+        MyArrayUtil.printArray( nums, 0 );
         // right shift
-        System.out.println( MyArrayUtil.rightShift( nums, numRightShift ) );
+        MyArrayUtil.printArray( MyArrayUtil.rightShift( nums, numRightShift ), 0);
     }
 }
