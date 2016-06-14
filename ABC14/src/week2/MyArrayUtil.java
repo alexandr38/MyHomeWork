@@ -4,6 +4,7 @@ package week2;
  * Created by Agryzkov on 13.06.2016.
  */
 
+import javax.xml.stream.events.StartDocument;
 import java.util.Scanner;
 
 public class MyArrayUtil {
@@ -98,5 +99,17 @@ public class MyArrayUtil {
             if ( nums[i]%2 == 0) { evenCount++ ; }
         }
         return evenCount ;
+    }
+
+    // cut array from startPos to endPos
+    public static int[] splitArray ( int[] arr, int start, int end ) {
+        // control endPos
+        if ( end > arr.length - 1 ) {end = arr.length - 1; }
+        int[] cutArray = new int[end - start + 1];
+        //System.arraycopy(arr, start, cutArray, 0, cutArray.length );
+        for ( int i = 0; i < cutArray.length; i++, start++ ) {
+            cutArray[i] = arr[start];
+        }
+        return cutArray;
     }
 }
