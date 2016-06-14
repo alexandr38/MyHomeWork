@@ -21,6 +21,8 @@ public class HomeWork4_10 {
         System.out.println( " parent array ");
         MyArrayUtil.printArray( randomArray, 0 );
         // cut array
+        // int[] cutRandomArray = new int[endPos - startPos + 1] ;
+        // System.arraycopy(randomArray, startPos, cutRandomArray, 0, cutRandomArray.length );
         int[] cutRandomArray = MyArrayUtil.splitArray( randomArray, startPos, endPos );
         System.out.println( " cut array ");
         MyArrayUtil.printArray( cutRandomArray, 0 );

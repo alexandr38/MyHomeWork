@@ -106,7 +106,6 @@ public class MyArrayUtil {
         // control endPos
         if ( end > arr.length - 1 ) {end = arr.length - 1; }
         int[] cutArray = new int[end - start + 1];
-        //System.arraycopy(arr, start, cutArray, 0, cutArray.length );
         for ( int i = 0; i < cutArray.length; i++, start++ ) {
             cutArray[i] = arr[start];
         }
