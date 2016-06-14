@@ -17,6 +17,9 @@ public class HomeWork3_1 {
         // create matrix
         int[][] ranMatrix = MyMatrixUtil.matrix( numStr, numCol );
         // print matrix
+        System.out.println( " parent matrix " );
         MyMatrixUtil.printMatrix( ranMatrix );
+        System.out.println( "replace matrix " );
+        MyMatrixUtil.printMatrix( MyMatrixUtil.replaceMatrix( ranMatrix ) );
     }
 }
