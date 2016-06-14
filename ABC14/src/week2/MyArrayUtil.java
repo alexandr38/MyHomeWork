@@ -111,4 +111,14 @@ public class MyArrayUtil {
         }
         return cutArray;
     }
+
+    // array iversion
+    public static int[] inversArr ( int[] nums ) {
+        for ( int i = 0, endPos = nums.length - 1; i < nums.length/2; i++, endPos-- ) {
+            int buf = nums[i] ;
+            nums[i] = nums[endPos];
+            nums[endPos] = buf;
+        }
+        return nums;
+    }
 }
