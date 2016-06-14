@@ -82,5 +82,21 @@ public class MyArrayUtil {
         return sumArr ;
     }
 
-   
+    // create array, where min Value <= cell <= max Value
+    public static int[] minMaxCellArr (int minCell, int maxCell, int size ) {
+        int[] minMaxCellArr = new int[size] ;
+        for ( int i = 0 ; i < size ; i++ ) {
+            minMaxCellArr[i] = minCell + (int)(Math.random() * (maxCell - minCell + 1 )) ;
+        }
+        return minMaxCellArr ;
+    }
+
+    // count of even numbers
+    public static int evenCount ( int[] nums ) {
+        int evenCount = 0 ;
+        for ( int i = 0; i < nums.length; i++ ) {
+            if ( nums[i]%2 == 0) { evenCount++ ; }
+        }
+        return evenCount ;
+    }
 }
