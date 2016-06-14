@@ -8,9 +8,8 @@ import java.util.Scanner;
 
 public class MyArrayUtil {
 
-    // create random array
+// create random array
     public  static  int[] createIntArray ( int sizeArray ) {
-
         int[] randomArray = new int[sizeArray] ;
         for (int i = 0 ; i < sizeArray ; i++ ) {
             randomArray[i] = (int) (Math.random() * 10);
@@ -20,7 +19,6 @@ public class MyArrayUtil {
 
     // search max cell
     public static int searchMaxCell ( int[] nums ) {
-
         int maxCell = nums[0];
         for (int i = 0; i < nums.length; i++) {
             if (maxCell < nums[i]) maxCell = nums[i];
@@ -30,7 +28,6 @@ public class MyArrayUtil {
 
     // search min cell
     public static int searchMinCell ( int[] nums ) {
-
         int minCell = nums[0];
         for (int i = 0; i < nums.length; i++) {
             if ( minCell > nums[i] ) minCell = nums[i];
@@ -85,22 +82,5 @@ public class MyArrayUtil {
         return sumArr ;
     }
 
-    // create new odd array ( нечетные элементы)
-    public static int[] newOddArray ( int sizeNums ) {
-        int[] oddArray = new int[sizeNums] ;
-        for ( int i = 0 ; i < sizeNums ; i++ ) {
-            oddArray[i] = (int)(Math.random()*100)*2 + 1;
-        }
-        return oddArray ;
-    }
-
-    // create new even array ( четные элементы)
-    public static int[] newEvenArray ( int sizeNums ) {
-        int[] evenArray = new int[sizeNums] ;
-        for ( int i = 0 ; i < sizeNums ; i++ ) {
-            evenArray[i] = (int)(Math.random()*100)*2;
-        }
-        return evenArray ;
-    }
-
+   
 }
