@@ -24,8 +24,19 @@ public class MyStringUtil {
         return ifPalindrom;
     }
 
-    //Find the longest chain 0 and 1
-    //public static int[] searchLongestChain ( String str ) {
-
+    //Find the longest chain char
+    public static int[] searchLongestChain ( String str, char searchChar ) {
+        // 0 - start pos, 1 - count
+        int[] result = {0,0};
+        int countChar = 0;
+        //result[0] = str.indexOf( searchChar );
+        for (int i = 0; i < str.length(); i++ ) {
+            if ( str.charAt(i) == searchChar ) { countChar++; }
+            else { if (result[1] < countChar ) { result[1] = countChar; result[0] = i - countChar; }
+                countChar = 0; }
+        }
+        if (result[1] < countChar ) { result[1] = countChar; result[0] = str.length() - countChar; }
+        return result;
+    }
 
 }
