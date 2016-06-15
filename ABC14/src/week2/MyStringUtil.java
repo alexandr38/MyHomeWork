@@ -24,4 +24,8 @@ public class MyStringUtil {
         return ifPalindrom;
     }
 
+    //Find the longest chain 0 and 1
+    //public static int[] searchLongestChain ( String str ) {
+
+
 }
