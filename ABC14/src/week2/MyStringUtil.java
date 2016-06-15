@@ -14,4 +14,13 @@ public class MyStringUtil {
         return countSymb;
     }
 
+    //Is palindrome string
+    public static boolean searchPalindrome ( String str ) {
+        boolean ifPalindrom = false;
+        for ( int i = 0, j = str.length() - 1; i < str.length()/2; i++, j-- )
+        {
+            if ( str.charAt(i) == str.charAt(j) ) {ifPalindrom = true ; }
+        }
+        return ifPalindrom;
+    }
 }
