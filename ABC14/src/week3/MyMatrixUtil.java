@@ -70,4 +70,36 @@ public class MyMatrixUtil {
         }
         return diagArr;
     }
+
+    // change max and min string of matrix ( max and min - summ elements of string )
+    public static int[][] changeStrMatr( int[][] matrix ) {
+        // array of sums of elements rows
+        int[] sumArr = new int[matrix.length];
+        for ( int i = 0; i < matrix.length; i++ ) {
+            for ( int j = 0; j < matrix[i].length; j++ ) {
+                sumArr[i] += matrix[i][j];
+            }
+        }
+        // search max and min sum and their index
+        int maxSum = sumArr[0];
+        int indexMaxSum = 0;
+        int minSum = sumArr[0];
+        int indexMinSum = 0;
+        for ( int i = 0; i < sumArr.length; i++ ) {
+            if ( sumArr[i] > maxSum ) { maxSum = sumArr[i]; indexMaxSum = i; }
+            if ( sumArr[i] < minSum ) { minSum = sumArr[i]; indexMinSum = i; }
+        }
+        // change rows
+        switch ( indexMaxSum - indexMinSum ) {
+            case 0 :
+                break;
+            default :
+                for ( int j = 0; j < matrix[indexMaxSum].length; j++ ) {
+                    int buf = matrix[indexMaxSum][j];
+                    matrix[indexMaxSum][j] = matrix[indexMinSum][j];
+                    matrix[indexMinSum][j] = buf;
+                }
+        }
+        return matrix;
+    }
 }
