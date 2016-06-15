@@ -59,4 +59,15 @@ public class MyMatrixUtil {
             System.out.println();
         }
     }
+
+    // diagonal of matrix save in to array
+    public static int[] diagonArr ( int[][] matrix ) {
+        int[] diagArr = new int[matrix.length];
+        for ( int i = 0; i < matrix.length; i++ ) {
+            for ( int j = 0; j < matrix[i].length; j++ ) {
+                if ( i == j ) { diagArr[i] = matrix[i][j]; }
+            }
+        }
+        return diagArr;
+    }
 }
