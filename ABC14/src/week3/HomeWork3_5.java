@@ -20,6 +20,8 @@ public class HomeWork3_5 {
         MyMatrixUtil.printMatrix(ranMatrix);
         System.out.println(" change min and max string ");
         MyMatrixUtil.printMatrix( MyMatrixUtil.changeStrMatr( ranMatrix ) );
+        System.out.println(" change min and max column ");
+        MyMatrixUtil.printMatrix( MyMatrixUtil.changeColumnMatr( ranMatrix ) );
 
     }
 }

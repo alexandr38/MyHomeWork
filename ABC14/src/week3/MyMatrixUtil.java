@@ -102,4 +102,38 @@ public class MyMatrixUtil {
         }
         return matrix;
     }
+
+    // change max and min column of matrix ( max and min - summ elements of column )
+    public static int[][] changeColumnMatr( int[][] matrix ) {
+        // array of sums of elements columns
+        int[] sumArr = new int[matrix[0].length];
+        // circle for columns
+        for ( int j = 0; j < matrix[0].length; j++ ) {
+            // circle for rows
+            for ( int i = 0; i < matrix.length; i++ ) {
+                sumArr[j] += matrix[i][j];
+            }
+        }
+        // search max and min sum and their index
+        int maxSum = sumArr[0];
+        int indexMaxSum = 0;
+        int minSum = sumArr[0];
+        int indexMinSum = 0;
+        for ( int i = 0; i < sumArr.length; i++ ) {
+            if ( sumArr[i] > maxSum ) { maxSum = sumArr[i]; indexMaxSum = i; }
+            if ( sumArr[i] < minSum ) { minSum = sumArr[i]; indexMinSum = i; }
+        }
+        // change columns
+        switch ( indexMaxSum - indexMinSum ) {
+            case 0 :
+                break;
+            default :
+                for ( int i = 0; i < matrix.length; i++ ) {
+                    int buf = matrix[i][indexMaxSum];
+                    matrix[i][indexMaxSum] = matrix[i][indexMinSum];
+                    matrix[i][indexMinSum] = buf;
+                }
+        }
+        return matrix;
+    }
 }
