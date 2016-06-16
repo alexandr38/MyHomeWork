@@ -63,7 +63,7 @@ public class MyStringUtil {
     public static String firstLowerCase ( String str ) {
         String result = new String();
         for ( int i = 0; i < str.length() - 1; i++ ) {
-            if (str.charAt(i) == ' ' && str.charAt(i+1) != ' ' ) { result = result + str.substring(i+1,i+2).toLowerCase(); }
+            if (str.charAt(i) == ' ' && str.charAt(i+1) != ' ' ) { result = result + str.substring(i+1,i+2).toLowerCase() + str.substring(i+2); }
         }
         return result;
     }
