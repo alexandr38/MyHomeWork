@@ -7,14 +7,13 @@ import java.util.Scanner;
 /**
  * Created by Agryzkov on 16.06.2016.
  */
-// in progress
+
 public class HomeWork3_7 {
     // very long word in the string
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(" enter the string ");
-        String userStr = sc.next();
-        String result = MyStringUtil.searchLongestWord( userStr );
-        System.out.println( "very long word " + result );
+        String userStr = sc.nextLine();
+        System.out.println( "very long word " + MyStringUtil.searchLongestWord( userStr ) );
     }
 }
