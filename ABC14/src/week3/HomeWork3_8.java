@@ -7,6 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Agryzkov on 16.06.2016.
  */
+// in progress
 public class HomeWork3_8 {
     // first symbol in word to lower case
     public static void main(String[] args) {

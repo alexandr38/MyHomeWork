@@ -7,6 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Agryzkov on 16.06.2016.
  */
+// in progress
 public class HomeWork3_7 {
     // very long word in the string
     public static void main(String[] args) {
