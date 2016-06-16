@@ -39,7 +39,7 @@ public class MyStringUtil {
         return result;
     }
 
-    //Find the longest word
+    //Find the longest word !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public static String searchLongestWord ( String str ) {
         int lengthWord = 0;
         int startPos = 0;
@@ -57,6 +57,15 @@ public class MyStringUtil {
         if ( lengthWord != 0 ) { if ( endPos - startPos +1 < lengthWord ) { word = str.substring( str.length() - lengthWord ); } }
         else { word = str.substring( startPos, endPos + 1 ); }
         return word;
+    }
+
+    // first symbol in word to lower case !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public static String firstLowerCase ( String str ) {
+        String result = new String();
+        for ( int i = 0; i < str.length() - 1; i++ ) {
+            if (str.charAt(i) == ' ' && str.charAt(i+1) != ' ' ) { result = result + str.substring(i+1,i+2).toLowerCase(); }
+        }
+        return result;
     }
 
 }
