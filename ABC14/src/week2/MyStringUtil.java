@@ -39,4 +39,14 @@ public class MyStringUtil {
         return result;
     }
 
+    //Find the longest word
+    public static String searchLongestWord ( String str ) {
+        int lengthWord = 0;
+        int startPos = 0;
+        int endPos = 0;
+        String word = new String();
+        
+        return word;
+    }
+
 }
