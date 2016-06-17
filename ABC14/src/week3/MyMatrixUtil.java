@@ -155,4 +155,31 @@ public class MyMatrixUtil {
         }
         return  multiMatr;
     }
+
+    // rotation matrix on 90, matrix.length = matrix[i].length
+    public static int[][] rotationMatrix ( int[][] matrix, int angle ) {
+        /* внеш. цикл по половине строки, как при перевороте массива.
+        *  внутр. цикл по длине столбца - тек.строка, чтоб не цепл€ть уже помен€ные.
+        *  (1,1)-> buf; (1,4)->(1,1) == (i,j) = (j, length - 1 - i)
+        *  (4,4)-> (1,4) == (j, length - 1 - i) = (length - 1 - i, length - 1 - j)
+        *  (4,1)-> (4,4) == (length - 1 - i, length - 1 - j) = (length - 1 - j, i)
+        *  buf->(4,1) == (length - 1 - j, i) = buf
+        *  при перевороте строки и столбцы мен€ютс€ местами
+        *  переворот на 90. 180, 270 - повторим переворот нужное кол-во раз
+        */
+        // circle rotation
+        for ( int rotation = 0; rotation < angle/90; rotation++ ) {
+            // rotation matrix on 90
+            for (int i = 0; i < matrix.length / 2; i++) {
+                for (int j = i; j < matrix.length - 1 - i; j++) {
+                    int buf = matrix[i][j];
+                    matrix[i][j] = matrix[j][matrix.length - 1 - i];
+                    matrix[j][matrix.length - 1 - i] = matrix[matrix.length - 1 - i][matrix.length - 1 - j];
+                    matrix[matrix.length - 1 - i][matrix.length - 1 - j] = matrix[matrix.length - 1 - j][i];
+                    matrix[matrix.length - 1 - j][i] = buf;
+                }
+            }
+        }
+        return matrix;
+    }
 }
