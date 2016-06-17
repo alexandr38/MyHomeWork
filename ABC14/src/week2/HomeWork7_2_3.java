@@ -12,9 +12,9 @@ public class HomeWork7_2_3 {
 
         Scanner sc = new Scanner(System.in);
         System.out.println(" enter the string ");
-        String userStr = sc.next();
+        String userStr = sc.nextLine();
         System.out.println( "enter the char for search ");
-        String symbol = sc.next();
+        String symbol = sc.nextLine();
         char symb = symbol.charAt(0); // convert in char
         System.out.println( "symbol " + symbol + " in string search and count - " + MyStringUtil.searchCountSymbol(userStr, symb) );
     }

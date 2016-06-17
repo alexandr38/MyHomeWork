@@ -12,11 +12,11 @@ public class HomeWork7_2_5 {
 
         Scanner sc = new Scanner(System.in);
         System.out.println(" enter the string ");
-        String userStr = sc.next();
+        String userStr = sc.nextLine();
         System.out.println( "enter the char for search ");
-        String symbol = sc.next();
+        String symbol = sc.nextLine();
         System.out.println( " enter new char ");
-        String newSymbol = sc.next();
+        String newSymbol = sc.nextLine();
         // convert string to char
         char symb = symbol.charAt(0);
         char newSymb = newSymbol.charAt(0);
