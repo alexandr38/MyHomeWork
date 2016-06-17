@@ -59,13 +59,25 @@ public class MyStringUtil {
         return word;
     }
 
-    // first symbol in word to lower case !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // first symbol in word to upper case
     public static String firstLowerCase ( String str ) {
-        String result = new String();
-        for ( int i = 0; i < str.length() - 1; i++ ) {
-            if (str.charAt(i) == ' ' && str.charAt(i+1) != ' ' ) { result = result + str.substring(i+1,i+2).toUpperCase() + str.substring(i+2); }
+        // cut first and last ' '
+        String result = str.trim();
+        switch (result.length()) {
+            case 1:
+                result = result.toUpperCase();
+                break;
+            default:
+                result = result.substring(0, 1).toUpperCase() + result.substring(1);
+                for (int i = 1; i < result.length() - 1; i++) {
+                    if (str.charAt(i) == ' ' && str.charAt(i + 1) != ' ') {
+                        result = result.substring(0, i + 1) + str.substring(i + 1, i + 2).toUpperCase() + str.substring(i + 2);
+                    }
+                }
+                break;
         }
         return result;
     }
 
 }
+
