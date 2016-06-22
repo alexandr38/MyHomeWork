@@ -1,9 +1,5 @@
 package week2;
 
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 /**
  * Created by Agryzkov on 14.06.2016.
  */
@@ -85,12 +81,26 @@ public class MyStringUtil {
 
     // delete copy word
     public static String delCopyWord( String str) {
-        Set<String> words = new LinkedHashSet<String>();
-        //string in low case and in to array
+        /* Set<String> words = new LinkedHashSet<String>();
+        *  //string in low case and in to array
+        *  String[] strArray = str.toLowerCase().split(" ");
+        *  // build hash (every word gets once )
+        *  words.addAll( Arrays.asList(strArray) );
+        * String result = String.valueOf(words);
+        */
         String[] strArray = str.toLowerCase().split(" ");
-        // build hash (every word gets once )
-        words.addAll( Arrays.asList(strArray) );
-        String result = String.valueOf(words);
+
+        String[] strRes = new String[strArray.length];
+        String result = new String();
+
+        for (int i = 0; i < strArray.length; i++ ) {
+            boolean copy = false;
+            for ( int j = 0; j < i & !copy; j++ ) {
+                copy = strArray[i].equals(strRes[j]);
+            }
+            if ( !copy ) { strRes[i] = strArray[i];
+                           result += ( ' ' + strArray[i]) ; }
+        }
         return result;
     }
 
