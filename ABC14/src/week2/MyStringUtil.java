@@ -1,5 +1,7 @@
 package week2;
 
+import java.util.Scanner;
+
 /**
  * Created by Agryzkov on 14.06.2016.
  */
@@ -103,6 +105,30 @@ public class MyStringUtil {
         }
         return result;
     }
+
+    // enter the password
+    /*
+      - length of password in 8to 20 symbols
+     - in password must be upper and lower case symbol
+     - and number
+     - dont have word 'password', 'pass', 'gfhjkm'
+     - generate random password: a-z A-Z 0-9
+     */
+
+
+    // length of password in 8to 20 symbols
+    public static boolean lengthPswd ( String pswd ) {
+        return pswd.length()>= 8 && pswd.length()<= 20 ;
+    }
+
+    //in password must be upper and lower case symbol and number
+    public static boolean upLowCaseAndNumber ( String pswd ) {
+        for ( int i = 0; i < pswd.length(); i++ ) {
+            if ( Character.isAlphabetic( pswd.charAt(i) ) )
+        }
+
+    }
+
 
 }
 
