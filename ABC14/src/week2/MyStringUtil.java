@@ -1,6 +1,7 @@
 package week2;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  * Created by Agryzkov on 14.06.2016.
@@ -111,7 +112,7 @@ public class MyStringUtil {
       - length of password in 8to 20 symbols
      - in password must be upper and lower case symbol
      - and number
-     - dont have word 'password', 'pass', 'gfhjkm'
+     - do not have word 'password', 'pass', 'gfhjkm'
      - generate random password: a-z A-Z 0-9
      */
 
@@ -121,12 +122,41 @@ public class MyStringUtil {
         return pswd.length()>= 8 && pswd.length()<= 20 ;
     }
 
-    //in password must be upper and lower case symbol and number
-    public static boolean upLowCaseAndNumber ( String pswd ) {
-        for ( int i = 0; i < pswd.length(); i++ ) {
-            if ( Character.isAlphabetic( pswd.charAt(i) ) )
+    //in password must be upper case symbol
+    public static boolean upperCaseSymb ( String pswd ) {
+        boolean uperCase = false;
+        for ( int i = 0; i < pswd.length() & !uperCase; i++ ) {
+            uperCase = Character.isAlphabetic( pswd.charAt(i) ) && Character.isUpperCase( pswd.charAt(i) );
         }
+        return uperCase;
+    }
 
+    //in password must be lower case symbol
+    public static boolean lowerCaseSymb ( String pswd ) {
+        boolean lowerCase = false;
+        for ( int i = 0; i < pswd.length() & !lowerCase; i++ ) {
+            lowerCase = Character.isAlphabetic( pswd.charAt(i) ) && Character.isLowerCase(pswd.charAt(i));
+        }
+        return lowerCase;
+    }
+
+    //in password must be number
+    public static boolean numberSymb ( String pswd ) {
+        boolean number = false;
+        for ( int i = 0; i < pswd.length() & !number; i++ ) {
+            number = Character.isDigit(pswd.charAt(i));
+        }
+        return number;
+    }
+
+    //do not have word 'password', 'pass', 'gfhjkm'
+    public static boolean isNotWord ( String pswd ) {
+        String[] word = { "password", "pass", "gfhjkm" };
+        boolean findWord = false;
+        for (int i = 0; i < word.length & !findWord; i++ ) {
+            findWord = pswd.toLowerCase().contains( word[i] );
+        }
+        return findWord;
     }
 
 
