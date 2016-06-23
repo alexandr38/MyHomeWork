@@ -159,6 +159,18 @@ public class MyStringUtil {
         return findWord;
     }
 
+    // confirm password
+    public static boolean confirmPswd ( String pswd, String pswdCopy ) {
+        return pswd.equals( pswdCopy );
+    }
+
+    // generate random password of length 8 - 20
+    public static String generatePswd() {
+        String randomPswd = new String();
+
+        return randomPswd;
+    }
+
 
 }
 
