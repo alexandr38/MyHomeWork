@@ -1,5 +1,6 @@
 package week2;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -166,9 +167,16 @@ public class MyStringUtil {
 
     // generate random password of length 8 - 20
     public static String generatePswd() {
-        String randomPswd = new String();
+        // generate length of password
+        byte length = (byte)( Math.random() * (21 - 8) + 8 );
+        String symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder randomPswd = new StringBuilder();
 
-        return randomPswd;
+        // generate password
+        for ( int i = 0; i < length; i++) {
+            randomPswd.append( symbols.charAt((int)(Math.random()*symbols.length() )) );
+        }
+        return String.valueOf(randomPswd);
     }
 
 
