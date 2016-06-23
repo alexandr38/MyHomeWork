@@ -18,7 +18,8 @@ public class HomeWork3_12 {
    public static void main(String[] args) {
        Scanner sc = new Scanner(System.in);
 
-       System.out.println( "0 - generate random password, \n 1 - user enter password \n ");
+       System.out.println( "0 - generate random password, \n" + "1 - user enter password \n ");
+       System.out.println( " make a choice " );
        byte selection = sc.nextByte();
 
        switch ( selection ) {
@@ -45,10 +46,10 @@ public class HomeWork3_12 {
                        } else {
                            System.out.println( "password correct. Congratulations." );
                        }
-                   }
+                   } else { err = true; };
                } while ( err );
                break;
-           
+
            default :
                System.out.println( "incorrect selection ");
                break;
