@@ -167,8 +167,8 @@ public class MyStringUtil {
 
     // generate random password of length 8 - 20
     public static String generatePswd() {
-        // generate length of password
-        byte length = (byte)( Math.random() * (21 - 8) + 8 );
+        // generate length of password: Min + (int)(Math.random() * ((Max - Min) + 1))
+        byte length = (byte) ( 8 + (byte)( Math.random()*(20 - 8 + 1) ) );
         String symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         StringBuilder randomPswd = new StringBuilder();
 
