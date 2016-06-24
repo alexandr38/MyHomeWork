@@ -12,10 +12,10 @@ public class HomeWork3_13 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println( " enter the size of field ( max size 26x26 )" );
+        System.out.println( " enter the size of field ( max size 26x26, min size 2x2 )" );
         int matrSize = sc.nextInt();
 
-        if ( matrSize > 26 ) {
+        if ( matrSize > 26 || matrSize < 2 ) {
             System.out.println( "incorrect size of field" );
         } else {
             // build fields
@@ -51,11 +51,21 @@ public class HomeWork3_13 {
         err = false;
         System.out.println( " simple of shut 'a1, A1'. shuting!  " );
         String shut = sc.next();
-        if ( !Character.isAlphabetic( shut.charAt(0) ) ) {
-                System.out.println( "incorrect shut! \n" );
+        switch ( shut.length() ) {
+            case 2 :
+                err = Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit(shut.charAt(0));
+                break;
+            case 3 :
+                err = Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit( shut.charAt(0) ) & Character.isDigit( shut.charAt(0) );
+                break;
+            default :
                 err = true;
+                break;
+        }
+        if ( err ) {
+                System.out.println( "incorrect shut! \n" );
             } else {
-                if ( Integer.valueOf( shut.substring(1) ) > batleField.length ) {
+                if ( Integer.valueOf( shut.substring(1) ) > batleField.length || Integer.valueOf( shut.substring(1) ) < 1 ) {
                     System.out.println( "out of field! \n" );
                     err = true;
                 } else {
