@@ -25,10 +25,13 @@ public class HomeWork3_13 {
             // generate ship
             int[] coordinatesShip = genShip( matrSize );
 
-            // shut of user and search coordinates on the batleField
-            int[] coordinateAtack = shutUsersOnField( batleField );
+            boolean batleResult = false;
+            while ( !batleResult ) {
+                // shut of user and search coordinates on the batleField
+                int[] coordinateAtack = shutUsersOnField(batleField);
 
-            // check shut
+                // check shut result
+            }
         }
     }
 
