@@ -1,5 +1,7 @@
 package week3;
 
+import javax.print.DocFlavor;
+
 /**
  * Created by Agryzkov on 14.06.2016.
  */
@@ -181,5 +183,33 @@ public class MyMatrixUtil {
             }
         }
         return matrix;
+    }
+
+    // create battlefield
+    public static String[][] createBattlefield ( int size ) {
+        String[][] battlefield = new String[size + 1][size + 1];
+        String nameOfStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //insert ' ' in matrix
+        for ( int i = 0; i < battlefield.length; i++ ) {
+            for ( int j = 0; j < battlefield.length; j++ ) {
+                battlefield[i][j] = "";
+            }
+        }
+        // name column and row
+        for ( int i = 1; i < battlefield.length; i++ ) {
+            battlefield[i][0] = String.valueOf(nameOfStr.charAt(i-1));
+            battlefield[0][i] = String.valueOf(i);
+        }
+        return battlefield;
+    }
+
+    // print string matrix
+    public static void printStrMatrix ( String[][] matrix ) {
+        for ( int i = 0; i < matrix.length; i++ ) {
+            for ( int j = 0; j < matrix[i].length; j++) {
+                System.out.format( "%4S", matrix[i][j] );
+            }
+            System.out.println();
+        }
     }
 }
