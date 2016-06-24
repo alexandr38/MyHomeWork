@@ -31,6 +31,7 @@ public class HomeWork3_13 {
                 int[] coordinateAtack = shutUsersOnField(batleField);
 
                 // check shut result
+                batleResult = chekShutResult( coordinateAtack, coordinatesShip, batleField );
             }
         }
     }
@@ -87,6 +88,20 @@ public class HomeWork3_13 {
             }
         } while ( err );
         return coordinateShut;
+    }
+
+    // check shut result
+    public static boolean chekShutResult( int[] shut, int[] ship, String[][] batleField ) {
+        boolean result = false;
+        int upDown = ship[0] - shut[0];
+        int leftRight = ship[1] - shut[1];
+        batleField[ship[0]][ship[1]] = "S";
+        if (upDown == 0 && leftRight == 0 ) {
+            batleField[ship[0]][ship[1]] = "X";
+            result = true;
+        }
+        MyMatrixUtil.printStrMatrix( batleField );
+        return result;
     }
 
 }
