@@ -93,6 +93,7 @@ public class HomeWork3_13 {
     // check shut result
     public static boolean chekShutResult( int[] shut, int[] ship, String[][] batleField ) {
         boolean result = false;
+        String message = "";
         String upDownHelp = " :) ";
         String leftRightHelp = " :) ";
         int upDown = ship[0] - shut[0];
@@ -100,26 +101,30 @@ public class HomeWork3_13 {
         batleField[ship[0]][ship[1]] = "S";
         if (upDown == 0 && leftRight == 0 ) {
             batleField[ship[0]][ship[1]] = "X";
+            message = " you win! ";
             result = true;
         } else {
-            if (upDown < 0) {
-                upDownHelp = "higher";
+            if (batleField[shut[0]][shut[1]] == "*") {
+                message = "here have been shot!";
             } else {
+                if (upDown < 0) {
+                    upDownHelp = "higher";
+                }
                 if (upDown > 0) {
-                    upDownHelp = "lower";
-                }
-            }
-            if (leftRight < 0) {
-                upDownHelp = "left";
-            } else {
+                        upDownHelp = "lower";
+                    }
+                if (leftRight < 0) {
+                        leftRightHelp = "left";
+                    }
                 if (leftRight > 0) {
-                    upDownHelp = "right";
-                }
+                        leftRightHelp = "right";
+                    }
+              batleField[shut[0]][shut[1]] = "*";
+              message = "shuting " + upDownHelp + " and " + leftRightHelp;
             }
-            batleField[shut[0]][shut[1]] = "*";
-            System.out.println( "shuting " + upDownHelp + " and " + leftRightHelp );
         }
         MyMatrixUtil.printStrMatrix( batleField );
+        System.out.println( message );
         return result;
     }
 
