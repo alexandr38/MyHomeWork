@@ -57,10 +57,10 @@ public class HomeWork3_13 {
         String shut = sc.next();
         switch ( shut.length() ) {
             case 2 :
-                err = Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit(shut.charAt(0));
+                err = !( Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit(shut.charAt(1)) );
                 break;
             case 3 :
-                err = Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit( shut.charAt(0) ) & Character.isDigit( shut.charAt(0) );
+                err =!( Character.isAlphabetic( shut.charAt(0) ) & Character.isDigit( shut.charAt(1) ) & Character.isDigit( shut.charAt(2) ) );
                 break;
             default :
                 err = true;
@@ -98,7 +98,7 @@ public class HomeWork3_13 {
         String leftRightHelp = " :) ";
         int upDown = ship[0] - shut[0];
         int leftRight = ship[1] - shut[1];
-        batleField[ship[0]][ship[1]] = "S";
+        //batleField[ship[0]][ship[1]] = "S";
         if (upDown == 0 && leftRight == 0 ) {
             batleField[ship[0]][ship[1]] = "X";
             message = " you win! ";
