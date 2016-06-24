@@ -93,12 +93,31 @@ public class HomeWork3_13 {
     // check shut result
     public static boolean chekShutResult( int[] shut, int[] ship, String[][] batleField ) {
         boolean result = false;
+        String upDownHelp = " :) ";
+        String leftRightHelp = " :) ";
         int upDown = ship[0] - shut[0];
         int leftRight = ship[1] - shut[1];
         batleField[ship[0]][ship[1]] = "S";
         if (upDown == 0 && leftRight == 0 ) {
             batleField[ship[0]][ship[1]] = "X";
             result = true;
+        } else {
+            if (upDown < 0) {
+                upDownHelp = "higher";
+            } else {
+                if (upDown > 0) {
+                    upDownHelp = "lower";
+                }
+            }
+            if (leftRight < 0) {
+                upDownHelp = "left";
+            } else {
+                if (leftRight > 0) {
+                    upDownHelp = "right";
+                }
+            }
+            batleField[shut[0]][shut[1]] = "*";
+            System.out.println( "shuting " + upDownHelp + " and " + leftRightHelp );
         }
         MyMatrixUtil.printStrMatrix( batleField );
         return result;
