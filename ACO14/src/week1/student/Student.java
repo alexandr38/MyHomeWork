@@ -18,9 +18,9 @@ public class Student {
     *		получить средний бал за все предметы
     */
 
-    public String name;
-    public String adress;
-    public Subject[] subjectList = new Subject[10];
+    String name;
+    String adress;
+    Subject[] subjectList = new Subject[10];
     private int indexList = 0;
 
     public void addSubjectToTheStudent (Subject subject ) {

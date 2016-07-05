@@ -15,8 +15,21 @@ public class Subject {
     *		показать информацию о предмете
     *		получить оценку студента за предмет
 	*/
-    public String name;
-    public int numOfHoursPerSemester;
-    public int usedHoursBySubject;
-    public int evaluationBySubject;
+    String name;
+    int numOfHoursPerSemester;
+    int usedHoursBySubject;
+    int evaluationBySubject;
+
+    // pass the exam
+    private void passExam(int evaluationBySubject) {
+        this.evaluationBySubject = evaluationBySubject;
+    }
+
+    // show information by subject
+    private void showInfBySubj() {
+        String result = String.format("name of subject: %s \t numOfHoursPerSemester: %d \t " +
+                "usedHoursBySubject: %d \t evaluationBySubject: %d ;\n", name, numOfHoursPerSemester, usedHoursBySubject, evaluationBySubject);
+        System.out.println( result );
+    }
+
 }
