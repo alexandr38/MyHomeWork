@@ -1,4 +1,4 @@
-package week1;
+package week1.student;
 
 /**
  * Created by Agryzkov on 05.07.2016.

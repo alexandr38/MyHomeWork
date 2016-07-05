@@ -1,6 +1,4 @@
-package week1;
-
-import java.lang.reflect.Array;
+package week1.student;
 
 /**
  * Created by Agryzkov on 05.07.2016.
