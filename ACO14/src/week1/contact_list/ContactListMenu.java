@@ -31,11 +31,35 @@ public class ContactListMenu {
                 showFindContact();
             } else if (choice == 6) {
                 showRemoveContact();
+            } else if (choice == 7) {
+                showUpdateContactInfo();
             } else if (choice == 0) {
                 break;
-
             }
         }
+    }
+
+    private void showUpdateContactInfo() {
+        System.out.println("Input name contact for update");
+        String name = scanner.nextLine();
+
+        int pos = contactList.findContactByName(name);
+
+        if (pos == -1) {
+            System.out.println("contact for update not found");
+        } else {
+            System.out.println("Input new name");
+            String newName = scanner.nextLine();
+
+            System.out.println("Input new phone");
+            String newPhone = scanner.next();
+
+            Contact contact = new Contact();
+            contact.initContact(newName, newPhone);
+
+            contactList.setContact(contact, pos);
+        }
+
     }
 
     private void showRemoveContact() {
@@ -93,6 +117,7 @@ public class ContactListMenu {
         System.out.println("4. remove last contact");
         System.out.println("5. find contact by name");
         System.out.println("6. remove contact by index");
+        System.out.println("7. update contact");
         System.out.println("0. Exit");
     }
 

@@ -82,7 +82,8 @@ public class ContactList {
         }
     }
 
-
-
+    public void setContact (Contact contact, int pos) {
+        list[pos] = contact;
+    }
 
 }
