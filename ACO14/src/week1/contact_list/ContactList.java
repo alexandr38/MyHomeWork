@@ -68,7 +68,18 @@ public class ContactList {
 
     // remove contact
     public void removeContact(int position){
-        
+        Contact[] temp = new Contact[size-1];
+
+        if (position == 0){
+            System.arraycopy(list,1,temp,0,size-1);
+            list = temp;
+        } else if (position == size - 1){
+            removeLastContact();
+        } else {
+            System.arraycopy(list,0,temp,0,position);
+            System.arraycopy(list,position+1,temp,position,size-position-1);
+            list = temp;
+        }
     }
 
 

@@ -10,30 +10,39 @@ public class ContactListMenu {
     private Scanner scanner = new Scanner(System.in);
     private ContactList contactList;
     
-    public void start(ContactList contactList){
+    public void start(ContactList contactList) {
 
         this.contactList = contactList;
 
-        while(true){
+        while (true) {
             showMainMenu();
 
             int choice = scanner.nextInt();
 
-            if(choice == 1){
+            if (choice == 1) {
                 showAddContactMenu();
-            } else if(choice == 2){
+            } else if (choice == 2) {
                 showAllContactsMenu();
-            } else if(choice == 3){
+            } else if (choice == 3) {
                 showContactDetailsMenu();
-            } else if(choice == 4){
+            } else if (choice == 4) {
                 showRemoveLastContact();
-            } else  if(choice == 5){
+            } else if (choice == 5) {
                 showFindContact();
-            } else if(choice == 0){
+            } else if (choice == 6) {
+                showRemoveContact();
+            } else if (choice == 0) {
                 break;
-            }
 
+            }
         }
+    }
+
+    private void showRemoveContact() {
+        System.out.println("Input index contact for remove ");
+        int index = scanner.nextInt();
+
+        contactList.removeContact(index-1);
     }
 
     private void showFindContact (){
@@ -82,6 +91,8 @@ public class ContactListMenu {
         System.out.println("2. Show All");
         System.out.println("3. Show contact details");
         System.out.println("4. remove last contact");
+        System.out.println("5. find contact by name");
+        System.out.println("6. remove contact by index");
         System.out.println("0. Exit");
     }
 
