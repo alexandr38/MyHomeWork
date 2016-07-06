@@ -27,10 +27,24 @@ public class ContactListMenu {
                 showContactDetailsMenu();
             } else if(choice == 4){
                 showRemoveLastContact();
-            } else  if(choice == 0){
+            } else  if(choice == 5){
+                showFindContact();
+            } else if(choice == 0){
                 break;
             }
 
+        }
+    }
+
+    private void showFindContact (){
+        System.out.println("Input contact name");
+        String contactName = scanner.nextLine();
+
+        int contactPos = contactList.findContactByName(contactName);
+        if (contactPos == -1){
+            System.out.println("contact not found");
+        } else {
+            System.out.println(contactList.getContact(contactPos).asString());
         }
     }
 
