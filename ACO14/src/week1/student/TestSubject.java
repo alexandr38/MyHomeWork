@@ -19,7 +19,7 @@ public class TestSubject {
         subject.setEvaluationBySubject(5);
         System.out.println(subject.showInfBySubjAsString());
 
-        
+
 
     }
 }

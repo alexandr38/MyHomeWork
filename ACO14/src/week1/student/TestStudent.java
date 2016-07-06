@@ -39,6 +39,9 @@ public class TestStudent {
         student.trainingOfStudent("capital", 5);
 
 
+        // 
+
+
         // average score
         float averScore = student.averageScoreOfStudentSubj();
         System.out.println("average score = " + averScore);
