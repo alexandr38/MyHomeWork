@@ -61,4 +61,42 @@ public class Student {
         }
     }
 
+    // exam
+    public void examOfStudent ( String nameOfSubject, int score ) {
+        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
+        if (indexSubj == -1) {
+            System.out.println("subject not found!");
+        } else {
+            Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
+            findSubj.setEvaluationBySubject(score);
+            this.subjectList.setSubjByIndex(findSubj, indexSubj);
+        }
+    }
+
+    // score the student for subject
+    public int scoreStudentForSubj ( String nameOfSubject ) {
+        int score = 0;
+        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
+        if (indexSubj == -1) {
+            System.out.println("subject not found!");
+        } else {
+            Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
+            score = findSubj.getEvaluationBySubject();
+        }
+        return score;
+    }
+
+    // info for subject
+    public String infoForStudentSubj ( String nameOfSubject ) {
+        Subject findSubj = new Subject();
+        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
+        if (indexSubj == -1) {
+            System.out.println("subject not found!");
+        } else {
+            findSubj = this.subjectList.getSubjByIndex(indexSubj);
+
+        }
+        return findSubj.showInfBySubjAsString();
+    }
+
 }

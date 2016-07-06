@@ -68,4 +68,5 @@ public class SubjectList {
         return averageScore/subjectList.length;
     }
 
+
 }
