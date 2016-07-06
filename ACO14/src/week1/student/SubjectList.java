@@ -32,8 +32,7 @@ public class SubjectList {
         // -1 if subj not found
         int posSubj = -1;
         for ( int i=0; i < indexList; i++ ) {
-            Subject curSubject = subjectList[i];
-            if ( name.equals(curSubject.getSubjName())) {
+            if ( name.equals(subjectList[i].getSubjName())) {
                 posSubj = i;
             }
         }

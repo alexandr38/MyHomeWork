@@ -25,11 +25,17 @@ public class ContactListMenu {
                 showAllContactsMenu();
             } else if(choice == 3){
                 showContactDetailsMenu();
-            } else if(choice == 0){
+            } else if(choice == 4){
+                showRemoveLastContact();
+            } else  if(choice == 0){
                 break;
             }
 
         }
+    }
+
+    private void showRemoveLastContact (){
+        contactList.removeLastContact();
     }
 
     private void showContactDetailsMenu() {
@@ -61,6 +67,7 @@ public class ContactListMenu {
         System.out.println("1. Add Contact");
         System.out.println("2. Show All");
         System.out.println("3. Show contact details");
+        System.out.println("4. remove last contact");
         System.out.println("0. Exit");
     }
 

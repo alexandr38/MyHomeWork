@@ -21,4 +21,8 @@ public class Contact {
     public String asString(){
         return name;
     }
+
+    public String getContactName (){
+        return name;
+    }
 }

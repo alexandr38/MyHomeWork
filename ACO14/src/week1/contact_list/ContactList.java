@@ -46,6 +46,26 @@ public class ContactList {
         return result;
     }
 
+    // remove last contact
+    public void removeLastContact() {
+        Contact[] temp = new  Contact[size - 1];
+        System.arraycopy(list, 0, temp, 0, size-1);
+        list = temp;
+        size--;
+    }
+
+    // find contact by name, -1 contact not found
+    public int findContactByName (String name){
+        int position = -1;
+        for (int i = 0; i < size; i++){
+            if(getContact(i).getContactName().equals(name)){
+                position = i;
+                break;
+            }
+        }
+        return position;
+    }
+
 
 
 
