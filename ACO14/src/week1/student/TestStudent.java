@@ -20,12 +20,14 @@ public class TestStudent {
         student.addSubjectToStudent("capital",25);
 
         // show info for all subject
+        System.out.println("after add 6 subjects");
         System.out.println(student.showAllStudentSubjAsString());
 
         // delete last subject
         student.delLastSubjectFromStudent();
 
         // control of delete
+        System.out.println("after delete last subject");
         System.out.println(student.showAllStudentSubjAsString());
 
         // training student
@@ -33,9 +35,11 @@ public class TestStudent {
         student.trainingOfStudent("mathematica", 5);
 
         // control of training
+        System.out.println("after training");
         System.out.println(student.showAllStudentSubjAsString());
 
         // bad subject
+        System.out.println("after bad search subject");
         student.trainingOfStudent("capital", 5);
 
 
@@ -49,6 +53,7 @@ public class TestStudent {
         examSubj.setEvaluationBySubject(3);
         student.subjectList.setSubjByIndex(examSubj,4);
 
+        System.out.println("after exam");
         System.out.println(student.showAllStudentSubjAsString());
 
 
