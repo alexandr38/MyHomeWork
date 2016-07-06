@@ -24,6 +24,9 @@ public class Subject {
     public void initSubject(String name, int numOfHoursPerSemester) {
         this.name = name;
         this.numOfHoursPerSemester = numOfHoursPerSemester;
+        this.usedHoursBySubject = 0;
+        this.evaluationBySubject = 0;
+
     }
 
     // set evaluation by subject
@@ -33,8 +36,8 @@ public class Subject {
 
     // show information by subject as string
     public String showInfBySubjAsString() {
-        String result = String.format("name of subject: %s \t numOfHoursPerSemester: %d \t " +
-                "usedHoursBySubject: %d \t evaluationBySubject: %d ;\n", name, numOfHoursPerSemester, usedHoursBySubject, evaluationBySubject);
+        String result = String.format("name of subject: %15s \t numOfHoursPerSemester: %4d \t " +
+                "usedHoursBySubject: %4d \t evaluationBySubject: %4d ;\n", name, numOfHoursPerSemester, usedHoursBySubject, evaluationBySubject);
         return result;
     }
 

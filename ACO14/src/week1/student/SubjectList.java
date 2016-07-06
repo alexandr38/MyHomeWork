@@ -10,7 +10,7 @@ public class SubjectList {
 
     // add subject
     public void addSubjectToList(Subject subject) {
-        if (indexList >= subjectList.length) {
+        if (indexList >= subjectList.length && subjectList.length > 0) {
             Subject[] temp = new Subject[ subjectList.length*2 ];
             System.arraycopy( subjectList, 0, temp, 0, subjectList.length );
             subjectList = temp;
@@ -21,8 +21,8 @@ public class SubjectList {
 
     // delete last subject
     public void deleteSubjectFromList () {
-        Subject[] temp = new Subject[ subjectList.length - 1 ];
-        System.arraycopy(subjectList, 0, temp, 0, subjectList.length - 1);
+        Subject[] temp = new Subject[ indexList - 1 ];
+        System.arraycopy(subjectList, 0, temp, 0, indexList - 1);
         subjectList = temp;
     }
 
@@ -30,7 +30,7 @@ public class SubjectList {
     public int findSubjByName(String name) {
         // -1 if subj not found
         int posSubj = -1;
-        for ( int i=0; i < subjectList.length; i++ ) {
+        for ( int i=0; i < indexList; i++ ) {
             Subject curSubject = subjectList[i];
             if ( name.equals(curSubject.getSubjName())) {
                 posSubj = i;
@@ -51,7 +51,7 @@ public class SubjectList {
 
     public String subjectListAsString() {
         String result = " Subject list for student \n";
-        for ( int i = 1; i < subjectList.length; i++ ) {
+        for ( int i = 0; i < indexList; i++ ) {
             Subject curSubject = subjectList[i];
             result += curSubject.showInfBySubjAsString();
         }
@@ -61,7 +61,7 @@ public class SubjectList {
     // get average score from list
     public float getAverageScoreFromSubjList() {
         float averageScore = 0;
-        for ( int i = 0; i < subjectList.length; i++ ) {
+        for ( int i = 0; i < indexList; i++ ) {
             Subject curSubject = subjectList[i];
             averageScore += curSubject.getEvaluationBySubject();
         }

@@ -25,6 +25,7 @@ public class Student {
     public void initStudent(String name, String adress) {
         this.name = name;
         this.adress = adress;
+        this.subjectList = new SubjectList();
     }
 
     // add subject
@@ -41,7 +42,7 @@ public class Student {
 
     // show inf for student subjects as string
     public String showAllStudentSubjAsString () {
-        return this.subjectList.subjectListAsString();
+        return subjectList.subjectListAsString();
     }
 
     // average score of the subjects
@@ -60,43 +61,4 @@ public class Student {
             this.subjectList.setSubjByIndex(findSubj, indexSubj);
         }
     }
-
-    // exam
-    public void examOfStudent ( String nameOfSubject, int score ) {
-        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
-        if (indexSubj == -1) {
-            System.out.println("subject not found!");
-        } else {
-            Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
-            findSubj.setEvaluationBySubject(score);
-            this.subjectList.setSubjByIndex(findSubj, indexSubj);
-        }
-    }
-
-    // score the student for subject
-    public int scoreStudentForSubj ( String nameOfSubject ) {
-        int score = 0;
-        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
-        if (indexSubj == -1) {
-            System.out.println("subject not found!");
-        } else {
-            Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
-            score = findSubj.getEvaluationBySubject();
-        }
-        return score;
-    }
-
-    // info for subject
-    public String infoForStudentSubj ( String nameOfSubject ) {
-        Subject findSubj = new Subject();
-        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
-        if (indexSubj == -1) {
-            System.out.println("subject not found!");
-        } else {
-            findSubj = this.subjectList.getSubjByIndex(indexSubj);
-
-        }
-        return findSubj.showInfBySubjAsString();
-    }
-
 }
