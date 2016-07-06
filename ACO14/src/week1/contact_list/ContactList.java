@@ -66,6 +66,11 @@ public class ContactList {
         return position;
     }
 
+    // remove contact
+    public void removeContact(int position){
+        
+    }
+
 
 
 
