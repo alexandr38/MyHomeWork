@@ -10,6 +10,11 @@ public class ContactList {
     private int size = 0;
 
     public void addContact(Contact contact){
+        if (size >= list.length && list.length > 0) {
+            Contact[] temp = new Contact[list.length*2];
+            System.arraycopy(list, 0, temp, 0, list.length);
+            list = temp;
+        }
         list[size] = contact;
         size++;
     }
