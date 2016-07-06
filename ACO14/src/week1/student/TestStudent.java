@@ -39,7 +39,17 @@ public class TestStudent {
         student.trainingOfStudent("capital", 5);
 
 
-        // 
+        // exam
+        Subject examSubj = new Subject();
+        examSubj = student.subjectList.getSubjByIndex(3);
+        examSubj.setEvaluationBySubject(5);
+        student.subjectList.setSubjByIndex(examSubj,3);
+
+        examSubj = student.subjectList.getSubjByIndex(4);
+        examSubj.setEvaluationBySubject(3);
+        student.subjectList.setSubjByIndex(examSubj,4);
+
+        System.out.println(student.showAllStudentSubjAsString());
 
 
         // average score
