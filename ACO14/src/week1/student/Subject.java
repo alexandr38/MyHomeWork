@@ -20,16 +20,42 @@ public class Subject {
     int usedHoursBySubject;
     int evaluationBySubject;
 
-    // pass the exam
-    private void passExam(int evaluationBySubject) {
+    // init subject
+    public void initSubject(String name, int numOfHoursPerSemester) {
+        this.name = name;
+        this.numOfHoursPerSemester = numOfHoursPerSemester;
+    }
+
+    // set evaluation by subject
+    public void setEvaluationBySubject(int evaluationBySubject) {
         this.evaluationBySubject = evaluationBySubject;
     }
 
-    // show information by subject
-    private void showInfBySubj() {
+    // show information by subject as string
+    public String showInfBySubjAsString() {
         String result = String.format("name of subject: %s \t numOfHoursPerSemester: %d \t " +
                 "usedHoursBySubject: %d \t evaluationBySubject: %d ;\n", name, numOfHoursPerSemester, usedHoursBySubject, evaluationBySubject);
-        System.out.println( result );
+        return result;
+    }
+
+    // get evaluation by subject
+    public int getEvaluationBySubject() {
+        return evaluationBySubject;
+    }
+
+    // name of subject
+    public String getSubjName() {
+        return name;
+    }
+
+    // get used hours by subject
+    public int getUsedHoursBySubject() {
+        return usedHoursBySubject;
+    }
+
+    // set used hours by subject
+    public void setUsedHoursBySubject(int usedHoursBySubject) {
+        this.usedHoursBySubject = usedHoursBySubject;
     }
 
 }

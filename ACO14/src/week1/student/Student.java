@@ -20,47 +20,45 @@ public class Student {
 
     String name;
     String adress;
-    Subject[] subjectList = new Subject[10];
-    private int indexList = 0;
+    SubjectList subjectList;
 
-    public void addSubjectToTheStudent (Subject subject ) {
-        if( indexList >= subjectList.length ) {
-            Subject[] temp = new Subject[ subjectList.length*2 ];
-            System.arraycopy( subjectList, 0, temp, 0, subjectList.length );
-            subjectList = temp;
-        }
-        subjectList[indexList] = subject;
-        indexList ++;
+    public void initStudent(String name, String adress) {
+        this.name = name;
+        this.adress = adress;
     }
 
-    // delete last subject
-    public void deleteSubjectToTheStudent ( Subject[] subjectList ) {
-        Subject[] temp = new Subject[ subjectList.length - 1 ];
-        System.arraycopy(subjectList, 0, temp, 0, subjectList.length - 1);
-        subjectList = temp;
+    // add subject
+    public void addSubjectToStudent (String name, int hour) {
+        Subject newSubj = new Subject();
+        newSubj.initSubject(name, hour);
+        this.subjectList.addSubjectToList(newSubj);
     }
 
-    // average score of the subject
-    public float averageScoreOfSubjects ( Subject[] subjectList ) {
-        float averageScore = 0;
-        for ( int i = 0; i < subjectList.length; i++ ) {
-            averageScore += subjectList[i].evaluationBySubject;
-        }
-        return averageScore/subjectList.length;
+    // delete last subj from list
+    public void delLastSubjectFromStudent() {
+        this.subjectList.deleteSubjectFromList();
+    }
+
+    // show inf for student subjects as string
+    public String showAllStudentSubjAsString () {
+        return this.subjectList.subjectListAsString();
+    }
+
+    // average score of the subjects
+    public float averageScoreOfStudentSubj() {
+       return this.subjectList.getAverageScoreFromSubjList();
     }
 
     // training
     public void trainingOfStudent ( String nameOfSubject, int hourOfTrain ) {
-        for ( int i = 0; i < subjectList.length; i++ ) {
-            if ( subjectList[i].name.equals( nameOfSubject ) ) {
-                subjectList[i].usedHoursBySubject += hourOfTrain;
-                break;
-            }
+        int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
+        if (indexSubj == -1) {
+            System.out.println("subject not found!");
+        } else {
+            Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
+            findSubj.setUsedHoursBySubject(hourOfTrain);
+            this.subjectList.setSubjByIndex(findSubj, indexSubj);
         }
     }
 
-    // show all info by subject
-    public void showAllInfOfSubject () {
-
-    }
 }
