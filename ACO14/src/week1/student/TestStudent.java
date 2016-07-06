@@ -22,5 +22,18 @@ public class TestStudent {
         // show info for all subject
         System.out.println(student.showAllStudentSubjAsString());
 
+        // delete last subject
+        student.delLastSubjectFromStudent();
+
+        // control of delete
+        System.out.println(student.showAllStudentSubjAsString());
+
+        // training student
+        student.trainingOfStudent("english", 5);
+        student.trainingOfStudent("mathematica", 5);
+
+        // control of training
+        System.out.println(student.showAllStudentSubjAsString());
+
     }
 }

@@ -24,6 +24,7 @@ public class SubjectList {
         Subject[] temp = new Subject[ indexList - 1 ];
         System.arraycopy(subjectList, 0, temp, 0, indexList - 1);
         subjectList = temp;
+        indexList--;
     }
 
     // find pos subject by name
