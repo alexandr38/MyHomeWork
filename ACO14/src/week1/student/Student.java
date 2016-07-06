@@ -54,7 +54,7 @@ public class Student {
     public void trainingOfStudent ( String nameOfSubject, int hourOfTrain ) {
         int indexSubj = this.subjectList.findSubjByName(nameOfSubject);
         if (indexSubj == -1) {
-            System.out.println("subject not found!");
+            System.out.println(String.format("subject  %s  not found!", nameOfSubject));
         } else {
             Subject findSubj = this.subjectList.getSubjByIndex(indexSubj);
             findSubj.setUsedHoursBySubject(hourOfTrain);

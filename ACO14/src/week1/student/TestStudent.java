@@ -35,5 +35,12 @@ public class TestStudent {
         // control of training
         System.out.println(student.showAllStudentSubjAsString());
 
+        // bad subject
+        student.trainingOfStudent("capital", 5);
+
+
+        // average score
+        float averScore = student.averageScoreOfStudentSubj();
+        System.out.println("average score = " + averScore);
     }
 }
