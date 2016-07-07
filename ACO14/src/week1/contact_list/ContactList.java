@@ -46,6 +46,19 @@ public class ContactList {
         return result;
     }
 
+    public String asString(String oper){
+        String result = "CONTACT LIST\n" + oper;
+
+        for (int i = 0; i < size; i++) {
+            Contact currContact = list[i];
+            if (currContact.phone.startsWith(oper)) {
+                result += "\t" + i + ". " + currContact.asString() + "\n";
+            }
+        }
+
+        return result;
+    }
+
     public String asString(int pos, int count){
         String result = "";
 

@@ -37,10 +37,22 @@ public class ContactListMenu {
                 showFirstFiveContact();
             } else if (choice == 9){
                 showLastFiveContact();
+            } else if (choice == 10){
+                showKievstarContact();
+            } else if (choice == 11){
+                showLifeContact();
             } else if (choice == 0){
                 break;
             }
         }
+    }
+
+    private void showKievstarContact(){
+        System.out.println(contactList.asString("097"));
+    }
+
+    private void showLifeContact(){
+        System.out.println(contactList.asString("063"));
     }
 
     private void showLastFiveContact(){
@@ -52,7 +64,7 @@ public class ContactListMenu {
     private void showFirstFiveContact() {
         if (contactList.getSize()<= 5){
             showAllContactsMenu();
-        } else System.out.println(contactList.asString(0,5));
+        } else System.out.println(contactList.asString(0, 5));
     }
 
     private void showUpdateContactInfo() {
@@ -222,6 +234,8 @@ public class ContactListMenu {
         System.out.println("7. update contact");
         System.out.println("8. show first five contact");
         System.out.println("9. show last five contact");
+        System.out.println("10.show kievstar contacts");
+        System.out.println("11.show life contacts");
         System.out.println("0. Exit");
     }
 
