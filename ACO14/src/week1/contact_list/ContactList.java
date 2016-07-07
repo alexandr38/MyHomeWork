@@ -91,6 +91,14 @@ public class ContactList {
         list[pos] = contact;
     }
 
+    public void setContactName (String name, int pos){
+        list[pos].setName(name);
+    }
+
+    public void setContactPhone(String phone, int pos){
+        list[pos].setPhone(phone);
+    }
+
     public int getSize() {
         return size;
     }

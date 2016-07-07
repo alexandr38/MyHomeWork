@@ -46,12 +46,31 @@ public class ContactListMenu {
         if (!(checkIndexTrue(index))){
             System.out.println("bad index");
         } else {
-            Contact contact = new Contact();
-            contact.initContact(addName(), addPhone());
+            while (true){
+                showUpdateMenu();
 
-            contactList.setContact(contact, index);
+                int choice = scanner.nextInt();
+
+                if (choice == 1){
+                    contactList.setContactName(addName(),index);
+                } else if (choice == 2){
+                    contactList.setContactPhone(addPhone(),index);
+                } else if (choice == 3){
+                    Contact contact = new Contact();
+                    contact.initContact(addName(),addPhone());
+                    contactList.setContact(contact,index);
+                } else if (choice == 0){
+                    break;
+                }
+            }
         }
+    }
 
+    private void showUpdateMenu(){
+        System.out.println("1. update name");
+        System.out.println("2. update phone");
+        System.out.println("3. update contact");
+        System.out.println("0. exit");
     }
 
     private String addPhone(){
@@ -161,8 +180,7 @@ public class ContactListMenu {
         int postion = scanner.nextInt();
 
         if (checkIndexTrue(postion)){
-            Contact contact = contactList.getContact(postion);
-            System.out.println(contact.toJson());
+            System.out.println(contactList.getContact(postion).toJson());
         } else System.out.println("bad index");
     }
 
@@ -175,7 +193,6 @@ public class ContactListMenu {
         Contact contact = new Contact();
         contact.initContact(addName(),addPhone());
         contactList.addContact(contact);
-
     }
 
 
