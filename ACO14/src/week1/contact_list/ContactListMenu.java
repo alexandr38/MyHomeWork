@@ -40,18 +40,16 @@ public class ContactListMenu {
     }
 
     private void showUpdateContactInfo() {
-        System.out.println("Input name contact for update");
-        String name = scanner.nextLine();
+        System.out.println("Input index contact for update");
+        int index = scanner.nextInt();
 
-        int pos = contactList.findContactByName(name);
-
-        if (pos == -1) {
-            System.out.println("contact for update not found");
+        if (!(checkIndexTrue(index))){
+            System.out.println("bad index");
         } else {
             Contact contact = new Contact();
             contact.initContact(addName(), addPhone());
 
-            contactList.setContact(contact, pos);
+            contactList.setContact(contact, index);
         }
 
     }
@@ -87,7 +85,7 @@ public class ContactListMenu {
     }
 
     private String addName(){
-       
+
         String newName = "";
 
         while (true){
@@ -96,7 +94,7 @@ public class ContactListMenu {
 
             if (!chekNameAlfabet(name)) {
                 System.out.println("name must have only A-Z, a-z");
-            } else if (chekCopyName(name)){
+            } else if (!chekCopyName(name)){
                 newName = name;
                 break;
             } else System.out.println("this name is used");
@@ -105,7 +103,7 @@ public class ContactListMenu {
     }
 
     // check index
-    public boolean checkIndex(int index){
+    public boolean checkIndexTrue(int index){
         return index <= (contactList.getSize() - 1);
     }
 
@@ -122,14 +120,23 @@ public class ContactListMenu {
     }
 
     private boolean chekCopyName(String name) {
-        return (contactList.findContactByName(name)== -1);
+        return !(contactList.findContactByName(name)== -1);
     }
 
     private void showRemoveContact() {
-        System.out.println("Input index contact for remove ");
-        int index = scanner.nextInt();
+        while (true){
+            System.out.println("Input name contact for remove ");
+            String name = scanner.next();
 
-        contactList.removeContact(index);
+            if (!chekNameAlfabet(name)){
+                System.out.println("name must have only A-Z, a-z");
+            } else if (!chekCopyName(name)){
+                System.out.println("contact not found");
+            } else {
+                contactList.removeContact(contactList.findContactByName(name));
+            }
+            break;
+        }
     }
 
 
@@ -141,7 +148,7 @@ public class ContactListMenu {
         if (contactPos == -1){
             System.out.println("contact not found");
         } else {
-            System.out.println(contactList.getContact(contactPos).asString());
+            System.out.println(contactList.getContact(contactPos).toJson());
         }
     }
 
@@ -153,8 +160,10 @@ public class ContactListMenu {
         System.out.println("Input contact position");
         int postion = scanner.nextInt();
 
-        Contact contact = contactList.getContact(postion);
-        System.out.println(contact.toJson());
+        if (checkIndexTrue(postion)){
+            Contact contact = contactList.getContact(postion);
+            System.out.println(contact.toJson());
+        } else System.out.println("bad index");
     }
 
     private void showAllContactsMenu() {
@@ -176,7 +185,7 @@ public class ContactListMenu {
         System.out.println("3. Show contact details");
         System.out.println("4. remove last contact");
         System.out.println("5. find contact by name");
-        System.out.println("6. remove contact by index");
+        System.out.println("6. remove contact by name");
         System.out.println("7. update contact");
         System.out.println("0. Exit");
     }

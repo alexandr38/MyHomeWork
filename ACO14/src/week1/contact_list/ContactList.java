@@ -48,17 +48,19 @@ public class ContactList {
 
     // remove last contact
     public void removeLastContact() {
-        Contact[] temp = new  Contact[size - 1];
-        System.arraycopy(list, 0, temp, 0, size-1);
-        list = temp;
-        size--;
+        if (!(size == 0)){
+            Contact[] temp = new Contact[size - 1];
+            System.arraycopy(list, 0, temp, 0, size - 1);
+            list = temp;
+            size--;
+        }
     }
 
     // find contact by name, -1 contact not found
     public int findContactByName (String name){
         int position = -1;
         for (int i = 0; i < size; i++){
-            if(getContact(i).getContactName().equals(name)){
+            if(getContact(i).asString().equals(name)){
                 position = i;
                 break;
             }
@@ -71,8 +73,11 @@ public class ContactList {
         Contact[] temp = new Contact[size-1];
 
         if (position == 0){
-            System.arraycopy(list,1,temp,0,size-1);
-            list = temp;
+            if (size - 1 == 0){ list = temp;
+            }else{
+                System.arraycopy(list,1,temp,0,size-1);
+                list = temp;
+            }
         } else if (position == size - 1){
             removeLastContact();
         } else {
