@@ -62,7 +62,7 @@ public class ContactList {
     public String asString(int pos, int count){
         String result = "";
 
-        for (int i = pos; i < count+1; i++) {
+        for (int i = pos; i < pos + count; i++) {
             Contact currContact = list[i];
             result += "\t" + i +". " + currContact.asString() + "\n";
         }
