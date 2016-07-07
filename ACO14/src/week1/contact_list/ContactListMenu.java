@@ -68,7 +68,7 @@ public class ContactListMenu {
                 truePhone = true;
                 newPhone = phone;
             } else {
-                System.out.println("incorrect phone. phone must have only number and lenght 9 - 12 symbols");
+                System.out.println("incorrect phone. phone must have only number and length 9 - 12 symbols");
             }
         }
         return newPhone;
@@ -94,12 +94,12 @@ public class ContactListMenu {
             System.out.println("Input name");
             String name = scanner.next();
 
-            if (chekName(name)) {
-                trueName = true;
+            if (!chekNameAlfabet(name)) {
+                System.out.println("name must have only A-Z, a-z");
+            } else if (chekCopyName(name)){
                 newName = name;
-            } else {
-                System.out.println("incorrect name");
-            }
+                trueName = true;
+            } else System.out.println("this name is used");
         }
         return newName;
     }
@@ -117,8 +117,8 @@ public class ContactListMenu {
         return chName;
     }
 
-    private boolean chekName(String name) {
-        return chekNameAlfabet(name)&&(contactList.findContactByName(name)== -1);
+    private boolean chekCopyName(String name) {
+        return (contactList.findContactByName(name)== -1);
     }
 
     private void showRemoveContact() {
