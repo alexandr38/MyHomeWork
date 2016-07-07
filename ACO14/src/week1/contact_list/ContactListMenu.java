@@ -204,6 +204,8 @@ public class ContactListMenu {
         System.out.println("5. find contact by name");
         System.out.println("6. remove contact by name");
         System.out.println("7. update contact");
+        System.out.println("8. show first five contact");
+        System.out.println("9. show last five contact");
         System.out.println("0. Exit");
     }
 
