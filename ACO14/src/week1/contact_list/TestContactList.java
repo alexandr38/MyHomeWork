@@ -70,7 +70,7 @@ public class TestContactList {
         System.out.println("\n before change telephone");
         System.out.println(contactList.getContact(2).toJson());
         contactList.setContactPhone("065232323", 2);
-        System.out.println("after change telepfone");
+        System.out.println("after change telephone");
         System.out.println(contactList.getContact(2).toJson());
     }
 }
