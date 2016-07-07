@@ -87,10 +87,10 @@ public class ContactListMenu {
     }
 
     private String addName(){
-        boolean trueName = false;
+       
         String newName = "";
 
-        while (!trueName){
+        while (true){
             System.out.println("Input name");
             String name = scanner.next();
 
@@ -98,12 +98,16 @@ public class ContactListMenu {
                 System.out.println("name must have only A-Z, a-z");
             } else if (chekCopyName(name)){
                 newName = name;
-                trueName = true;
+                break;
             } else System.out.println("this name is used");
         }
         return newName;
     }
 
+    // check index
+    public boolean checkIndex(int index){
+        return index <= (contactList.getSize() - 1);
+    }
 
 
     private boolean chekNameAlfabet (String name){
@@ -128,9 +132,10 @@ public class ContactListMenu {
         contactList.removeContact(index);
     }
 
+
     private void showFindContact (){
         System.out.println("Input contact name");
-        String contactName = scanner.nextLine();
+        String contactName = scanner.next();
 
         int contactPos = contactList.findContactByName(contactName);
         if (contactPos == -1){

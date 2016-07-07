@@ -86,4 +86,7 @@ public class ContactList {
         list[pos] = contact;
     }
 
+    public int getSize() {
+        return size;
+    }
 }
