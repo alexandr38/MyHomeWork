@@ -48,14 +48,8 @@ public class ContactListMenu {
         if (pos == -1) {
             System.out.println("contact for update not found");
         } else {
-            System.out.println("Input new name");
-            String newName = scanner.nextLine();
-
-            System.out.println("Input new phone");
-            String newPhone = scanner.next();
-
             Contact contact = new Contact();
-            contact.initContact(newName, newPhone);
+            contact.initContact(addName(), addPhone());
 
             contactList.setContact(contact, pos);
         }
@@ -74,7 +68,7 @@ public class ContactListMenu {
                 truePhone = true;
                 newPhone = phone;
             } else {
-                System.out.println("incorrect phone");
+                System.out.println("incorrect phone. phone must have only number and lenght 9 - 12 symbols");
             }
         }
         return newPhone;
