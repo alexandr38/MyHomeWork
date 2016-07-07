@@ -33,10 +33,26 @@ public class ContactListMenu {
                 showRemoveContact();
             } else if (choice == 7) {
                 showUpdateContactInfo();
-            } else if (choice == 0) {
+            } else if (choice == 8) {
+                showFirstFiveContact();
+            } else if (choice == 9){
+                showLastFiveContact();
+            } else if (choice == 0){
                 break;
             }
         }
+    }
+
+    private void showLastFiveContact(){
+        if (contactList.getSize()<= 5){
+            showAllContactsMenu();
+        } else System.out.println(contactList.asJson(contactList.getSize()-5,5));
+    }
+
+    private void showFirstFiveContact() {
+        if (contactList.getSize()<= 5){
+            showAllContactsMenu();
+        } else System.out.println(contactList.asJson(0,5));
     }
 
     private void showUpdateContactInfo() {

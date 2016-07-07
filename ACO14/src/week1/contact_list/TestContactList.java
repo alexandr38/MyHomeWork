@@ -24,6 +24,9 @@ public class TestContactList {
         contact.initContact("petrik", "0933091219");
         contactList.addContact(contact);
 
+        contact.initContact("alex", "0973091219");
+        contactList.addContact(contact);
+
         System.out.println(contactList.asJson());
     }
 }

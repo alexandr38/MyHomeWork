@@ -35,6 +35,18 @@ public class ContactList {
         return result;
     }
 
+    public String asJson(int pos, int count){
+        String result = "{ \n \tlist : [ ";
+
+        for (int i = pos; i < count; i++) {
+            Contact currContact = list[i];
+            result += "\t\t" + currContact.toJson();
+        }
+
+        result += "\t\n]\n}";
+        return result;
+    }
+
     public String asString(){
         String result = "CONTACT LIST\n";
 
@@ -84,6 +96,7 @@ public class ContactList {
             System.arraycopy(list,0,temp,0,position);
             System.arraycopy(list,position+1,temp,position,size-position-1);
             list = temp;
+            size--;
         }
     }
 
