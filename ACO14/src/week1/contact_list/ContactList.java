@@ -47,7 +47,7 @@ public class ContactList {
     }
 
     public String asString(String oper){
-        String result = "CONTACT LIST\n" + oper;
+        String result = "CONTACT LIST " + oper +"\n";
 
         for (int i = 0; i < size; i++) {
             Contact currContact = list[i];
