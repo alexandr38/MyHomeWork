@@ -10,7 +10,18 @@ public class TestContactList {
 
         Contact contact = new Contact();
         contact.initContact("Serhii", "0933091219");
+        contactList.addContact(contact);
 
+        contact.initContact("sashko", "0933091219");
+        contactList.addContact(contact);
+
+        contact.initContact("mikola", "0973091219");
+        contactList.addContact(contact);
+
+        contact.initContact("nikita", "097091219");
+        contactList.addContact(contact);
+
+        contact.initContact("petrik", "0933091219");
         contactList.addContact(contact);
 
         System.out.println(contactList.asJson());
