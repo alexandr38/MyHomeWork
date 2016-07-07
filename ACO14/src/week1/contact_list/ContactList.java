@@ -35,20 +35,19 @@ public class ContactList {
         return result;
     }
 
-    public String asJson(int pos, int count){
-        String result = "{ \n \tlist : [ ";
+    public String asString(){
+        String result = "CONTACT LIST\n";
 
-        for (int i = pos; i < count; i++) {
+        for (int i = 0; i < size; i++) {
             Contact currContact = list[i];
-            result += "\t\t" + currContact.toJson();
+            result += "\t" + i +". " + currContact.asString() + "\n";
         }
 
-        result += "\t\n]\n}";
         return result;
     }
 
-    public String asString(){
-        String result = "CONTACT LIST\n";
+    public String asString(int pos, int count){
+        String result = "";
 
         for (int i = 0; i < size; i++) {
             Contact currContact = list[i];

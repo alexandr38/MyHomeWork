@@ -46,13 +46,13 @@ public class ContactListMenu {
     private void showLastFiveContact(){
         if (contactList.getSize()<= 5){
             showAllContactsMenu();
-        } else System.out.println(contactList.asJson(contactList.getSize()-5,5));
+        } else System.out.println(contactList.asString(contactList.getSize()-5,5));
     }
 
     private void showFirstFiveContact() {
         if (contactList.getSize()<= 5){
             showAllContactsMenu();
-        } else System.out.println(contactList.asJson(0,5));
+        } else System.out.println(contactList.asString(0,5));
     }
 
     private void showUpdateContactInfo() {
