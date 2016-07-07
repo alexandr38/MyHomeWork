@@ -62,11 +62,75 @@ public class ContactListMenu {
 
     }
 
+    private String addPhone(){
+        boolean truePhone = false;
+        String newPhone = "";
+
+        while (!truePhone){
+            System.out.println("Input phone");
+            String phone = scanner.next();
+
+            if (chekPhone(phone)) {
+                truePhone = true;
+                newPhone = phone;
+            } else {
+                System.out.println("incorrect phone");
+            }
+        }
+        return newPhone;
+    }
+
+    private boolean chekPhone (String phone){
+        boolean chPhone = true;
+
+        for (int i = 0; i < phone.length()&& chPhone; i++){
+            if ( !(Character.isDigit(phone.charAt(i)))){
+                chPhone = false;
+            }
+        }
+        return chPhone;
+    }
+
+    private String addName(){
+        boolean trueName = false;
+        String newName = "";
+
+        while (!trueName){
+            System.out.println("Input name");
+            String name = scanner.next();
+
+            if (chekName(name)) {
+                trueName = true;
+                newName = name;
+            } else {
+                System.out.println("incorrect name");
+            }
+        }
+        return newName;
+    }
+
+
+
+    private boolean chekNameAlfabet (String name){
+        boolean chName = true;
+
+        for (int i = 0; i < name.length()&& chName; i++){
+            if ( !(Character.isAlphabetic(name.charAt(i)))){
+                chName = false;
+            }
+        }
+        return chName;
+    }
+
+    private boolean chekName(String name) {
+        return chekNameAlfabet(name)&&(contactList.findContactByName(name)== -1);
+    }
+
     private void showRemoveContact() {
         System.out.println("Input index contact for remove ");
         int index = scanner.nextInt();
 
-        contactList.removeContact(index-1);
+        contactList.removeContact(index);
     }
 
     private void showFindContact (){
@@ -98,13 +162,9 @@ public class ContactListMenu {
     }
 
     private void showAddContactMenu(){
-        System.out.println("Input name");
-        String name = scanner.next();
-        System.out.println("Input phone");
-        String phone = scanner.next();
 
         Contact contact = new Contact();
-        contact.initContact(name,phone);
+        contact.initContact(addName(),addPhone());
         contactList.addContact(contact);
 
     }
