@@ -263,16 +263,63 @@ public class Recursion_1 {
      *   array220([3], 0) → false
      */
     public boolean array220(int[] nums, int index) {
-
-        if (nums.length == 0){
-            return false;
-        } else if (nums.length - 1 < index){
-            return false;
-        } else if (nums[index] == 11) {
-            return true;
-        }
-        return true;
+        return false;
     }
+
+    /* Given a string, compute recursively a new string where all the lowercase 'x' chars have been moved
+     * to the end of the string.
+     *   endX("xxre") → "rexx"
+     *   endX("xxhixx") → "hixxxx"
+     *   endX("xhixhix") → "hihixxx"
+     */
+    public String endX(String str) {
+
+        if (str.length() < 2){
+            return str;
+        } else if (str.charAt(0) == 'x'){
+            return str = endX(str.substring(1)) + 'x';
+        } else return str = str.substring(0,1) + endX(str.substring(1));
+    }
+
+    /* Given a string, compute recursively (no loops) the number of "11" substrings in the string.
+     *  The "11" substrings should not overlap.
+     *   count11("11abc11") → 2
+     *   count11("abc11x11x11") → 3
+     *   count11("111") → 1
+     */
+    public int count11(String str) {
+
+        if (str.length() < 2){
+            return 0;
+        } else if (str.charAt(0) == '1' && str.charAt(1) == '1'){
+            return 1 + count11(str.substring(2));
+        } else return count11(str.substring(1));
+    }
+
+    /* Given a string that contains a single pair of parenthesis, compute recursively
+     * a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".
+     *       parenBit("xyz(abc)123") → "(abc)"
+     *       parenBit("x(hello)") → "(hello)"
+     *       parenBit("(xy)1") → "(xy)"
+     */
+    public String parenBit(String str) {
+
+        return str;
+    }
+
+    /* Given a string and a non-empty substring sub, compute recursively if at least n copies of sub appear
+     * in the string somewhere, possibly with overlapping. N will be non-negative.
+     *   strCopies("catcowcat", "cat", 2) → true
+     *   strCopies("catcowcat", "cow", 2) → false
+     *   strCopies("catcowcat", "cow", 1) → true
+     */
+    public boolean strCopies(String str, String sub, int n) {
+
+        return false;
+
+    }
+
+
 
 
 
