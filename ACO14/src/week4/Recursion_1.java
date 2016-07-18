@@ -160,4 +160,121 @@ public class Recursion_1 {
 
     }
 
+    /* Given a string and a non-empty substring sub, compute recursively the number of times that sub appears in the string,
+     * without the sub strings overlapping.
+     *   strCount("catcowcat", "cat") → 2
+     *   strCount("catcowcat", "cow") → 1
+     *   strCount("catcowcat", "dog") → 0
+     */
+    public int strCount(String str, String sub) {
+
+        if (str.length() == 0 ||
+                (str.length() < sub.length())){
+            return 0;
+        } else if (str.substring(0,sub.length()).equals(sub)){
+            return 1 + strCount(str.substring(sub.length()), sub);
+        } else return strCount(str.substring(1), sub);
+
+    }
+
+    /* We have a number of bunnies and each bunny has two big floppy ears. We want to compute the total number
+     *   of ears across all the bunnies recursively (without loops or multiplication).
+     *   bunnyEars(0) → 0
+     *   bunnyEars(1) → 2
+     *   bunnyEars(2) → 4
+     */
+    public int bunnyEars(int bunnies) {
+
+        if (bunnies == 0){
+            return 0;
+        } else return 2 + bunnyEars(bunnies - 1);
+    }
+
+    /* We have triangle made of blocks. The topmost row has 1 block,
+     * the next row down has 2 blocks, the next row has 3 blocks, and so on.
+     * Compute recursively (no loops or multiplication) the total number of blocks in such a triangle
+     * with the given number of rows.
+     *   triangle(0) → 0
+     *   triangle(1) → 1
+     *   triangle(2) → 3
+     */
+    public int triangle(int rows) {
+
+        if (rows == 0){
+            return  0;
+        } else return rows + triangle(rows - 1);
+    }
+
+    /* Given a non-negative int n, compute recursively (no loops) the count of the occurrences of 8 as a digit,
+     * except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4.
+     * Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes
+     * the rightmost digit (126 / 10 is 12).
+     *   count8(8) → 1
+     *   count8(818) → 2
+     *   count8(8818) → 4
+     */
+    public int count8(int n) {
+
+        if (n < 10 && n == 8) {
+            return 1;
+        } else if (n < 10 && !(n == 8)) {
+            return 0;
+        } else if (n % 10 == 8 && (n / 10) % 10 == 8) {
+            return 2 + count8(n / 10);
+        } if (n % 10 == 8){
+            return 1 + count8(n / 10);
+        } else return count8(n / 10);
+    }
+
+    /* Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
+     *   countHi("xxhixx") → 1
+     *   countHi("xhixhix") → 2
+     *   countHi("hi") → 1
+     */
+    public int countHi(String str) {
+
+        if (str.length() < 2){
+            return 0;
+        } else if (str.charAt(0) == 'h' && str.charAt(1) == 'i'){
+            return 1 + countHi(str.substring(2));
+        } else return countHi(str.substring(1));
+    }
+
+    /* Given a string, compute recursively a new string where all the 'x' chars have been removed.
+     *   noX("xaxb") → "ab"
+     *   noX("abc") → "abc"
+     *   noX("xx") → ""
+     */
+    public String noX(String str) {
+
+        if (str.length() == 0){
+            return str;
+        } else if (str.charAt(0) == 'x'){
+            return str = noX(str.substring(1));
+        } else return str = str.substring(0,1) + noX(str.substring(1));
+    }
+
+    /* Given an array of ints, compute recursively if the array contains somewhere a value followed
+     * in the array by that value times 10. We'll use the convention of considering only the part of the
+     * array that begins at the given index. In this way, a recursive call can pass index+1 to move down the array.
+     * The initial call will pass in index as 0.
+     *   array220([1, 2, 20], 0) → true
+     *   array220([3, 30], 0) → true
+     *   array220([3], 0) → false
+     */
+    public boolean array220(int[] nums, int index) {
+
+        if (nums.length == 0){
+            return false;
+        } else if (nums.length - 1 < index){
+            return false;
+        } else if (nums[index] == 11) {
+            return true;
+        }
+        return true;
+    }
+
+
+
+
 }
