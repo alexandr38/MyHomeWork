@@ -442,9 +442,36 @@ public class Recursion_1 {
         } else if (str.charAt(0) == str.charAt(1)){
             return String.valueOf(str.charAt(1) + stringClean(str.substring(1)));
         }else return String.valueOf(str.charAt(0) + stringClean(str.substring(1)));
+    }
 
+    /*      Given a string, return true if it is a nesting of zero or more pairs of parenthesis, like "(())" or "((()))".
+     * Suggestion: check the first and last chars, and then recur on what's inside them.
+     *   nestParen("(())") → true
+     *   nestParen("((()))") → true
+     *   nestParen("(((x))") → false
+     */
+    public boolean nestParen(String str) {
+        return false;
 
+    }
 
+    /*      Given a string and a non-empty substring sub, compute recursively the largest substring which starts
+     * and ends with sub and return its length.
+     *   strDist("catcowcat", "cat") → 9
+     *   strDist("catcowcat", "cow") → 3
+     *   strDist("cccatcowcatxx", "cat") → 9
+     */
+    public int strDist(String str, String sub) {
 
+        if (str.length()< sub.length()){
+            return 0;
+        }
+        if (!str.startsWith(sub)) {
+            return strDist(str.substring(1), sub);
+        }
+        if (!str.endsWith(sub)) {
+            return strDist(str.substring(0, str.length() - 1), sub);
+        }
+        return str.length();
     }
 }
