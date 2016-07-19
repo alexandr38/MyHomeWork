@@ -100,9 +100,7 @@ public class Recursion_1 {
     */
     public int array11(int[] nums, int index) {
 
-        if (nums.length == 0){
-            return 0;
-        } else if (nums.length - 1 < index){
+        if (nums.length == 0 || nums.length - 1 < index){
             return 0;
         } else if (nums[index] == 11){
             return 1 + array11(nums, index + 1);
@@ -264,12 +262,11 @@ public class Recursion_1 {
      */
     public boolean array220(int[] nums, int index) {
 
-        if (nums.length == 0 || nums.length - 1 <= index){
-            return false;
-        } else if (index < nums.length) {
-
-        }
-        return false;
+        if (nums.length - 1 <= index){
+            return false;}
+        if (nums[index + 1] == nums[index] * 10) {
+            return true;}
+        return array220(nums, ++index);
     }
 
     /* Given a string, compute recursively a new string where all the lowercase 'x' chars have been moved
@@ -282,7 +279,8 @@ public class Recursion_1 {
 
         if (str.length() < 2){
             return str;
-        } else if (str.charAt(0) == 'x'){
+        }
+        if (str.charAt(0) == 'x'){
             return str = endX(str.substring(1)) + 'x';
         } else return str = str.substring(0,1) + endX(str.substring(1));
     }
@@ -438,6 +436,14 @@ public class Recursion_1 {
      */
     public String stringClean(String str) {
 
-        return str;
+        if (str.length() < 2){
+            return str;
+        } else if (str.charAt(0) == str.charAt(1)){
+            return String.valueOf(str.charAt(1) + stringClean(str.substring(1)));
+        }else return String.valueOf(str.charAt(0) + stringClean(str.substring(1)));
+
+
+
+
     }
 }
