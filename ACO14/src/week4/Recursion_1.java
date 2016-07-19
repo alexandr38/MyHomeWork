@@ -309,6 +309,15 @@ public class Recursion_1 {
      */
     public String parenBit(String str) {
 
+        if (str.length() < 2){
+            return "";
+        }
+        if (!str.startsWith("(")){
+            return parenBit(str.substring(1));
+        }
+        if (!str.endsWith(")")){
+            return parenBit(str.substring(0,str.length() - 1));
+        }
         return str;
     }
 
@@ -440,7 +449,7 @@ public class Recursion_1 {
         if (str.length() < 2){
             return str;
         } else if (str.charAt(0) == str.charAt(1)){
-            return String.valueOf(str.charAt(1) + stringClean(str.substring(1)));
+            return  stringClean(str.substring(1));
         }else return String.valueOf(str.charAt(0) + stringClean(str.substring(1)));
     }
 
