@@ -295,7 +295,8 @@ public class Recursion_1 {
 
         if (str.length() < 2){
             return 0;
-        } else if (str.charAt(0) == '1' && str.charAt(1) == '1'){
+        }
+        if (str.charAt(0) == '1' && str.charAt(1) == '1'){
             return 1 + count11(str.substring(2));
         } else return count11(str.substring(1));
     }
