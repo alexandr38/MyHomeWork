@@ -349,10 +349,10 @@ public class Recursion_1 {
     public int fibonacci(int n) {
 
         if (n == 0){
-            return 0;
-        } else if (n == 1){
-            return 1;
-        } else return n - 1 + fibonacci(n - 1);
+            return 0;}
+        if (n == 1 || n == 2){
+            return 1;}
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     /*  Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod (%) by 10 yields
