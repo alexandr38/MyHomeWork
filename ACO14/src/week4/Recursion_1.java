@@ -370,7 +370,7 @@ public class Recursion_1 {
 
         if (n == 0){
             return 1;
-        } else return base *+ powerN(base,n - 1);
+        } else return base * powerN(base,n - 1);
     }
 
     /*   Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars
@@ -388,5 +388,56 @@ public class Recursion_1 {
         } else return str.charAt(0) + changeXY(str.substring(1));
     }
 
-    
+    /*    Given an array of ints, compute recursively if the array contains a 6. We'll use the convention of considering
+     * only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to move
+     * down the array. The initial call will pass in index as 0.
+     *   array6([1, 6, 4], 0) ? true
+     *   array6([1, 4], 0) ? false
+     *   array6([6], 0) ? true
+     */
+    public boolean array6(int[] nums, int index) {
+
+        if (nums.length == 0 || nums.length - 1 < index){
+            return false;
+        } else return nums[index] == 6 || array6(nums, index + 1);
+    }
+
+    /*      Given a string, compute recursively a new string where all the adjacent chars are now separated by a "*".
+     *   allStar("hello") ? "h*e*l*l*o"
+     *   allStar("abc") ? "a*b*c"
+     *   allStar("ab") ? "a*b"
+     */
+    public String allStar(String str) {
+
+        if (str.length() < 2){
+            return str;
+        } else return String.valueOf(str.charAt(0)) + '*' + allStar(str.substring(1));
+    }
+
+    /*      We'll say that a "pair" in a string is two instances of a char separated by a char. So "AxA" the A's make
+     *   a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x. Recursively compute the number
+     *   of pairs in the given string.
+     *      countPairs("axa") ? 1
+     *      countPairs("axax") ? 2
+     *      countPairs("axbx") ? 1
+     */
+    public int countPairs(String str) {
+
+        if (str.length() < 3){
+            return 0;
+        } else if (str.charAt(0) == str.charAt(2)){
+            return 1 + countPairs(str.substring(1));
+        } else return countPairs(str.substring(1));
+    }
+
+    /*      Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been
+     * reduced to a single char. So "yyzzza" yields "yza".
+     *       stringClean("yyzzza") ? "yza"
+     *       stringClean("abbbcdd") ? "abcd"
+     *       stringClean("Hello") ? "Helo"
+     */
+    public String stringClean(String str) {
+
+        return str;
+    }
 }
