@@ -128,5 +128,103 @@ public class MyMap {
         return map;
     }
 
+    /*      The classic word-count algorithm: given an array of strings, return a Map<String, Integer> with a key for
+     *  each different string, with the value the number of times that string appears in the array.
+     *   wordCount(["a", "b", "a", "c", "b"]) → {"b": 2, "c": 1, "a": 2}
+     *   wordCount(["c", "b", "a"]) → {"b": 1, "c": 1, "a": 1}
+     *   wordCount(["c", "c", "c", "c"]) → {"c": 4}
+     */
+    public Map<String, Integer> wordCount(String[] strings) {
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        if (strings.length > 0){
+            map.put(strings[0], 1);
+            for (int i = 1; i < strings.length; i++) {
+                if (!map.containsKey(strings[i])) {
+                    map.put(strings[i], 1);
+                } else
+                    map.put(strings[i], map.get(strings[i]) + 1);
+            }
+        }
+        return map;
+    }
+
+    /*      Given an array of strings, return a Map<String, Boolean> where each different string is a key
+     * and value is true only if that string appears 2 or more times in the array.
+     *   wordMultiple(["a", "b", "a", "c", "b"]) → {"b": true, "c": false, "a": true}
+     *   wordMultiple(["c", "b", "a"]) → {"b": false, "c": false, "a": false}
+     *   wordMultiple(["c", "c", "c", "c"]) → {"c": true}
+     */
+    public Map<String, Boolean> wordMultiple(String[] strings) {
+
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+
+        if (strings.length > 0){
+            map.put(strings[0], false);
+            for (int i = 1; i < strings.length; i++) {
+                if (!map.containsKey(strings[i])) {
+                    map.put(strings[i], false);
+                } else
+                    map.put(strings[i],true);
+            }
+        }
+        return map;
+    }
+
+    /*      Given an array of strings, return a Map<String, Integer> containing a key for every different string
+     * in the array, and the value is that string's length.
+     *       wordLen(["a", "bb", "a", "bb"]) → {"a": 1, "bb": 2}
+     *       wordLen(["this", "and", "that", "and"]) → {"that": 4, "this": 4, "and": 3}
+     *       wordLen(["code", "code", "code", "bug"]) → {"bug": 3, "code": 4}
+     */
+    public Map<String, Integer> wordLen(String[] strings) {
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        if (strings.length > 0){
+            map.put(strings[0], strings[0].length());
+            for (int i = 1; i < strings.length; i++) {
+                if (!map.containsKey(strings[i])) {
+                    map.put(strings[i], strings[i].length());
+                }
+            }
+        }
+        return map;
+    }
+
+    /*      Given an array of non-empty strings, return a Map<String, String> with a key for every different first character seen,
+     * with the value of all the strings starting with that character appended together in the order they appear in the array.
+     *       firstChar(["salt", "tea", "soda", "toast"]) → {"t": "teatoast", "s": "saltsoda"}
+     *       firstChar(["aa", "bb", "cc", "aAA", "cCC", "d"]) → {"d": "d", "b": "bb", "c": "cccCC", "a": "aaaAA"}
+     *       firstChar([]) → {}
+     */
+    public Map<String, String> firstChar(String[] strings) {
+
+        Map<String, String> map = new HashMap<String, String>();
+
+        if (strings.length > 0){
+            map.put(String.valueOf(strings[0].charAt(0)), strings[0]);
+            for (int i = 1; i < strings.length; i++) {
+                if (!map.containsKey(String.valueOf(strings[i].charAt(0)))) {
+                    map.put(String.valueOf(strings[i].charAt(0)), strings[i]);
+                } else
+                    map.put(String.valueOf(strings[i].charAt(0)), map.get(String.valueOf(strings[i].charAt(0))) + strings[i]);
+            }
+        }
+        return map;
+    }
+
+    /*      We'll say that 2 strings "match" if they are non-empty and their first chars are the same. Loop over and then
+     * return the given array of non-empty strings as follows: if a string matches an earlier string in the array,
+     * swap the 2 strings in the array. When a position in the arrays has been swapped, it no longer matches anything.
+     * Using a map, this can be solved making just one pass over the array. More difficult than it looks.
+     *       allSwap(["ab", "ac"]) → ["ac", "ab"]
+     *       allSwap(["ax", "bx", "cx", "cy", "by", "ay", "aaa", "azz"]) → ["ay", "by", "cy", "cx", "bx", "ax", "azz", "aaa"]
+     *       allSwap(["ax", "bx", "ay", "by", "ai", "aj", "bx", "by"]) → ["ay", "by", "ax", "bx", "aj", "ai", "by", "bx"]
+     */
+    public String[] allSwap(String[] strings) {
+
+    }
 
 }
