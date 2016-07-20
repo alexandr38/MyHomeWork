@@ -251,6 +251,27 @@ public class MyMap {
      */
     public Map<String, String> pairs(String[] strings) {
 
+        Map<String, String> map = new HashMap<String, String>();
+
+        if (strings.length > 0){
+            for (int i = 0; i < strings.length; i++){
+                if (!strings[i].isEmpty()){
+                    map.put(String.valueOf(strings[i].charAt(0)), strings[i].substring(strings[i].length() - 1));
+                }
+            }
+        }
+        return map;
+    }
+
+    /*      Loop over the given array of strings to build a result string like this: when a string appears the 2nd,
+     *  4th, 6th, etc. time in the array, append the string to the result. Return the empty string
+     * no string appears a 2nd time.
+     *       wordAppend(["a", "b", "a"]) → "a"
+     *       wordAppend(["a", "", "a"]) → "a"
+     *       wordAppend([]) → ""
+     */
+    public String wordAppend(String[] strings) {
+
     }
 
 }
