@@ -225,6 +225,32 @@ public class MyMap {
      */
     public String[] allSwap(String[] strings) {
 
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        if (strings.length > 0 ){
+            for (int i = 0; i < strings.length; i++){
+                if (!strings[i].isEmpty()){
+                    if (map.containsKey(String.valueOf(strings[i].charAt(0)))){
+                        String buff = strings[map.get(String.valueOf(strings[i].charAt(0)))];
+                        strings[map.get(String.valueOf(strings[i].charAt(0)))] = strings[i];
+                        strings[i] = buff;
+                        map.remove(String.valueOf(strings[i].charAt(0)));
+                    } else
+                        map.put(String.valueOf(strings[i].charAt(0)), i);
+                }
+            }
+        }
+        return strings;
+    }
+
+    /*      Given an array of non-empty strings, return a Map<String, String> where for every different string in the array,
+     * there is a key of its first character with the value of its last character.
+     *       pairs(["code", "bug"]) → {"b": "g", "c": "e"}
+     *       pairs(["man", "moon", "main"]) → {"m": "n"}
+     *       pairs(["man", "moon", "good", "night"]) → {"g": "d", "n": "t", "m": "n"}
+     */
+    public Map<String, String> pairs(String[] strings) {
+
     }
 
 }
