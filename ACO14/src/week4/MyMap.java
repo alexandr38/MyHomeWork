@@ -2,6 +2,8 @@ package week4;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
 
 /**
  * Created by sasha on 19.07.2016.
@@ -272,6 +274,11 @@ public class MyMap {
      */
     public String wordAppend(String[] strings) {
 
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        String result = "";
+
+        
+        return result;
     }
 
 }
