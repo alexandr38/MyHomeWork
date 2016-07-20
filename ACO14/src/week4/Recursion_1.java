@@ -460,8 +460,13 @@ public class Recursion_1 {
      *   nestParen("(((x))") → false
      */
     public boolean nestParen(String str) {
-        return false;
 
+        if (str.isEmpty()){
+            return true;
+        }
+        if (str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')'){
+            return nestParen(str.substring(1, str.length() - 1));
+        } else return false;
     }
 
     /*      Given a string and a non-empty substring sub, compute recursively the largest substring which starts
