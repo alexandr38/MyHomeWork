@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ABC14.iml" filepath="$PROJECT_DIR$/ABC14.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ACO14/ACO14.iml" filepath="$PROJECT_DIR$/../ACO14/ACO14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SigleLinkedListReversion-master/SigleLinkedListReversion-master.iml" filepath="$PROJECT_DIR$/../SigleLinkedListReversion-master/SigleLinkedListReversion-master.iml" />
     </modules>
   </component>
 </project>
