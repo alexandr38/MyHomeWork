@@ -13,3 +13,9 @@
   и в конечном итоге ваш список должен стать G -> F -> E -> D -> C -> B -> A
 
   Условием выполнения задачи будет прохождения теста в классе /src/test/java/ua/com/artcode/TestReversion.java
+  
+  Implement own simple ArrayStack, LinkedStack, ArrayQueue, LinkedQueue
+  Implement own ArrayList
+  Implement own LinkedList
+  Implement own BinarySearchTree
+  Implement own HashMap

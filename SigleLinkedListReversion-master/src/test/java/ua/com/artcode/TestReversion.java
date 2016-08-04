@@ -7,7 +7,6 @@ import main.java.ua.com.artcode.Node;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 import static org.junit.Assert.assertSame;
 
 public class TestReversion {
