@@ -21,16 +21,22 @@ public class ListUtils {
 
     public static <T> A<T> reversion(A<T> head) {
 //        todo write your code
-        A<T> nHead = null;
-        A<T> tmp = null;
-        while (head != null){
-            tmp = head.getNext();
-            head.getNext().setNext(nHead);
-            nHead.setNext(head);
-            head.setNext(tmp);
+        if (head != null && head.getNext() != null){
+            A<T> last = head;
+            A<T> curr = head.getNext().getNext();
+            head = head.getNext();
 
+            head.setNext(last);
+            last.setNext(null);
+
+            while (curr != null){
+                last = curr;
+                curr = curr.getNext();
+                last.setNext(head);
+                head = last;
+            }
         }
-
         return head;
     }
+
 }
