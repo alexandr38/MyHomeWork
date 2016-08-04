@@ -5,7 +5,8 @@ import main.java.ua.com.artcode.A;
 import main.java.ua.com.artcode.ListUtils;
 import main.java.ua.com.artcode.Node;
 import org.junit.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 import static org.junit.Assert.assertSame;
 

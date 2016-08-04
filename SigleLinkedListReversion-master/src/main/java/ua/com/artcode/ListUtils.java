@@ -23,24 +23,20 @@ public class ListUtils {
 //        todo write your code
         if (head != null && head.getNext() != null){
             A<T> last = head;
-            //last.setNext(null);
+            A<T> curr = head.getNext().getNext();
+            head = head.getNext();
 
-            A<T> curr = head.getNext();
-            curr.setNext(last);
+            head.setNext(last);
+            last.setNext(null);
 
-            head = head.getNext().getNext();
-            while (head != null){
-                if (head.getNext() != null){
-                    A<T> temp = head;
-                    head.setNext(curr);
-                    curr = head;
-                    head = temp.getNext();
-                } else {
-                    head.setNext(curr);
-                }
+            while (curr != null){
+                last = curr;
+                curr = curr.getNext();
+                last.setNext(head);
+                head = last;
             }
         }
-
         return head;
     }
+
 }
