@@ -11,15 +11,22 @@ public class MyArrayStack {
     public MyArrayStack(int maxSize){
         this.maxSize = maxSize;
         stackArray = new String[maxSize];
-        top = --maxSize;
+        top = 0;
     }
 
     public void push(String str){
-        stackArray[++top] = str;
+        if (!isFull()) {
+            stackArray[++top] = str;
+        } else System.out.println("stack is full");
     }
 
     public String pop(){
-        return stackArray[top--];
+        if (!isEmpty()) {
+            return stackArray[top--];
+        } else {
+            System.out.println("stack is empty");
+            return null;
+        }
     }
 
     public boolean isEmpty(){
@@ -30,5 +37,5 @@ public class MyArrayStack {
         return top == maxSize - 1;
     }
 
-    
+
 }
