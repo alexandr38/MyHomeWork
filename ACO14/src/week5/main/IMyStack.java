@@ -12,4 +12,6 @@ public interface IMyStack<E> {
     E peek(int top);
 
     Integer stackSize();
+
+    String toString ();
 }

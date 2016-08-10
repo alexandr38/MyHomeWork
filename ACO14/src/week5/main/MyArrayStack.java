@@ -50,6 +50,7 @@ public class MyArrayStack<E> implements IMyStack<E> {
         E result = null;
         if (!isEmpty()){
             result = arrayStack[top - 1];
+            arrayStack[top - 1] = null;
             top--;
         }else {
             System.out.println("stack is empty");
@@ -72,5 +73,14 @@ public class MyArrayStack<E> implements IMyStack<E> {
     @Override
     public Integer stackSize() {
         return top;
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < top; i++){
+            str+="\t" + String.valueOf(arrayStack[i]);
+        }
+        return str;
     }
 }
