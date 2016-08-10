@@ -46,7 +46,6 @@ public class MyArrayStack<E> implements IMyStack<E> {
 
     @Override
     public E pop() {
-
         E result = null;
         if (!isEmpty()){
             result = arrayStack[top - 1];
@@ -59,13 +58,12 @@ public class MyArrayStack<E> implements IMyStack<E> {
     }
 
     @Override
-    public E peek(int top) {
-
+    public E peek(int index) {
         E result = null;
-        if (!isEmpty()){
-            result = arrayStack[top - 1];
+        if (!(isEmpty() || index >= top)){
+            result = arrayStack[index - 1];
             } else {
-            System.out.println("stack is empty");
+            System.out.println("stack is empty or index outside of stack");
         }
         return result;
     }
