@@ -56,7 +56,7 @@ public class MyArrayStack<E> implements IMyStack<E> {
     }
 
     @Override
-    public E peek(int top) {
+    public E peek() {
         E result = null;
         if (!isEmpty()){
             result = arrayStack[top - 1];
@@ -75,7 +75,7 @@ public class MyArrayStack<E> implements IMyStack<E> {
     public String toString() {
         String str = "";
         for (int i = top - 1; i >= 0; i--){
-            str+="\t" + String.valueOf(arrayStack[i]);
+            str+=String.valueOf(arrayStack[i]) + "\t";
         }
         return str;
     }

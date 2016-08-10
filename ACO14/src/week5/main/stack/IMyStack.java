@@ -9,9 +9,10 @@ public interface IMyStack<E> {
 
     E pop();
 
-    E peek(int top);
+    E peek();
 
     Integer stackSize();
 
+    @Override
     String toString ();
 }
