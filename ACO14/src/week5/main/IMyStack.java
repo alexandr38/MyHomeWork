@@ -5,9 +5,11 @@ package week5.main;
  */
 public interface IMyStack<E> {
 
-    void  push(MyStack<E> element);
+    void  push(E element);
 
-    MyStack<E> pop();
+    E pop();
 
-    MyStack<E> peek(int top);
+    E peek(int top);
+
+    Integer stackSize();
 }
