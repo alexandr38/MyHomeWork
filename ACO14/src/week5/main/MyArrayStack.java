@@ -58,12 +58,12 @@ public class MyArrayStack<E> implements IMyStack<E> {
     }
 
     @Override
-    public E peek(int index) {
+    public E peek(int top) {
         E result = null;
-        if (!(isEmpty() || index >= top)){
-            result = arrayStack[index - 1];
+        if (!isEmpty()){
+            result = arrayStack[top - 1];
             } else {
-            System.out.println("stack is empty or index outside of stack");
+            System.out.println("stack is empty");
         }
         return result;
     }
