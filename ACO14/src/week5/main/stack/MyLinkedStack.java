@@ -1,4 +1,4 @@
-package week5.main;
+package week5.main.stack;
 
 /**
  * Created by Agryzkov on 10.08.2016.

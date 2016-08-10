@@ -1,11 +1,11 @@
-package week5.main;
+package week5.main.stack;
 
 /**
  * Created by sasha on 09.08.2016.
  */
 public class MyArrayStack<E> implements IMyStack<E> {
 
-    private final int DEFAULT_CAPACITY = 20;
+    private final int DEFAULT_CAPACITY = 5;
     private int top;
     private E[] arrayStack;
 
