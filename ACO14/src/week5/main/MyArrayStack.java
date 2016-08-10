@@ -1,7 +1,5 @@
 package week5.main;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
 /**
  * Created by sasha on 09.08.2016.
  */
@@ -58,10 +56,10 @@ public class MyArrayStack<E> implements IMyStack<E> {
     }
 
     @Override
-    public E peek(int index) {
+    public E peek(int top) {
         E result = null;
-        if (!(isEmpty() || index >= top)){
-            result = arrayStack[index - 1];
+        if (!isEmpty()){
+            result = arrayStack[top - 1];
             } else {
             System.out.println("stack is empty or index outside of stack");
         }
@@ -76,7 +74,7 @@ public class MyArrayStack<E> implements IMyStack<E> {
     @Override
     public String toString() {
         String str = "";
-        for (int i = 0; i < top; i++){
+        for (int i = top - 1; i >= 0; i--){
             str+="\t" + String.valueOf(arrayStack[i]);
         }
         return str;
