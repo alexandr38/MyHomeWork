@@ -7,7 +7,7 @@ import week5.main.stack.IMyStack;
  */
 public class AutoFillStack {
 
-    public static void autoFillStack(IMyStack stack,String[] data) {
+    public static void autoFillStack(IMyStack stack,Object[] data) {
         for (int i = 0; i < data.length; i++) {
             stack.push(data[i]);
         }

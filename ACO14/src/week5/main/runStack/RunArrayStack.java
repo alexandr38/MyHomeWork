@@ -9,8 +9,11 @@ import week5.main.stack.MyArrayStack;
 public class RunArrayStack {
     public static void main(String[] args) {
 
-        IMyStack<String> stack = new MyArrayStack<>();
-        String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
+       // IMyStack<String> stack = new MyArrayStack<>();
+       // String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
+
+        IMyStack<Integer> stack = new MyArrayStack<>();
+        Integer[] array = {11, 12, 13, 14, 15, 16, 17};
 
         AutoFillStack.autoFillStack(stack, array);
 
