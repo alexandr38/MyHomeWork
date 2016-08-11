@@ -7,8 +7,8 @@ public class MyArrayQueue<E> implements IMyQueue<E> {
 
     private E[] arrayQueue;
     private final int DEFAULT_CAPACITY = 5;
-    private int front;
-    private int rear;
+    private int front, rear;
+
 
     public MyArrayQueue() {
         arrayQueue = (E[])(new Object[DEFAULT_CAPACITY]);

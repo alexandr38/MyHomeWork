@@ -20,4 +20,3 @@
   Implement own BinarySearchTree
   Implement own HashMap
 
-http://faculty.washington.edu/moishe/javademos/ArrayQueue.java

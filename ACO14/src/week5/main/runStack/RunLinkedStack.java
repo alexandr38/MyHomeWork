@@ -22,7 +22,7 @@ public class RunLinkedStack {
         System.out.println(String.valueOf(stack.pop()));
 
         System.out.println("stack after one pop");
-        //System.out.println(stack.toString());
+        System.out.println(stack.toString());
         System.out.println("stack capasity = " + String.valueOf(stack.stackSize()));
 
     }
