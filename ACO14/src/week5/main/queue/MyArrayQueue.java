@@ -59,6 +59,15 @@ public class MyArrayQueue<E> implements IMyQueue<E> {
         return rear - front;
     }
 
+    @Override
+    public String toString() {
+        String str = "";
+        for (int i = front; i < rear; i++){
+            str+=String.valueOf(arrayQueue[i]) + "\t";
+        }
+        return str;
+    }
+
     private boolean isEmpty() {
         return rear == front;
     }
