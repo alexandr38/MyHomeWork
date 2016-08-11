@@ -1,13 +1,11 @@
-package week5.main;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
+package week5.main.stack;
 
 /**
  * Created by sasha on 09.08.2016.
  */
 public class MyArrayStack<E> implements IMyStack<E> {
 
-    private final int DEFAULT_CAPACITY = 20;
+    private final int DEFAULT_CAPACITY = 5;
     private int top;
     private E[] arrayStack;
 
@@ -58,12 +56,12 @@ public class MyArrayStack<E> implements IMyStack<E> {
     }
 
     @Override
-    public E peek(int top) {
+    public E peek() {
         E result = null;
         if (!isEmpty()){
             result = arrayStack[top - 1];
             } else {
-            System.out.println("stack is empty");
+            System.out.println("stack is empty or index outside of stack");
         }
         return result;
     }
@@ -76,8 +74,8 @@ public class MyArrayStack<E> implements IMyStack<E> {
     @Override
     public String toString() {
         String str = "";
-        for (int i = 0; i < top; i++){
-            str+="\t" + String.valueOf(arrayStack[i]);
+        for (int i = top - 1; i >= 0; i--){
+            str+=String.valueOf(arrayStack[i]) + "\t";
         }
         return str;
     }

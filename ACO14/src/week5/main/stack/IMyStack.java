@@ -1,4 +1,4 @@
-package week5.main;
+package week5.main.stack;
 
 /**
  * Created by sasha on 09.08.2016.
@@ -9,9 +9,10 @@ public interface IMyStack<E> {
 
     E pop();
 
-    E peek(int top);
+    E peek();
 
     Integer stackSize();
 
+    @Override
     String toString ();
 }
