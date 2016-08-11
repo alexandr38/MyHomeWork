@@ -13,6 +13,6 @@ public interface IMyStack<E> {
 
     Integer stackSize();
 
-    @Override
+
     String toString ();
 }
