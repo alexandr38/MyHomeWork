@@ -1,20 +1,20 @@
 package week5.main.runQueue;
 
 import week5.main.queue.IMyQueue;
-import week5.main.queue.MyArrayQueue;
+import week5.main.queue.MyLinkedQueue;
 
 /**
  * Created by Agryzkov on 11.08.2016.
  */
-public class RunArrayQueue {
+public class RunLinkedQueue {
 
     public static void main(String[] args) {
 
-        // IMyQueue<String> queue = new MyArrayQueue<>();
-        // String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
+         IMyQueue<String> queue = new MyLinkedQueue<>();
+         String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
 
-        IMyQueue<Integer> queue = new MyArrayQueue<>();
-        Integer[] array = {11, 12, 13, 14, 15, 16, 17};
+        //IMyQueue<Integer> queue = new MyLinkedQueue<>();
+        //Integer[] array = {11, 12, 13, 14, 15, 16, 17};
 
         AutoFillQueue.autoFillQueue(queue, array);
 
