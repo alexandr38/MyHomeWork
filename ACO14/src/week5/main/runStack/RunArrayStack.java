@@ -9,7 +9,10 @@ import week5.main.stack.MyArrayStack;
 public class RunArrayStack {
     public static void main(String[] args) {
 
-        IMyStack<String> stack = createArrayStack();
+        IMyStack<String> stack = new MyArrayStack<>();
+        String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
+
+        AutoFillStack.autoFillStack(stack, array);
 
         System.out.println(stack.toString());
         System.out.println("stack capasity = " + String.valueOf(stack.stackSize()));
@@ -23,15 +26,4 @@ public class RunArrayStack {
 
     }
 
-    public static IMyStack<String> createArrayStack(){
-
-        String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
-
-        IMyStack<String> stack = new MyArrayStack<>();
-
-        for (int i = 0; i < array.length; i++){
-            stack.push(array[i]);
-        }
-        return stack;
-    }
 }

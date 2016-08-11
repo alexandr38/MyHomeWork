@@ -10,7 +10,10 @@ public class RunLinkedStack {
 
     public static void main(String[] args) {
 
-        IMyStack<String> stack = createLinkedStack();
+        IMyStack<String> stack = new MyLinkedStack<String>();
+        String[] array = {"aa", "bb", "cc", "dd", "ee", "gg", "hh", "ii", "jj", "kk"};
+
+        AutoFillStack.autoFillStack(stack, array);
 
         System.out.println(stack.toString());
         System.out.println("stack capasity = " + String.valueOf(stack.stackSize()));
@@ -24,19 +27,4 @@ public class RunLinkedStack {
 
     }
 
-    public static IMyStack<String> createLinkedStack() {
-        IMyStack<String> stack = new MyLinkedStack<String>();
-
-        stack.push("aa");
-        stack.push("bb");
-        stack.push("cc");
-        stack.push("dd");
-        stack.push("ee");
-        stack.push("ff");
-        stack.push("gg");
-        stack.push("hh");
-        stack.push("ii");
-        stack.push("jj");
-        return stack;
-    }
 }
