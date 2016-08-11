@@ -6,17 +6,17 @@ package week5.main.queue;
 public class MyArrayQueue<E> implements IMyQueue<E> {
 
     private E[] arrayQueue;
-    private final int DEFAULT_CAPACITY = 5;
+    private final int DEFAULT_CAPACITY = 50;
     private int front;
     private int rear;
 
     public MyArrayQueue() {
-        E[] arrayQueue = (E[])(new Object[DEFAULT_CAPACITY]);
+        arrayQueue = (E[])(new Object[DEFAULT_CAPACITY]);
         front = rear = 0;
     }
 
     public MyArrayQueue(int capacity) {
-        E[] arrayQueue = (E[])(new Object[capacity]);
+        arrayQueue = (E[])(new Object[capacity]);
         front = rear = 0;
     }
 
@@ -64,7 +64,7 @@ public class MyArrayQueue<E> implements IMyQueue<E> {
     }
 
     private boolean isFull() {
-        return front == 0 && rear == arrayQueue.length;
+        return arrayQueue.length == getSize();
     }
 
     private void expansCapacity(){
