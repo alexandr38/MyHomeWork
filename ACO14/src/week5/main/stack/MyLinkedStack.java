@@ -61,6 +61,7 @@ public class MyLinkedStack<E> implements IMyStack<E> {
 
         while (current != null){
             result += String.valueOf(current.getValue()) + "\t";
+            current = current.getNext();
         }
         return result;
     }
