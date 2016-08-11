@@ -59,8 +59,9 @@ public class MyLinkedStack<E> implements IMyStack<E> {
         String result = "";
         Node<E> current = top;
 
-        while (current.getNext() != null){
-            result += current.getValue().toString() + "\t";
+        while (current != null){
+            result += String.valueOf(current.getValue()) + "\t";
+            current = current.getNext();
         }
         return result;
     }

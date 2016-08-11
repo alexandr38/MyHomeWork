@@ -20,5 +20,4 @@
   Implement own BinarySearchTree
   Implement own HashMap
 
-http://faculty.washington.edu/moishe/javademos/ch06%20Code/jss2/ArrayStack.java
-http://wikijava.org.ua/javabooks/Part_14_Thinking_in_Java_4th_edition.html
+http://faculty.washington.edu/moishe/javademos/ArrayQueue.java
