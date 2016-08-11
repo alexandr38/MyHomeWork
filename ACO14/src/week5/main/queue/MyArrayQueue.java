@@ -6,7 +6,7 @@ package week5.main.queue;
 public class MyArrayQueue<E> implements IMyQueue<E> {
 
     private E[] arrayQueue;
-    private final int DEFAULT_CAPACITY = 50;
+    private final int DEFAULT_CAPACITY = 5;
     private int front;
     private int rear;
 
