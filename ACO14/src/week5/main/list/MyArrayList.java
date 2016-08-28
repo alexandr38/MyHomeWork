@@ -1,5 +1,6 @@
 package week5.main.list;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -10,6 +11,28 @@ public class MyArrayList<E> implements IList<E> {
     private E[] elementData;
     private final int DEFAULT_CAPACITY = 5;
     private int size, capacity;
+
+    private class MyIterator implements Iterator{
+
+        private int index;
+
+        @Override
+        public boolean hasNext() {
+            return index - 1 < size();
+        }
+
+        @Override
+        public E next() {
+            return elementData[index];
+        }
+
+        @Override
+        public void remove() {
+            E[] temp = (E[]) new Object[elementData.length - 1];
+            System.arraycopy(elementData, 0, temp, 0, temp.length);
+            elementData = temp;
+        }
+    }
 
     public MyArrayList() {
         elementData = (E[]) new Object[DEFAULT_CAPACITY];
@@ -85,5 +108,10 @@ public class MyArrayList<E> implements IList<E> {
     @Override
     public List<E> subList(int from, int to) {
         return null;
+    }
+
+    @Override
+    public MyIterator iterator() {
+        return new MyIterator();
     }
 }

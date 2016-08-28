@@ -1,5 +1,6 @@
 package week5.main.list;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -32,6 +33,8 @@ public interface IList<E> {
     int lastIndexOf (E element);
 
     List<E> subList(int from, int to);
+
+    Iterator iterator();
 
 
 
