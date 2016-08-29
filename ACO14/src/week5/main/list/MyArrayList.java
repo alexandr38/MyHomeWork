@@ -11,7 +11,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     private E[] elementData;
     private final int DEFAULT_CAPACITY = 5;
-    private int size, index;
+    private int size;
 
 
     @Override
@@ -70,12 +70,12 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public E get(int index) {
-        return elementData[index - 1];
+        return isIndex(index) ? elementData[index - 1];
     }
 
     @Override
     public void set(E element, int index) {
-        if (index - 1 >=0 && index - 1 < size) {
+        if (isIndex(index)) {
             elementData[index - 1] = element;
         }
     }
@@ -178,17 +178,21 @@ public class MyArrayList<E> implements IMyList<E> {
 
     public MyArrayList() {
         elementData = (E[]) new Object[DEFAULT_CAPACITY];
-        this.index = this.size = 0;
+        this.size = 0;
     }
 
     public MyArrayList(int capacity) {
         elementData = (E[]) new Object[capacity];
-        this.index = this.size = 0;
+        this.size = 0;
     }
 
     private void resizeArray() {
         E[] temp = (E[]) new Object[elementData.length * 2 / 3 - 1];
         System.arraycopy(elementData, 0, temp, 0, elementData.length);
         elementData = temp;
+    }
+
+    private boolean isIndex(int index){
+        return index - 1 >= 0 && index - 1 < size;
     }
 }
