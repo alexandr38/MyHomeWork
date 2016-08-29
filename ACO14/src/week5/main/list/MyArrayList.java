@@ -1,62 +1,26 @@
 package week5.main.list;
 
+
 import java.util.Iterator;
-import java.util.List;
+import java.util.ListIterator;
 
 /**
  * Created by sasha on 28.08.2016.
  */
-public class MyArrayList<E> implements IList<E> {
+public class MyArrayList<E> implements IMyList<E> {
 
     private E[] elementData;
     private final int DEFAULT_CAPACITY = 5;
     private int size, capacity;
 
-    private class MyIterator implements Iterator{
-
-        private int index;
-
-        @Override
-        public boolean hasNext() {
-            return index - 1 < size();
-        }
-
-        @Override
-        public E next() {
-            return elementData[index];
-        }
-
-        @Override
-        public void remove() {
-            E[] temp = (E[]) new Object[elementData.length - 1];
-            System.arraycopy(elementData, 0, temp, 0, temp.length);
-            elementData = temp;
-        }
-    }
-
-    public MyArrayList() {
-        elementData = (E[]) new Object[DEFAULT_CAPACITY];
-        size = 0;
-    }
-
-    public MyArrayList(int capacity) {
-        elementData = (E[]) new Object[capacity];
-        size = 0;
-    }
-
 
     @Override
     public int size() {
-        return this.size;
+        return 0;
     }
 
     @Override
     public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    @Override
-    public boolean add(E element) {
         return false;
     }
 
@@ -66,13 +30,13 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     @Override
-    public boolean remove(E element) {
-        return false;
+    public Object[] toArray() {
+        return new Object[0];
     }
 
     @Override
-    public void clear() {
-
+    public boolean add(E element) {
+        return false;
     }
 
     @Override
@@ -86,8 +50,13 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     @Override
-    public E set(int index, E element) {
-        return null;
+    public void set(E element, int index) {
+
+    }
+
+    @Override
+    public void remove(E element) {
+
     }
 
     @Override
@@ -101,17 +70,93 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     @Override
-    public int lastIndexOf(E element) {
+    public int lastIndexOff(E element) {
         return 0;
     }
 
     @Override
-    public List<E> subList(int from, int to) {
-        return null;
+    public void clear() {
+
     }
 
     @Override
-    public MyIterator iterator() {
-        return new MyIterator();
+    public Iterator<E> iterator() {
+        return new Iterator<E>(){
+
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public E next() {
+                return null;
+            }
+        };
+    }
+
+    @Override
+    public ListIterator<E> listIterator() {
+        return new ListIterator<E>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public E next() {
+                return null;
+            }
+
+            @Override
+            public boolean hasPrevious() {
+                return false;
+            }
+
+            @Override
+            public E previous() {
+                return null;
+            }
+
+            @Override
+            public int nextIndex() {
+                return 0;
+            }
+
+            @Override
+            public int previousIndex() {
+                return 0;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+
+            @Override
+            public void set(E e) {
+
+            }
+
+            @Override
+            public void add(E e) {
+
+            }
+        };
+    }
+
+    @Override
+    public ListIterator<E> listIterator(int index) {
+        return null;
+    }
+
+    public MyArrayList() {
+        elementData = (E[]) new Object[DEFAULT_CAPACITY];
+        size = 0;
+    }
+
+    public MyArrayList(int capacity) {
+        elementData = (E[]) new Object[capacity];
+        size = 0;
     }
 }
