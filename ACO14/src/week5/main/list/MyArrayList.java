@@ -75,7 +75,9 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void set(E element, int index) {
-
+        if (index - 1 >=0 && index - 1 < size) {
+            elementData[index - 1] = element;
+        }
     }
 
     @Override
