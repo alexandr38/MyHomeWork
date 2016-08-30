@@ -26,13 +26,14 @@ public class TestArrayList {
             final MyArrayList<String> ml = new MyArrayList<String>();
             ml.add("");
             ml.add("");
+            ml.add("");
             final Iterator<String> iter = ml.iterator();
             int items = 0;
             while (iter.hasNext()) {
                 iter.next();
                 items++;
             }
-            Assert.assertEquals(2, items);
+            Assert.assertEquals(3, items);
         }
 
         @Test
