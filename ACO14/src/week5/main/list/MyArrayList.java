@@ -62,7 +62,8 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public E get(int index) {
-        return isIndex(index) ? elementData[index];
+        if (!isIndex(index)) throw new IllegalArgumentException("index out of bounds");
+        return elementData[index];
     }
 
     @Override
@@ -79,7 +80,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void remove(int index) {
-        
+
     }
 
     @Override
