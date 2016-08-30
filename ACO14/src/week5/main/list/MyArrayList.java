@@ -75,7 +75,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void remove(E element) {
-
+        remove(indexOf(element));
     }
 
     @Override
