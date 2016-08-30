@@ -148,24 +148,30 @@ public class MyArrayList<E> implements IMyList<E> {
     @Override
     public ListIterator<E> listIterator() {
         return new ListIterator<E>() {
+
+            int cursor = 0;
+            int prevElem = -1;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return !isEmpty() && cursor < size();
             }
 
             @Override
             public E next() {
-                return null;
+                prevElem++;
+                return elementData[cursor++];
             }
 
             @Override
             public boolean hasPrevious() {
-                return false;
+                return !isEmpty() && prevElem >= 0;
             }
 
             @Override
             public E previous() {
-                return null;
+                cursor--;
+                return elementData[prevElem--];
             }
 
             @Override

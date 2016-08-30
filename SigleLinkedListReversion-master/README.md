@@ -24,3 +24,6 @@ http://faculty.washington.edu/moishe/javademos/ch06%20Code/
 http://info.javarush.ru/translation/2014/04/27/%D0%9A%D0%B0%D0%BA-HashMap-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-%D0%B2-Java-.html
 
 
+// http://javatalks.ru/topics/45327?page=1#232369
+// http://javist.ru/svyazannyj-spisok-realizacii-v-java/
+// http://www.sql.ru/forum/710113/realizaciya-iterator
