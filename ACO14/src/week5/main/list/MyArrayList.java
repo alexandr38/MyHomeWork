@@ -31,6 +31,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public Object[] toArray() {
+        trimToSize();
         return elementData;
     }
 
@@ -80,7 +81,9 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void remove(int index) {
+        if (isIndex(index)) {
 
+        }
     }
 
     @Override
@@ -113,7 +116,12 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void clear() {
-
+        if (!isEmpty()) {
+            for (int i = 0; i < size; i++){
+                elementData[i] = null;
+            }
+            size = 0;
+        }
     }
 
     @Override
