@@ -82,7 +82,10 @@ public class MyArrayList<E> implements IMyList<E> {
     @Override
     public void remove(int index) {
         if (isIndex(index)) {
-
+            if (size > 1 && index < size - 1) {
+                System.arraycopy(elementData, index + 1, elementData, index, size - index - 1);
+            }
+            size--;
         }
     }
 
