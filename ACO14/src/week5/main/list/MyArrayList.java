@@ -26,7 +26,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public boolean contains(E element) {
-        return false;
+        return indexOf(element) != -1 ? true : false;
     }
 
     @Override
@@ -79,12 +79,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void remove(int index) {
-        if (isIndex(index)){
-            if (index == 0) {
-
-            }
-        }
-
+        
     }
 
     @Override
