@@ -31,7 +31,7 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return elementData;
     }
 
     @Override
@@ -48,35 +48,27 @@ public class MyArrayList<E> implements IMyList<E> {
         if (size + 1 > elementData.length){
             resizeArray();
         }
-
-        E[] temp = (E[]) new Object[elementData.length];
-
-        if (index == 0){
-            temp[0] = element;
-            System.arraycopy(elementData, 0, temp, 1, size);
-            } else {
-                if (index == size) {
-                    temp[size] = element;
-                    System.arraycopy(elementData, 0, temp, 0, size);
-                } else {
-                    System.arraycopy(elementData, 0, temp, 0, index - 1);
-                    temp[index - 1] = element;
-                    System.arraycopy(elementData, index - 1, temp, index, size - index + 1);
-                }
+        if (index >= 0 && index < size){
+            System.arraycopy(elementData, index, elementData, index + 1, size - index);
+            elementData[index] = element;
+            size++;
+        } else {
+            if (index == size) {
+                elementData[size++] = element;
+            }
         }
-        elementData = temp;
-        size++;
     }
+
 
     @Override
     public E get(int index) {
-        return isIndex(index) ? elementData[index - 1];
+        return isIndex(index) ? elementData[index];
     }
 
     @Override
     public void set(E element, int index) {
         if (isIndex(index)) {
-            elementData[index - 1] = element;
+            elementData[index] = element;
         }
     }
 
@@ -87,17 +79,40 @@ public class MyArrayList<E> implements IMyList<E> {
 
     @Override
     public void remove(int index) {
+        if (isIndex(index)){
+            if (index == 0) {
+
+            }
+        }
 
     }
 
     @Override
     public int indexOf(E element) {
-        return 0;
+        int index = -1;
+
+        if (!isEmpty()) {
+            for (int i = 0; i < size && index == -1; i++){
+                if (element.equals(elementData[i])) {
+                    index = i;
+                }
+            }
+        }
+        return index;
     }
 
     @Override
     public int lastIndexOff(E element) {
-        return 0;
+        int index = -1;
+
+        if (!isEmpty()){
+            for (int i = size - 1; i >= 0 && index == -1; i--){
+                if (element.equals(elementData[i])){
+                    index = i;
+                }
+            }
+        }
+        return index;
     }
 
     @Override
@@ -109,14 +124,16 @@ public class MyArrayList<E> implements IMyList<E> {
     public Iterator<E> iterator() {
         return new Iterator<E>(){
 
+            int cursor = 0;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return !isEmpty() && cursor < size();
             }
 
             @Override
             public E next() {
-                return null;
+                return elementData[cursor++];
             }
         };
     }
@@ -186,6 +203,14 @@ public class MyArrayList<E> implements IMyList<E> {
         this.size = 0;
     }
 
+    private void trimToSize(){
+        if (!isEmpty() && size() < elementData.length) {
+            E[] temp = (E[]) new Object[size()];
+            System.arraycopy(elementData, 0, temp, 0, size);
+            elementData = temp;
+        }
+    }
+
     private void resizeArray() {
         E[] temp = (E[]) new Object[elementData.length * 2];
         System.arraycopy(elementData, 0, temp, 0, elementData.length);
@@ -193,6 +218,6 @@ public class MyArrayList<E> implements IMyList<E> {
     }
 
     private boolean isIndex(int index){
-        return index - 1 >= 0 && index - 1 < size;
+        return index >= 0 && index < size;
     }
 }
