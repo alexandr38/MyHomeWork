@@ -187,7 +187,7 @@ public class MyArrayList<E> implements IMyList<E> {
     }
 
     private void resizeArray() {
-        E[] temp = (E[]) new Object[elementData.length * 2 / 3 - 1];
+        E[] temp = (E[]) new Object[elementData.length * 2];
         System.arraycopy(elementData, 0, temp, 0, elementData.length);
         elementData = temp;
     }
