@@ -7,14 +7,24 @@ import java.util.ListIterator;
  * Created by sasha on 31.08.2016.
  */
 public class MyLinkedList<E> implements IMyList<E> {
+
+    private Node<E> top;
+    private Node<E> tail;
+    private int size;
+
+    public MyLinkedList(){
+        size = 0;
+        top = tail = null;
+    }
+
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size() == 0;
     }
 
     @Override
@@ -29,21 +39,62 @@ public class MyLinkedList<E> implements IMyList<E> {
 
     @Override
     public boolean add(E element) {
-        return false;
+        Node<E> list = new Node<>(element);
+        if (isEmpty()){
+            top = tail = list;
+        } else {
+            tail.setNext(list);
+            list.setPrev(tail);
+            tail = list;
+        }
+        size++;
+        return true;
     }
 
     @Override
     public void add(int index, E element) {
+        if (isIndex(index)) {
 
+            Node<E> addElem = new Node<>(element);
+            Node<E> temp = top;
+
+            for (int i = 0; i < index; i++){
+                temp = temp.getNext();
+            }
+            addElem.setPrev(temp.getPrev());
+            addElem.setNext(temp);
+            temp.setPrev(addElem);
+            size++;
+        } else
+            throw new IndexOutOfBoundsException("index out of bounds");
     }
 
     @Override
     public E get(int index) {
-        return null;
+        if (isIndex(index)) {
+
+            Node<E> temp = top;
+
+            for (int i = 0; i < index; i++) {
+                temp = temp.getNext();
+            }
+            return temp.getValue();
+        } else
+            throw new IndexOutOfBoundsException("index out of bounds");
     }
 
     @Override
     public void set(E element, int index) {
+        if (isIndex(index)) {
+
+            Node<E> temp = top;
+
+            for (int i = 0; i < index; i++) {
+                temp = temp.getNext();
+            }
+            temp.setValue(element);
+        } else
+            throw new IndexOutOfBoundsException("index out of bounds");
 
     }
 
@@ -59,17 +110,38 @@ public class MyLinkedList<E> implements IMyList<E> {
 
     @Override
     public int indexOf(E element) {
-        return 0;
+
+        int index = -1;
+        Node<E> temp = top;
+
+        for (int i = 0; i < size(); i++){
+            if (element.equals(temp.getValue())){
+                index = i;
+            }
+            temp = temp.getNext();
+        }
+        return index;
     }
 
     @Override
     public int lastIndexOff(E element) {
-        return 0;
+
+        int index = -1;
+        Node<E> temp = tail;
+
+        for (int i = size() - 1; i >= 0; i--){
+            if (element.equals(temp.getValue())){
+                index = i;
+            }
+            temp = temp.getPrev();
+        }
+        return index;
     }
 
-    @Override
+    @Override // tak navernoe umiraet pamyat?
     public void clear() {
-
+        top = tail = null;
+        size = 0;
     }
 
     @Override
@@ -85,5 +157,9 @@ public class MyLinkedList<E> implements IMyList<E> {
     @Override
     public ListIterator<E> listIterator(int index) {
         return null;
+    }
+
+    private boolean isIndex(int index){
+        return !isEmpty() && index >= 0 && index < size;
     }
 }
