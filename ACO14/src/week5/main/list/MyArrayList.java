@@ -176,27 +176,29 @@ public class MyArrayList<E> implements IMyList<E> {
 
             @Override
             public int nextIndex() {
-                return 0;
+                return cursor + 1;
             }
 
             @Override
             public int previousIndex() {
-                return 0;
+                return cursor - 1;
             }
 
             @Override
             public void remove() {
-
+                remove();
+                cursor = size - 1;
+                prevElem = cursor - 1;
             }
 
             @Override
-            public void set(E e) {
-
-            }
+            public void set(E e) { elementData[cursor] = e; }
 
             @Override
             public void add(E e) {
-
+                add(e);
+                cursor = size - 1;
+                prevElem = cursor - 1;
             }
         };
     }
