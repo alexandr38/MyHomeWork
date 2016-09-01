@@ -30,7 +30,7 @@ public class MyLinkedList<E> implements IMyList<E> {
 
     @Override
     public boolean contains(E element) {
-        return false;
+        return indexOf(element) != -1;
     }
 
     @Override
@@ -109,12 +109,29 @@ public class MyLinkedList<E> implements IMyList<E> {
 
     @Override
     public void remove(E element) {
+        if (!isEmpty()) {
+            tail = tail.getPrev();
+            tail.getNext().setPrev(null);
+            tail.setNext(null);
+            size--;
+        }
 
     }
 
     @Override
     public void remove(int index) {
+        if (isIndex(index)){
 
+            Node<E> temp = top;
+
+            for (int i = 0; i < index; i++){
+                temp = temp.getNext();
+            }
+            temp.getPrev().setNext(temp.getNext());
+            temp.getPrev().setPrev(temp.getNext());
+            temp.setNext(null);
+            temp.setPrev(null);
+        }
     }
 
     @Override
