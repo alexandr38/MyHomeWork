@@ -164,7 +164,7 @@ public class MyLinkedList<E> implements IMyList<E> {
         return index;
     }
 
-    @Override // tak navernoe umiraet pamyat?
+    @Override // tak navernoe umiraet RAM?
     public void clear() {
         top = tail = null;
         size = 0;
@@ -189,13 +189,66 @@ public class MyLinkedList<E> implements IMyList<E> {
     }
 
     @Override
-    public ListIterator<E> listIterator() {
+    public ListIterator<E> listIterator(int index) {
         return null;
     }
 
     @Override
-    public ListIterator<E> listIterator(int index) {
-        return null;
+    public ListIterator<E> listIterator() {
+        return new ListIterator<E>() {
+
+            Node<E> cursor = top;
+            int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return cursor.getNext() != null;
+            }
+
+            @Override
+            public E next() {
+                cursor = cursor.getNext();
+                index++;
+                return cursor.getPrev().getValue();
+            }
+
+            @Override
+            public boolean hasPrevious() {
+                return cursor.getPrev() != null;
+            }
+
+            @Override
+            public E previous() {
+                cursor = cursor.getPrev();
+                index--;
+                return cursor.getNext().getValue();
+            }
+
+            @Override
+            public int nextIndex() {
+                return 0;
+            }
+
+            @Override
+            public int previousIndex() {
+                return 0;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+
+            @Override
+            public void set(E e) {
+
+            }
+
+            @Override
+            public void add(E e) {
+
+            }
+        };
     }
 
     private boolean isIndex(int index){
