@@ -2,6 +2,7 @@ package week5.main.list;
 
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.Objects;
 
 /**
  * Created by sasha on 31.08.2016.
@@ -33,8 +34,16 @@ public class MyLinkedList<E> implements IMyList<E> {
     }
 
     @Override
-    public Object[] toArray() {
-        return new Object[0];
+    public E[] toArray() {
+
+        E[] list = (E[]) new Objects[size()];
+        Node<E> temp = top;
+
+        for (int i = 0; i < list.length; i++){
+            list[i] = temp.getValue();
+            temp = temp.getNext();
+        }
+        return list;
     }
 
     @Override
