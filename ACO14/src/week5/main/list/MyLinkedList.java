@@ -172,7 +172,20 @@ public class MyLinkedList<E> implements IMyList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new Iterator<E>() {
+            Node<E> cursor = top;
+
+            @Override
+            public boolean hasNext() {
+                return cursor.getNext() != null;
+            }
+
+            @Override
+            public E next() {
+                cursor = cursor.getNext();
+                return cursor.getPrev().getValue();
+            }
+        };
     }
 
     @Override
