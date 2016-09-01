@@ -236,7 +236,12 @@ public class MyLinkedList<E> implements IMyList<E> {
 
             @Override
             public void remove() {
-
+                if (tail != null) {
+                    tail = tail.getPrev();
+                    tail.getNext().setPrev(null);
+                    tail.setNext(null);
+                    size--;
+                }
             }
 
             @Override
